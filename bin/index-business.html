@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trust Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #0a0a0a;
+      color: #fff;
+      font-family: "Inter", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 2.5rem 4rem 4rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .trust-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 4rem;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .left {
+      flex: 0 1 48%;
+      min-width: 0;
+    }
+
+    .headline {
+      font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.5rem;
+      color: #fff;
+      text-shadow:
+        1px 1px 0 rgba(255, 80, 80, 0.25),
+        -1px -1px 0 rgba(80, 80, 255, 0.25),
+        0 0 0 #fff;
+    }
+
+    .l-separator {
+      width: 4rem;
+      height: 3rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .l-separator::before,
+    .l-separator::after {
+      content: "";
+      position: absolute;
+      background: #fff;
+    }
+
+    .l-separator::before { left: 0; top: 0; width: 100%; height: 2px; }
+    .l-separator::after  { left: 0; top: 0; width: 2px; height: 100%; }
+
+    .body {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0 0 2rem;
+      color: rgba(255, 255, 255, 0.95);
+      max-width: 32ch;
+      text-shadow:
+        0.5px 0.5px 0 rgba(255, 80, 80, 0.2),
+        -0.5px -0.5px 0 rgba(80, 80, 255, 0.2),
+        0 0 0 rgba(255, 255, 255, 0.98);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 0.85rem 1.5rem;
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      position: relative;
+      transition: opacity 0.2s;
+      cursor: pointer;
+    }
+
+    .cta-button:hover { opacity: 0.95; }
+
+    .cta-button::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border: 1px solid transparent;
+      pointer-events: none;
+      background: linear-gradient(90deg,
+        rgba(255, 60, 60, 0.6) 0%,
+        transparent 30%,
+        transparent 70%,
+        rgba(80, 80, 255, 0.6) 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.8;
+    }
+
+    .cta-button::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border: 1px solid transparent;
+      pointer-events: none;
+      box-shadow:
+        -1px -1px 0 rgba(255, 80, 80, 0.5),
+        1px 1px 0 rgba(80, 80, 255, 0.5);
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: var(--chroma, 0.9);
+    }
+
+    .right {
+      flex: 0 1 52%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 380px;
+    }
+
+    .graphic { width: 100%; max-width: 420px; aspect-ratio: 1; }
+    .graphic-svg { width: 100%; height: 100%; color: #fff; }
+
+    .rings ellipse {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1;
+      opacity: calc(0.95 - var(--r, 0) * 0.18);
+      transform-origin: 200px 200px;
+    }
+
+    .orb { fill: #fff8f0; }
+    .arrow-line { stroke: currentColor; stroke-width: 1.5; opacity: 0.85; }
+    .arrow-head { stroke: currentColor; fill: none; opacity: 0.85; }
+
+    .particles .particle {
+      animation: particle-fade 4s ease-in-out infinite;
+      animation-delay: calc(var(--i, 0) * 0.4s);
+    }
+
+    @keyframes particle-fade {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .rings ellipse {
+        animation: ring-pulse 6s ease-in-out infinite;
+        animation-delay: calc(var(--r, 0) * 0.15s);
+      }
+    }
+
+    @keyframes ring-pulse {
+      0%, 100% { opacity: calc(0.95 - var(--r, 0) * 0.18); }
+      50% { opacity: calc(0.75 - var(--r, 0) * 0.12); }
+    }
+
+    .frequency-buffer { min-height: 8rem; background: #0a0a0a; }
+
+    .frequency-section {
+      position: relative;
+      min-height: 100vh;
+      background: #0a0a0a;
+      color: rgba(255, 255, 255, 0.95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .frequency-curves {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .curves-svg {
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 5%;
+      min-width: 60px;
+      max-width: 120px;
+      height: 100%;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .curves-left { left: 0; }
+    .curves-right { left: auto; right: 0; }
+    .curve { stroke-width: 1.5; stroke-linecap: round; }
+
+    .curves-left .curve-1 { animation: curve-left-oscillate 5.2s ease-in-out infinite; animation-delay: 0s; }
+    .curves-left .curve-2 { animation: curve-left-oscillate 5.8s ease-in-out infinite; animation-delay: 0.5s; }
+    .curves-left .curve-3 { animation: curve-left-oscillate 4.8s ease-in-out infinite; animation-delay: 1s; }
+    .curves-left .curve-4 { animation: curve-left-oscillate 5.5s ease-in-out infinite; animation-delay: 1.4s; }
+
+    @keyframes curve-left-oscillate {
+      0%, 100% { transform: translateX(0); opacity: 0.2; }
+      50% { transform: translateX(5vw); opacity: 0.65; }
+    }
+
+    .curves-right .curve-1 { animation: curve-right-oscillate 5.4s ease-in-out infinite; animation-delay: 0.2s; }
+    .curves-right .curve-2 { animation: curve-right-oscillate 4.6s ease-in-out infinite; animation-delay: 0.6s; }
+    .curves-right .curve-3 { animation: curve-right-oscillate 5.6s ease-in-out infinite; animation-delay: 1.1s; }
+    .curves-right .curve-4 { animation: curve-right-oscillate 5s ease-in-out infinite; animation-delay: 1.5s; }
+
+    @keyframes curve-right-oscillate {
+      0%, 100% { transform: translateX(0); opacity: 0.2; }
+      50% { transform: translateX(-5vw); opacity: 0.65; }
+    }
+
+    .frequency-diagram {
+      position: relative;
+      width: min(400px, 85vw);
+      height: min(400px, 85vw);
+      z-index: 1;
+    }
+
+    .frequency-circle-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .frequency-big-circle { fill: none; stroke: currentColor; stroke-width: 1; }
+    .frequency-dot { fill: currentColor; }
+
+    .frequency-center {
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .frequency-ring {
+      position: absolute;
+      inset: 0;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+    }
+
+    .frequency-record-btn {
+      position: relative;
+      z-index: 1;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: none;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: transform 0.15s, filter 0.2s;
+    }
+
+    .frequency-record-btn .record-icon {
+      width: 40px; height: 40px;
+      object-fit: contain;
+      pointer-events: none;
+      position: absolute;
+    }
+
+    .frequency-record-btn .record-mic-icon  { filter: brightness(0) invert(1); }
+    .frequency-record-btn .record-stop-icon { filter: brightness(0) invert(1); display: none !important; }
+    .frequency-record-btn.recording .record-mic-icon  { display: none !important; }
+    .frequency-record-btn.recording .record-stop-icon { display: block !important; }
+    .frequency-record-btn:hover  { transform: scale(1.05); }
+    .frequency-record-btn:active { transform: scale(0.98); }
+    .frequency-record-btn .record-label { display: none; }
+    .frequency-record-btn .record-dot   { display: none; }
+
+    .frequency-nodes { position: absolute; inset: 0; pointer-events: none; }
+
+    .frequency-node {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: auto;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .frequency-node.frequency-node-visible { opacity: 1; }
+
+    .node-label {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(0.62rem, 1.4vw, 0.78rem);
+      color: rgba(255, 255, 255, 0.88);
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .frequency-node-12   { left: 50%;   top: 17.5%; }
+    .frequency-node-12   .node-label { transform: translate(-50%, calc(-100% - 0.5rem)); }
+    .frequency-node-130  { left: 73%;   top: 27%; }
+    .frequency-node-130  .node-label { transform: translate(0.35rem, calc(-100% - 0.35rem)); }
+    .frequency-node-3    { left: 82.5%; top: 50%; }
+    .frequency-node-3    .node-label { transform: translate(calc(100% + 0.5rem), -50%); }
+    .frequency-node-430  { left: 73%;   top: 73%; }
+    .frequency-node-430  .node-label { transform: translate(0.35rem, 0.35rem); }
+    .frequency-node-6    { left: 50%;   top: 82.5%; }
+    .frequency-node-6    .node-label { transform: translate(-50%, calc(100% + 0.5rem)); }
+    .frequency-node-730  { left: 27%;   top: 73%; }
+    .frequency-node-730  .node-label { transform: translate(calc(-100% - 0.35rem), 0.35rem); }
+    .frequency-node-9    { left: 17.5%; top: 50%; }
+    .frequency-node-9    .node-label { transform: translate(calc(-100% - 0.5rem), -50%); }
+    .frequency-node-1030 { left: 27%;   top: 27%; }
+    .frequency-node-1030 .node-label { transform: translate(calc(-100% - 0.35rem), calc(-100% - 0.35rem)); }
+
+    .frequency-transcription {
+      position: absolute;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(90%, 480px);
+      z-index: 2;
+      text-align: center;
+    }
+
+    .frequency-transcription-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 0 0 0.5rem;
+    }
+
+    .frequency-transcription-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0;
+      min-height: 1.5em;
+    }
+
+    .frequency-transcription-status {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 0.35rem 0 0;
+    }
+
+    .frequency-progress {
+      position: absolute;
+      top: 3.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(260px, 70vw);
+      z-index: 3;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .frequency-progress-visible { opacity: 1; }
+
+    .frequency-progress-label {
+      margin: 0 0 0.4rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .frequency-progress-bar {
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+    }
+
+    .frequency-progress-fill {
+      width: 0%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #ffd15c, #ffb347);
+      transition: width 0.4s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="trust-label">[ MIT Media Lab ]</header>
+
+    <main class="content">
+      <section class="left">
+        <h1 class="headline">
+          Branding with intangible.<br>
+          Marketing by scent.<br>
+        </h1>
+        <div class="l-separator" aria-hidden="true"></div>
+        <p class="body">
+          Leveraging LLMs to ground sensory experience in narrative structure to create multimodal emotional resonance
+        </p>
+        <a href="#" class="cta-button">EXPLORE YOUR BRAND</a>
+      </section>
+
+      <section class="right" aria-hidden="true">
+        <div class="graphic">
+          <svg class="graphic-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="2" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="chroma" x="-20%" y="-20%" width="140%" height="140%">
+                <feOffset in="SourceGraphic" dx="-1" dy="-1" result="r"/>
+                <feOffset in="SourceGraphic" dx="1" dy="1" result="b"/>
+                <feFlood flood-color="#ff4444" result="red"/>
+                <feFlood flood-color="#4444ff" result="blue"/>
+                <feComposite in="red" in2="r" operator="in" result="redLayer"/>
+                <feComposite in="blue" in2="b" operator="in" result="blueLayer"/>
+                <feMerge>
+                  <feMergeNode in="redLayer"/>
+                  <feMergeNode in="blueLayer"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              <filter id="orbGlowChroma" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+                <feOffset in="SourceGraphic" dx="-1.5" dy="-1.5" result="redIn"/>
+                <feOffset in="SourceGraphic" dx="1.5" dy="1.5" result="blueIn"/>
+                <feFlood flood-color="#ff6666" result="redFlood"/>
+                <feFlood flood-color="#6666ff" result="blueFlood"/>
+                <feComposite in="redFlood" in2="redIn" operator="in" result="redLayer"/>
+                <feComposite in="blueFlood" in2="blueIn" operator="in" result="blueLayer"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="redLayer"/>
+                  <feMergeNode in="blueLayer"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <g class="particles" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.6">
+              <path d="M 80 60 L 84 64 M 84 60 L 80 64" class="particle" style="--i: 0"/>
+              <path d="M 320 90 L 324 94 M 324 90 L 320 94" class="particle" style="--i: 1"/>
+              <path d="M 350 200 L 354 204 M 354 200 L 350 204" class="particle" style="--i: 2"/>
+              <path d="M 280 320 L 284 324 M 284 320 L 280 324" class="particle" style="--i: 3"/>
+              <path d="M 100 280 L 104 284 M 104 280 L 100 284" class="particle" style="--i: 4"/>
+              <path d="M 200 50 L 204 54 M 204 50 L 200 54" class="particle" style="--i: 5"/>
+              <path d="M 380 250 L 384 254 M 384 250 L 380 254" class="particle" style="--i: 6"/>
+            </g>
+            <g filter="url(#chroma)" class="rings">
+              <ellipse cx="200" cy="200" rx="120" ry="80" class="ring" style="--r: 0"/>
+              <ellipse cx="200" cy="200" rx="100" ry="65" class="ring" style="--r: 1"/>
+              <ellipse cx="200" cy="200" rx="80"  ry="52" class="ring" style="--r: 2"/>
+              <ellipse cx="200" cy="200" rx="60"  ry="40" class="ring" style="--r: 3"/>
+              <ellipse cx="200" cy="200" rx="40"  ry="26" class="ring" style="--r: 4"/>
+            </g>
+            <circle cx="200" cy="200" r="18" class="orb" filter="url(#orbGlowChroma)"/>
+            <g class="arrow" filter="url(#chroma)">
+              <line x1="200" y1="200" x2="280" y2="120" stroke-dasharray="6 4" class="arrow-line"/>
+              <path d="M 280 120 L 274 114 M 280 120 L 276 126" stroke-width="2" class="arrow-head"/>
+            </g>
+          </svg>
+        </div>
+      </section>
+    </main>
+
+    <div class="frequency-buffer" aria-hidden="true"></div>
+
+    <section class="frequency-section" aria-label="Frequency">
+      <div class="frequency-curves" aria-hidden="true">
+        <svg class="curves-svg curves-left" viewBox="0 0 120 100" preserveAspectRatio="none">
+          <path class="curve curve-1" d="M 0 0 Q 38 50 0 100" fill="none" stroke="currentColor"/>
+          <path class="curve curve-2" d="M 0 0 Q 42 50 0 100" fill="none" stroke="currentColor"/>
+          <path class="curve curve-3" d="M 0 0 Q 40 50 0 100" fill="none" stroke="currentColor"/>
+          <path class="curve curve-4" d="M 0 0 Q 36 50 0 100" fill="none" stroke="currentColor"/>
+        </svg>
+        <svg class="curves-svg curves-right" viewBox="0 0 120 100" preserveAspectRatio="none">
+          <path class="curve curve-1" d="M 120 0 Q 82 50 120 100" fill="none" stroke="currentColor"/>
+          <path class="curve curve-2" d="M 120 0 Q 78 50 120 100" fill="none" stroke="currentColor"/>
+          <path class="curve curve-3" d="M 120 0 Q 80 50 120 100" fill="none" stroke="currentColor"/>
+          <path class="curve curve-4" d="M 120 0 Q 84 50 120 100" fill="none" stroke="currentColor"/>
+        </svg>
+      </div>
+
+      <div class="frequency-progress" id="frequencyProgress" aria-hidden="true">
+        <p class="frequency-progress-label" id="frequencyProgressLabel"></p>
+        <div class="frequency-progress-bar">
+          <div class="frequency-progress-fill" id="frequencyProgressFill"></div>
+        </div>
+      </div>
+
+      <div class="frequency-diagram">
+        <svg class="frequency-circle-svg" viewBox="0 0 400 400" aria-hidden="true">
+          <circle class="frequency-big-circle" cx="200" cy="200" r="130" fill="none" stroke="currentColor"/>
+          <circle class="frequency-dot" cx="200" cy="70"  r="4" fill="currentColor"/>
+          <circle class="frequency-dot" cx="292" cy="108" r="4" fill="currentColor"/>
+          <circle class="frequency-dot" cx="330" cy="200" r="4" fill="currentColor"/>
+          <circle class="frequency-dot" cx="292" cy="292" r="4" fill="currentColor"/>
+          <circle class="frequency-dot" cx="200" cy="330" r="4" fill="currentColor"/>
+          <circle class="frequency-dot" cx="108" cy="292" r="4" fill="currentColor"/>
+          <circle class="frequency-dot" cx="70"  cy="200" r="4" fill="currentColor"/>
+          <circle class="frequency-dot" cx="108" cy="108" r="4" fill="currentColor"/>
+        </svg>
+        <div class="frequency-center">
+          <div class="frequency-ring" aria-hidden="true"></div>
+          <button type="button" class="frequency-record-btn" id="frequencyRecordBtn" aria-label="Record audio">
+            <img src="assets/microphone.png"   alt="" class="record-icon record-mic-icon"  width="48" height="48">
+            <img src="assets/stop-button.png"  alt="" class="record-icon record-stop-icon" width="48" height="48">
+            <span class="record-label" aria-hidden="true">Record</span>
+            <span class="record-dot"   aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="frequency-nodes">
+          <div class="frequency-node frequency-node-12">  <span class="node-label">Scent 1</span></div>
+          <div class="frequency-node frequency-node-130"> <span class="node-label">Scent 2</span></div>
+          <div class="frequency-node frequency-node-3">   <span class="node-label">Scent 3</span></div>
+          <div class="frequency-node frequency-node-430"> <span class="node-label">Scent 4</span></div>
+          <div class="frequency-node frequency-node-6">   <span class="node-label">Scent 5</span></div>
+          <div class="frequency-node frequency-node-730"> <span class="node-label">Scent 6</span></div>
+          <div class="frequency-node frequency-node-9">   <span class="node-label">Scent 7</span></div>
+          <div class="frequency-node frequency-node-1030"><span class="node-label">Scent 8</span></div>
+        </div>
+      </div>
+
+      <div class="frequency-transcription" id="frequencyTranscription" aria-live="polite">
+        <p class="frequency-transcription-label">Transcription</p>
+        <p class="frequency-transcription-text" id="frequencyTranscriptionText"></p>
+        <p class="frequency-transcription-status" id="frequencyTranscriptionStatus"></p>
+      </div>
+
+      <div class="device-controls" style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;z-index:2;">
+        <button id="playSequenceBtn" class="cta-button" onclick="playSequenceOnDevice()">PLAY ON DEVICE</button>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const API_BASE = window.FREQUENCY_API_BASE || 'http://localhost:8000';
+
+    document.querySelector('.cta-button')?.addEventListener('mouseenter', function () {
+      this.style.setProperty('--chroma', '1');
+    });
+    document.querySelector('.cta-button')?.addEventListener('mouseleave', function () {
+      this.style.setProperty('--chroma', '0.9');
+    });
+
+    // ── Recording ──────────────────────────────────────────────────────────────
+    (function () {
+      const recordBtn = document.getElementById('frequencyRecordBtn');
+      const transcriptionEl = document.getElementById('frequencyTranscriptionText');
+      const statusEl = document.getElementById('frequencyTranscriptionStatus');
+      if (!recordBtn) return;
+
+      let mediaRecorder = null, stream = null, chunks = [];
+
+      const progressEl    = document.getElementById('frequencyProgress');
+      const progressLabel = document.getElementById('frequencyProgressLabel');
+      const progressFill  = document.getElementById('frequencyProgressFill');
+
+      function setRecording(on) {
+        recordBtn.classList.toggle('recording', on);
+        recordBtn.setAttribute('aria-label', on ? 'Stop recording' : 'Record audio');
+        const lbl = recordBtn.querySelector('.record-label');
+        if (lbl) lbl.textContent = on ? 'Stop' : 'Record';
+      }
+
+      function setStatus(text, isError) {
+        if (!statusEl) return;
+        statusEl.textContent = text;
+        statusEl.style.color = isError ? 'rgba(255,120,120,0.9)' : 'rgba(255,255,255,0.5)';
+      }
+
+      function setTranscription(text) { if (transcriptionEl) transcriptionEl.textContent = text || ''; }
+
+      function showProgress(label, pct) {
+        if (!progressEl) return;
+        progressEl.classList.add('frequency-progress-visible');
+        if (progressLabel && label) progressLabel.textContent = label;
+        if (progressFill) progressFill.style.width = (pct || 0) + '%';
+      }
+
+      function updateProgress(label, pct) {
+        if (!progressEl) return;
+        if (progressLabel && label) progressLabel.textContent = label;
+        if (progressFill && typeof pct === 'number') progressFill.style.width = pct + '%';
+      }
+
+      function hideProgress() {
+        if (!progressEl) return;
+        progressEl.classList.remove('frequency-progress-visible');
+        if (progressFill) progressFill.style.width = '0%';
+        if (progressLabel) progressLabel.textContent = '';
+      }
+
+      function stopRecording() {
+        if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+        if (stream) { stream.getTracks().forEach(t => t.stop()); stream = null; }
+        setRecording(false);
+      }
+
+      function sendForTranscription(blob, mimeType) {
+        showProgress('Transcribing', 20);
+        setStatus(''); setTranscription('');
+        const form = new FormData();
+        const ext = (mimeType || '').includes('webm') ? 'webm' : 'ogg';
+        form.append('audio', blob, 'recording.' + ext);
+
+        fetch(API_BASE + '/transcribe', { method: 'POST', body: form })
+          .then(res => {
+            if (!res.ok) return res.json().then(b => { throw new Error(b.detail || res.statusText); });
+            return res.json();
+          })
+          .then(data => {
+            const text = data.text || '';
+            setTranscription(text);
+            updateProgress('Fetching database', 45);
+            const scentPromise = isInFeedbackMode
+              ? (updateProgress('Refining scent', 70), feedbackScent(text))
+              : (updateProgress('Composing scent', 70), composeScent(text));
+            return scentPromise.then(sequence => {
+              setStatus('');
+              if (sequence && sequence.length) {
+                if (!isInFeedbackMode) {
+                  sessionOriginalSentence = text;
+                  sessionOriginalSequence = sequence;
+                  isInFeedbackMode = true;
+                }
+                currentSequence = sequence;
+                updateProgress('Playing on device', 95);
+                renderProfile(sequence);
+                playSequenceOnDevice().finally(() => {
+                  updateProgress('Complete', 100);
+                  setTimeout(hideProgress, 800);
+                });
+              } else {
+                setStatus('No scent sequence generated.');
+                updateProgress('No scent generated', 100);
+                setTimeout(hideProgress, 800);
+              }
+            });
+          })
+          .catch(err => {
+            setStatus('Transcription failed: ' + (err.message || err));
+            setTranscription(''); hideProgress();
+          });
+      }
+
+      recordBtn.addEventListener('click', e => {
+        e.preventDefault(); e.stopPropagation();
+        if (recordBtn.classList.contains('recording')) { stopRecording(); return; }
+        chunks = [];
+        setRecording(true);
+        if (!isInFeedbackMode) renderProfile([]);
+        hideProgress(); setTranscription(''); setStatus('');
+
+        if (!navigator.mediaDevices?.getUserMedia) {
+          setRecording(false);
+          alert('Your browser does not support recording. Try Chrome or Firefox.');
+          return;
+        }
+
+        navigator.mediaDevices.getUserMedia({ audio: true })
+          .then(s => {
+            stream = s;
+            let options = { mimeType: 'audio/webm;codecs=opus' };
+            if (!MediaRecorder.isTypeSupported(options.mimeType)) options = {};
+            mediaRecorder = new MediaRecorder(stream, options);
+            mediaRecorder.ondataavailable = ev => { if (ev.data.size > 0) chunks.push(ev.data); };
+            mediaRecorder.onstop = () => {
+              if (stream) { stream.getTracks().forEach(t => t.stop()); stream = null; }
+              if (chunks.length) {
+                const blob = new Blob(chunks, { type: mediaRecorder.mimeType || 'audio/webm' });
+                sendForTranscription(blob, mediaRecorder.mimeType);
+              }
+            };
+            mediaRecorder.start();
+          })
+          .catch(err => {
+            console.warn('Recording not available:', err);
+            setRecording(false);
+            alert('Microphone access is needed to record. Please allow the site to use your microphone and try again.');
+          });
+      });
+    })();
+
+    // ── Scent state ────────────────────────────────────────────────────────────
+    const baseNotes = [];
+    let scentsData = {}, currentSequence = null;
+    let sessionOriginalSentence = null, sessionOriginalSequence = null;
+    let sessionHistory = [], isInFeedbackMode = false;
+
+    fetch('./scent_classification.json')
+      .then(r => { if (!r.ok) throw new Error('Missing scent_classification.json'); return r.json(); })
+      .then(data => {
+        scentsData = data || {};
+        const names = Object.keys(scentsData);
+        if (!names.length) throw new Error('scent_classification.json has no entries');
+        baseNotes.splice(0, baseNotes.length, ...names);
+      })
+      .catch(err => console.error(err));
+
+    async function composeScent(sentence) {
+      try {
+        const res = await fetch(API_BASE + '/compose', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sentence })
+        });
+        if (!res.ok) { alert(`Composition failed: ${await res.text()}`); return null; }
+        const data = await res.json();
+        console.log('[Compose] Justification:', data.justification);
+        return data.scent_sequence || null;
+      } catch (err) {
+        console.error(err);
+        alert('Network error calling composition service. Is the backend running on :8000?');
+        return null;
+      }
+    }
+
+    async function feedbackScent(feedbackText) {
+      try {
+        const res = await fetch(API_BASE + '/feedback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            original_sentence: sessionOriginalSentence,
+            original_sequence: sessionOriginalSequence,
+            prior_rounds: sessionHistory,
+            latest_feedback: feedbackText
+          })
+        });
+        if (!res.ok) { alert(`Refinement failed: ${await res.text()}`); return null; }
+        const data = await res.json();
+        if (data.scent_sequence) {
+          sessionHistory.push({
+            feedback_text: feedbackText,
+            changes_made: data.changes_made || '',
+            resulting_sequence: data.scent_sequence
+          });
+        }
+        console.log('[Feedback] Justification:', data.justification);
+        console.log('[Feedback] Changes made:', data.changes_made);
+        return data.scent_sequence || null;
+      } catch (err) {
+        console.error(err);
+        alert('Network error calling feedback service. Is the backend running on :8000?');
+        return null;
+      }
+    }
+
+    const NODE_ORDER = ['12', '130', '3', '430', '6', '730', '9', '1030'];
+
+    function setLoading() {} // no-op
+
+    function renderProfile(sequence) {
+      const nodes = NODE_ORDER.map(id => document.querySelector('.frequency-node-' + id)).filter(Boolean);
+      nodes.forEach(node => {
+        node.classList.remove('frequency-node-visible');
+        const lbl = node.querySelector('.node-label');
+        if (lbl) lbl.textContent = '';
+      });
+      sequence.slice(0, 8).forEach((item, i) => {
+        const node = nodes[i]; if (!node) return;
+        const lbl = node.querySelector('.node-label');
+        if (lbl) lbl.textContent = item.scent_name || '';
+        setTimeout(() => node.classList.add('frequency-node-visible'), i * 400);
+      });
+    }
+
+    function hashString(str) {
+      let h = 2166136261 >>> 0;
+      for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
+      return h >>> 0;
+    }
+
+    function mulberry32(a) {
+      return () => {
+        let t = a += 0x6D2B79F5;
+        t = Math.imul(t ^ (t >>> 15), t | 1);
+        t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    async function playSequenceOnDevice() {
+      if (!currentSequence?.length) {
+        alert('No sequence to play. Generate a scent sequence first!');
+        return;
+      }
+      const bleSequence = [];
+      for (const item of currentSequence) {
+        const meta = scentsData[item.scent_name];
+        if (!meta?.location) { console.warn(`Skipping scent with no device location: ${item.scent_name}`); continue; }
+        const locId = parseInt(meta.location);
+        if (locId < 1 || locId > 12) { console.warn(`Skipping out-of-range scent: ${item.scent_name}`); continue; }
+        bleSequence.push({ scent_id: locId, duration: item.scent_duration });
+      }
+      if (!bleSequence.length) { alert('No playable scents in sequence.'); return; }
+      try {
+        const playBtn = document.getElementById('playSequenceBtn');
+        if (playBtn) playBtn.disabled = true;
+        const res = await fetch('http://localhost:5001/play_sequence', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sequence: bleSequence })
+        });
+        const result = await res.json();
+        alert(result.status === 'success' ? '✅ Sequence is playing on your device!' : `❌ Error: ${result.message}`);
+      } catch (err) {
+        console.error('BLE Error:', err);
+        alert('❌ Could not connect to BLE device. Make sure:\n1. Flask backend running on :5001\n2. BLE device powered on\n3. Device in range');
+      } finally {
+        const playBtn = document.getElementById('playSequenceBtn');
+        if (playBtn) playBtn.disabled = false;
+      }
+    }
+
+    async function testBLEConnection() {
+      try {
+        const res = await fetch('http://localhost:5001/test_connection');
+        const result = await res.json();
+        alert(result.status === 'success' ? `✅ ${result.message}` : `❌ ${result.message}`);
+      } catch (err) {
+        console.error('Connection test error:', err);
+        alert('❌ Could not connect to BLE backend. Make sure the Flask server is running on :5001');
+      }
+    }
+  </script>
+</body>
+</html>

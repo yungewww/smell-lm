@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmellAI Interface</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .scene {
+    position: relative;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  /* Phone shell */
+  .phone {
+    width: 320px;
+    height: 680px;
+    background: #111;
+    border-radius: 44px;
+    border: 1.5px solid #2a2a2a;
+    box-shadow: 0 0 0 1px #e0e0e0, 0 20px 40px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8);
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .phone::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 26px;
+    background: #0a0a0a;
+    border-radius: 20px;
+    z-index: 100;
+    border: 1px solid #1e1e1e;
+  }
+
+  .screen {
+    width: 100%;
+    height: 100%;
+    background: #f5f0e8;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    padding-top: 56px;
+  }
+  .screen::-webkit-scrollbar { display: none; }
+
+  /* Status bar */
+  .status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: #f5f0e8;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 28px 8px;
+    justify-content: space-between;
+    z-index: 10;
+    font-size: 10px;
+    color: #333;
+    letter-spacing: 0.05em;
+  }
+
+  /* Header */
+  .header {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid #e0d8cc;
+  }
+
+  .app-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+
+  .app-subtitle {
+    font-size: 9px;
+    color: #888;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* Iteration badge */
+  .iter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #1a1a1a;
+    color: #f5f0e8;
+    font-size: 9px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.1em;
+    margin-top: 10px;
+  }
+
+  .iter-dot {
+    width: 5px;
+    height: 5px;
+    background: #c8a96e;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* Content sections */
+  .section {
+    padding: 16px 24px;
+    border-bottom: 1px solid #e8e0d4;
+  }
+
+  .section-label {
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 10px;
+  }
+
+  /* Image upload area */
+  .image-upload {
+    width: 100%;
+    height: 90px;
+    border: 1.5px dashed #ccc;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #faf6ef;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+
+  .upload-icon {
+    font-size: 20px;
+    opacity: 0.4;
+  }
+
+  .upload-text {
+    font-size: 9px;
+    color: #aaa;
+    letter-spacing: 0.1em;
+  }
+
+  .image-preview {
+    width: 100%;
+    height: 90px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f4c56a22, #e8925522);
+    border: 1px solid #e0c89a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .preview-label {
+    font-size: 9px;
+    color: #c8a96e;
+    letter-spacing: 0.1em;
+  }
+
+  .preview-tag {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #c8a96e;
+    color: white;
+    font-size: 8px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Text input */
+  .text-input {
+    width: 100%;
+    background: #faf6ef;
+    border: 1.5px solid #ddd;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #2a2a2a;
+    line-height: 1.6;
+    resize: none;
+    height: 72px;
+    outline: none;
+  }
+
+  .char-count {
+    text-align: right;
+    font-size: 8px;
+    color: #bbb;
+    margin-top: 5px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Dispense button */
+  .dispense-btn {
+    margin: 0 24px 16px;
+    width: calc(100% - 48px);
+    background: #1a1a1a;
+    color: #f5f0e8;
+    border: none;
+    border-radius: 14px;
+    padding: 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn-icon { font-size: 14px; }
+
+  /* Odor chart */
+  .odor-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .odor-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .odor-name {
+    font-size: 9px;
+    color: #555;
+    width: 62px;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+
+  .odor-bar-bg {
+    flex: 1;
+    height: 6px;
+    background: #e8e0d4;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .odor-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: #c8a96e;
+    transition: width 0.4s ease;
+  }
+
+  .odor-pct {
+    font-size: 9px;
+    color: #999;
+    width: 28px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* Feedback row */
+  .feedback-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .feedback-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    text-align: center;
+  }
+
+  .feedback-btn.accept {
+    background: #1a1a1a;
+    color: #f5f0e8;
+  }
+
+  .feedback-btn.refine {
+    background: transparent;
+    border-color: #ccc;
+    color: #555;
+  }
+
+  /* History */
+  .history-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #ede5d8;
+  }
+
+  .history-item:last-child { border-bottom: none; }
+
+  .history-num {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #e8e0d4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    color: #999;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .history-text {
+    font-size: 9px;
+    color: #777;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+
+  .history-top {
+    font-size: 8px;
+    color: #c8a96e;
+    margin-top: 3px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Annotation panel beside phone */
+  .annotations {
+    color: #555;
+    padding-top: 60px;
+    width: 200px;
+  }
+
+  .ann-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .ann-line {
+    width: 32px;
+    height: 1px;
+    background: #333;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .ann-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #666;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+  }
+
+  .ann-label {
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c8a96e;
+    margin-bottom: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="scene">
+  <div class="phone">
+    <div class="status-bar">
+      <span>9:41</span>
+      <span>●●●</span>
+    </div>
+
+    <div class="screen">
+
+      <!-- Header -->
+      <div class="header">
+        <div class="app-title">SmellAI</div>
+        <div class="app-subtitle">Olfactory Synthesis Interface</div>
+        <div class="iter-badge">
+          <div class="iter-dot"></div>
+          Iteration 2 of session
+        </div>
+      </div>
+
+      <!-- Image upload -->
+      <div class="section">
+        <div class="section-label">Visual Context</div>
+        <div class="image-preview">
+          <span class="preview-label">orange_juice.jpg</span>
+          <span class="preview-tag">uploaded</span>
+        </div>
+      </div>
+
+      <!-- Text description -->
+      <div class="section">
+        <div class="section-label">Scent Description</div>
+        <textarea class="text-input">Slightly more acidic than usual orange juice, strong citrus note, faint sweetness.</textarea>
+        <div class="char-count">87 / 300</div>
+      </div>
+
+      <!-- Dispense button -->
+      <button class="dispense-btn">
+        <span class="btn-icon">◉</span>
+        Dispense Mixture
+      </button>
+
+      <!-- Odor distribution -->
+      <div class="section">
+        <div class="section-label">Generated Odor Weights</div>
+        <div class="odor-chart">
+          <div class="odor-row">
+            <span class="odor-name">Orange</span>
+            <div class="odor-bar-bg"><div class="odor-bar-fill" style="width:80%"></div></div>
+            <span class="odor-pct">0.80</span>
+          </div>
+          <div class="odor-row">
+            <span class="odor-name">Lemon</span>
+            <div class="odor-bar-bg"><div class="odor-bar-fill" style="width:15%"></div></div>
+            <span class="odor-pct">0.15</span>
+          </div>
+          <div class="odor-row">
+            <span class="odor-name">Vanilla</span>
+            <div class="odor-bar-bg"><div class="odor-bar-fill" style="width:5%"></div></div>
+            <span class="odor-pct">0.05</span>
+          </div>
+          <div class="odor-row">
+            <span class="odor-name">Lavender</span>
+            <div class="odor-bar-bg"><div class="odor-bar-fill" style="width:0%"></div></div>
+            <span class="odor-pct">0.00</span>
+          </div>
+          <div class="odor-row">
+            <span class="odor-name">Cedarwood</span>
+            <div class="odor-bar-bg"><div class="odor-bar-fill" style="width:0%"></div></div>
+            <span class="odor-pct">0.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-label">Evaluation</div>
+        <div class="feedback-row">
+          <div class="feedback-btn accept">✓ Accept</div>
+          <div class="feedback-btn refine">↺ Refine</div>
+        </div>
+      </div>
+
+      <!-- History -->
+      <div class="section">
+        <div class="section-label">Refinement History</div>
+        <div class="history-item">
+          <div class="history-num">1</div>
+          <div>
+            <div class="history-text">"Fresh orange scent"</div>
+            <div class="history-top">Top: orange 0.90 — refined</div>
+          </div>
+        </div>
+        <div class="history-item">
+          <div class="history-num">2</div>
+          <div>
+            <div class="history-text">"Slightly acidic, strong citrus note"</div>
+            <div class="history-top">Top: orange 0.80 — current</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Annotations -->
+  <div class="annotations">
+    <div class="ann-item" style="margin-top: 30px">
+      <div class="ann-line"></div>
+      <div class="ann-text">
+        <div class="ann-label">Input</div>
+        Optional image upload for visual context
+      </div>
+    </div>
+    <div class="ann-item" style="margin-top: 20px">
+      <div class="ann-line"></div>
+      <div class="ann-text">
+        <div class="ann-label">Prompt</div>
+        Free-text scent description
+      </div>
+    </div>
+    <div class="ann-item" style="margin-top: 50px">
+      <div class="ann-line"></div>
+      <div class="ann-text">
+        <div class="ann-label">Output</div>
+        LLM-generated weight distribution over 10 base odors
+      </div>
+    </div>
+    <div class="ann-item" style="margin-top: 30px">
+      <div class="ann-line"></div>
+      <div class="ann-text">
+        <div class="ann-label">Feedback</div>
+        Accept to terminate loop or refine to iterate
+      </div>
+    </div>
+    <div class="ann-item" style="margin-top: 18px">
+      <div class="ann-line"></div>
+      <div class="ann-text">
+        <div class="ann-label">History</div>
+        Full refinement trace across iterations
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

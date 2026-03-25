@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Death Sentence - Scent Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --panel: #1a1a1a;
+            --accent: #ff0000;
+            --accent-dim: #ff6666;
+            --text: #ffffff;
+            --muted: #cccccc;
+        }
+
+        * { box-sizing: border-box }
+        html, body { height: 100% }
+
+        body {
+            margin: 0;
+            background: radial-gradient(1200px 800px at 20% 10%, #1a1a1a 0%, #0f0f0f 40%, #000000 100%);
+            color: var(--text);
+            font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+            letter-spacing: .02em;
+        }
+
+        .frame {
+            width: min(920px, 92vw);
+            margin: 6vh auto;
+            padding: 28px 28px 36px;
+            border-radius: 16px;
+            background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 60%, #0a0a0a 100%);
+            border: 1px solid rgba(255, 0, 0, .25);
+            box-shadow: 0 0 0 2px rgba(255, 0, 0, .08), 0 40px 80px rgba(255, 0, 0, .15) inset;
+            position: relative;
+        }
+
+        .title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 52px;
+            line-height: 1.1;
+            text-align: center;
+            letter-spacing: 0.02em;
+            color: #ffffff;
+            text-shadow: 0 2px 24px rgba(255, 0, 0, .3), 0 0 8px rgba(255, 0, 0, .2);
+            margin: 16px 0 8px;
+            padding: 0 20px;
+        }
+
+        .title .title-dynamic {
+            color: #ff0000;
+            transition: all 0.15s ease-in-out;
+            text-decoration: underline;
+            text-decoration-color: rgba(255, 0, 0, 0.5);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 6px;
+            font-style: italic;
+            letter-spacing: 0.06em;
+            transform-origin: center;
+            display: inline-block;
+        }
+
+        .title .title-dynamic.transitioning {
+            transform: scale(0.97);
+            opacity: 0.25;
+        }
+
+        .subtitle-main {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            font-weight: 400;
+            text-align: center;
+            color: #cccccc;
+            letter-spacing: 0.18em;
+            margin: 4px 0 32px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px;
+            align-items: center;
+            padding: 14px;
+            border: 1px solid rgba(212, 165, 116, .3);
+            border-radius: 12px;
+            background: rgba(247, 242, 232, .9);
+            box-shadow: 0 0 24px rgba(212, 165, 116, .1) inset;
+        }
+
+        .input-row input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text);
+            font-family: 'Space Mono', monospace;
+            font-size: 20px;
+        }
+
+        .input-row button {
+            background: transparent;
+            border: 1px solid rgba(212, 165, 116, .4);
+            color: var(--accent);
+            padding: 10px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all .2s ease;
+        }
+
+        .input-row button:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 12px rgba(212, 165, 116, .3);
+        }
+
+        .cta {
+            display: block;
+            margin: 22px auto 8px;
+            padding: 16px 28px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            background: var(--accent);
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 8px 28px rgba(212, 165, 116, .3), 0 0 0 2px rgba(232, 196, 160, .2) inset;
+            transition: transform .08s ease, filter .2s ease;
+        }
+
+        .cta:hover { filter: saturate(110%) brightness(1.05) }
+        .cta:active { transform: translateY(1px) }
+
+        .subtitle {
+            margin: 26px 0 12px;
+            color: var(--accent);
+            font-weight: 800;
+            letter-spacing: .08em;
+        }
+
+        .notes {
+            margin: 0;
+            padding-left: 20px;
+            list-style: decimal-leading-zero;
+            display: grid;
+            gap: 10px;
+        }
+
+        .note {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 14px;
+            background: rgba(247, 242, 232, .8);
+            border: 1px solid rgba(212, 165, 116, .3);
+            border-radius: 10px;
+        }
+
+        .note-name {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        .bars { display: flex; gap: 8px; align-items: center }
+
+        .bar {
+            height: 6px;
+            width: 64px;
+            background: #f0e6d6;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(212, 165, 116, .25)
+        }
+
+        .bar > span {
+            position: absolute;
+            inset: 0;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+            box-shadow: 0 0 10px rgba(212, 165, 116, .3)
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 16px
+        }
+
+        .meter {
+            position: relative;
+            width: 160px;
+            height: 80px;
+            border-top-left-radius: 160px;
+            border-top-right-radius: 160px;
+            border: 1px solid rgba(255, 0, 0, .4);
+            overflow: hidden;
+            background: rgba(26, 26, 26, .8)
+        }
+
+        .needle {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            height: 78px;
+            background: var(--accent);
+            transform-origin: bottom center;
+            transform: rotate(-70deg);
+            box-shadow: 0 0 12px rgba(255, 0, 0, .55)
+        }
+
+        .score {
+            color: var(--muted);
+            font-family: 'Space Mono', monospace
+        }
+
+        .hidden { display: none }
+
+        .loader-overlay {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, .9);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+        }
+
+        .loader-overlay.hidden { display: none }
+
+        .loader-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            padding: 22px 26px;
+            border-radius: 14px;
+            background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
+            border: 1px solid rgba(255, 0, 0, .3);
+            box-shadow: 0 12px 40px rgba(255, 0, 0, .2);
+        }
+
+        .skull-spin {
+            filter: drop-shadow(0 0 16px rgba(255, 0, 0, .3));
+            animation: spin 1.2s linear infinite
+        }
+
+        .loader-text {
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: .04em
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg) }
+            to { transform: rotate(360deg) }
+        }
+
+        .device-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 0, 0, .15);
+        }
+
+        .device-btn {
+            padding: 14px 20px;
+            font-weight: 700;
+            letter-spacing: .05em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all .15s ease;
+            font-size: 14px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
+        }
+
+        .device-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .test-btn {
+            background: rgba(212, 165, 116, .15);
+            color: var(--accent);
+            border: 1px solid rgba(212, 165, 116, .4);
+        }
+
+        .test-btn:hover:not(:disabled) {
+            background: rgba(212, 165, 116, .25);
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(212, 165, 116, .3);
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, #ff006e, #d62828);
+            color: #ffffff;
+            border: 1px solid rgba(255, 0, 110, .5);
+            font-weight: 800;
+        }
+
+        .play-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #ff1a81, #e03636);
+            box-shadow: 0 0 24px rgba(255, 0, 110, .4);
+            transform: translateY(-1px);
+        }
+
+        .play-btn:active:not(:disabled) { transform: translateY(0px); }
+
+        @media (max-width: 640px) {
+            .title { font-size: 36px }
+            .input-row input { font-size: 16px }
+            .device-controls { grid-template-columns: 1fr; }
+            .device-btn { font-size: 13px; padding: 12px 16px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <header class="title">DEATH <span id="dynamicPrefix" class="title-dynamic">SENTENCE</span></header>
+        <div class="subtitle-main">Real-Time Sentence-to-Scent LLM</div>
+
+        <div class="input-row">
+            <input id="prompt" type="text" placeholder="Please enter your death sentence..">
+            <button id="leaf" aria-label="suggest themes">🍃</button>
+        </div>
+
+        <button id="synthesize" class="cta">SYNTHESIZE SCENT →</button>
+
+        <section class="results hidden" id="results">
+            <h2 class="subtitle">GENERATED FRAGRANCE PROFILE:</h2>
+            <ol id="notes" class="notes"></ol>
+            <div class="rating">
+                <div class="meter">
+                    <div class="needle" id="needle"></div>
+                </div>
+                <div class="score">MORTALITY RATING: <span id="score">—</span></div>
+            </div>
+
+            <div class="device-controls">
+                <button id="testConnectionBtn" class="device-btn test-btn" onclick="testBLEConnection()">
+                    🔍 TEST DEVICE CONNECTION
+                </button>
+                <button id="playSequenceBtn" class="device-btn play-btn" onclick="playSequenceOnDevice()">
+                    ▶ PLAY SEQUENCE ON DEVICE
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <div id="loader" class="loader-overlay hidden" aria-live="polite" aria-busy="true">
+        <div class="loader-card">
+            <svg class="skull-spin" width="120" height="120" viewBox="0 0 120 120" fill="none"
+                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Loading">
+                <circle cx="60" cy="65" r="35" fill="#2a2a2a" stroke="#ff0000" stroke-width="3" />
+                <circle cx="50" cy="55" r="6" fill="#000000" />
+                <circle cx="70" cy="55" r="6" fill="#000000" />
+                <path d="M60 65 L55 70 L65 70 Z" fill="#000000" />
+                <path d="M40 80 Q60 95 80 80" stroke="#ff0000" stroke-width="3" fill="none" />
+                <rect x="55" y="80" width="3" height="8" fill="#ffffff" />
+                <rect x="62" y="80" width="3" height="8" fill="#ffffff" />
+                <rect x="45" y="25" width="30" height="40" rx="5" fill="#1a1a1a" stroke="#ff0000" stroke-width="2" />
+                <rect x="50" y="20" width="20" height="10" rx="3" fill="#1a1a1a" stroke="#ff0000" stroke-width="2" />
+                <rect x="47" y="50" width="26" height="15" rx="2" fill="#ff0000" opacity="0.7" />
+                <g transform="translate(30, 30)">
+                    <line x1="0" y1="0" x2="20" y2="20" stroke="#ff0000" stroke-width="3" />
+                    <line x1="20" y1="0" x2="0" y2="20" stroke="#ff0000" stroke-width="3" />
+                </g>
+            </svg>
+            <div class="loader-text">Synthesizing your death sentence...</div>
+        </div>
+    </div>
+
+    <script>
+        const promptInput = document.getElementById('prompt');
+        const synthBtn = document.getElementById('synthesize');
+        const leafBtn = document.getElementById('leaf');
+        const results = document.getElementById('results');
+        const notesEl = document.getElementById('notes');
+        const needle = document.getElementById('needle');
+        const scoreEl = document.getElementById('score');
+        const loaderEl = document.getElementById('loader');
+        const dynamicPrefixEl = document.getElementById('dynamicPrefix');
+
+        const themes = [
+            {
+                prefix: 'FINAL',
+                prompts: [
+                    'I want to rest in the forest alone..',
+                    'Lay me by the ocean during a storm..',
+                    'Disappear into neon rain in a cyberpunk alley..',
+                    'Freeze into a glacier under auroras..',
+                ]
+            },
+            {
+                prefix: 'LAST',
+                prompts: [
+                    'Take me to the mountains one final time..',
+                    'Let me see the northern lights before I go..',
+                    'I want to taste the sea air and feel the wind..',
+                    'Bring me flowers from the wildflower field..',
+                ]
+            },
+            {
+                prefix: 'DARK',
+                prompts: [
+                    'Bury me in the shadows of ancient trees..',
+                    'Let me dissolve into the midnight fog..',
+                    'I want to become one with the eternal night..',
+                    'Scatter my ashes in the deepest cave..',
+                ]
+            },
+            {
+                prefix: 'SILENT',
+                prompts: [
+                    'I want to fade away without a sound..',
+                    'Let me disappear into the quiet mist..',
+                    'I wish to become the silence between heartbeats..',
+                    'Take me where the world stops speaking..',
+                ]
+            },
+            {
+                prefix: 'COLD',
+                prompts: [
+                    'I want to freeze into a crystal of ice..',
+                    'Let me become the snow that never melts..',
+                    'I wish to rest in the eternal winter..',
+                    'Bury me in the heart of a glacier..',
+                ]
+            },
+            {
+                prefix: 'DEEP',
+                prompts: [
+                    "I want to sink into the ocean's abyss..",
+                    'Let me become one with the deep sea..',
+                    'I wish to rest in the darkest trench..',
+                    'Take me to the bottom of the world..',
+                ]
+            },
+            {
+                prefix: 'FOREVER',
+                prompts: [
+                    'I want to become eternal stardust..',
+                    'Let me transform into cosmic energy..',
+                    'I wish to merge with the infinite void..',
+                    'Take me beyond the edge of existence..',
+                ]
+            }
+        ];
+
+        let currentThemeIndex = 0;
+        const allPrompts = themes.flatMap(t => t.prompts);
+
+        function cycleTheme() {
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            dynamicPrefixEl.classList.add('transitioning');
+            setTimeout(() => {
+                dynamicPrefixEl.textContent = themes[currentThemeIndex].prefix;
+                dynamicPrefixEl.classList.remove('transitioning');
+            }, 150);
+        }
+
+        setInterval(cycleTheme, 2000);
+
+        let scentsData = {};
+        let currentSequence = null;
+
+        fetch('scent_classification.json')
+            .then(r => { if (!r.ok) throw new Error('Missing scent_classification.json'); return r.json(); })
+            .then(data => { scentsData = data || {}; })
+            .catch(err => console.error(err));
+
+        leafBtn.addEventListener('click', () => {
+            promptInput.value = allPrompts[Math.floor(Math.random() * allPrompts.length)];
+        });
+
+        synthBtn.addEventListener('click', async () => {
+            const prompt = (promptInput.value || '').trim();
+            if (!prompt) { alert('Please enter your death sentence.'); return; }
+            setLoading(true);
+            const sequence = await composeScent(prompt);
+            setLoading(false);
+            if (!sequence) return;
+
+            currentSequence = sequence;
+
+            const notes = sequence.map(item => {
+                const meta = scentsData[item.scent_name];
+                const loc = meta && meta.location ? ` [${meta.location}]` : '';
+                return `${item.scent_name} (${item.scent_duration}s)${loc}`;
+            });
+            const strengths = sequence.map(item => Math.round((item.scent_duration / 30) * 100));
+            const mortality = computeMortality(prompt);
+            renderProfile({ notes, strengths, mortality });
+        });
+
+        async function composeScent(sentence) {
+            try {
+                const res = await fetch('http://localhost:8000/compose', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sentence })
+                });
+                if (!res.ok) { alert(`Composition failed: ${await res.text()}`); return null; }
+                const data = await res.json();
+                return data.scent_sequence || null;
+            } catch (err) {
+                console.error(err);
+                alert('Network error calling composition service. Is the backend running on :8000?');
+                return null;
+            }
+        }
+
+        function computeMortality(prompt) {
+            const rng = mulberry32(hashString(prompt || 'default'));
+            return Math.round(10 * (0.4 + rng() * 0.6));
+        }
+
+        function setLoading(isLoading) {
+            if (!loaderEl) return;
+            loaderEl.classList.toggle('hidden', !isLoading);
+            synthBtn.disabled = isLoading;
+        }
+
+        function renderProfile(profile) {
+            notesEl.innerHTML = '';
+            profile.notes.forEach((name, i) => {
+                const li = document.createElement('li');
+                li.className = 'note';
+                li.innerHTML = `
+                    <div class="note-name">${i + 1}. ${name}</div>
+                    <div class="bars"><div class="bar"><span style="width:${profile.strengths[i]}%"></span></div></div>
+                `;
+                notesEl.appendChild(li);
+            });
+            results.classList.remove('hidden');
+            scoreEl.textContent = `${profile.mortality}/10`;
+            needle.style.transform = `rotate(${-70 + (profile.mortality / 10) * 140}deg)`;
+        }
+
+        function hashString(str) {
+            let h = 2166136261 >>> 0;
+            for (let i = 0; i < str.length; i++) {
+                h ^= str.charCodeAt(i);
+                h = Math.imul(h, 16777619);
+            }
+            return h >>> 0;
+        }
+
+        function mulberry32(a) {
+            return function () {
+                let t = a += 0x6D2B79F5;
+                t = Math.imul(t ^ (t >>> 15), t | 1);
+                t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+                return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+            };
+        }
+
+        async function playSequenceOnDevice() {
+            if (!currentSequence || currentSequence.length === 0) {
+                alert('No sequence to play. Generate a scent sequence first!');
+                return;
+            }
+            const bleSequence = currentSequence.map(item => {
+                const meta = scentsData[item.scent_name];
+                if (!meta || !meta.location) throw new Error(`Location not found for scent: ${item.scent_name}`);
+                return { scent_id: parseInt(meta.location), duration: item.scent_duration };
+            });
+            try {
+                setLoading(true);
+                document.getElementById('playSequenceBtn').disabled = true;
+                const response = await fetch('http://localhost:5001/play_sequence', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sequence: bleSequence })
+                });
+                const result = await response.json();
+                alert(result.status === 'success' ? '✅ Sequence is playing on your device!' : `❌ Error: ${result.message}`);
+            } catch (err) {
+                console.error('BLE Error:', err);
+                alert('❌ Could not connect to BLE device. Make sure:\n1. The Flask backend is running on :5001\n2. Your BLE device is powered on\n3. Device is in range');
+            } finally {
+                setLoading(false);
+                document.getElementById('playSequenceBtn').disabled = false;
+            }
+        }
+
+        async function testBLEConnection() {
+            try {
+                setLoading(true);
+                const response = await fetch('http://localhost:5001/test_connection');
+                const result = await response.json();
+                alert(result.status === 'success' ? `✅ ${result.message}` : `❌ ${result.message}`);
+            } catch (err) {
+                console.error('Connection test error:', err);
+                alert('❌ Could not connect to BLE backend. Make sure the Flask server is running on :5001');
+            } finally {
+                setLoading(false);
+            }
+        }
+    </script>
+</body>
+
+</html>

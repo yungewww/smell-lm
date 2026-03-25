@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AromaAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080808;
+      --ring: rgba(255,255,255,0.12);
+      --ring-active: rgba(255,255,255,0.55);
+      --text: #f0ede8;
+      --muted: rgba(240,237,232,0.38);
+      --accent: #c8a97e;
+      --accent-dim: rgba(200,169,126,0.18);
+      --btn-bg: rgba(255,255,255,0.05);
+      --btn-hover: rgba(255,255,255,0.10);
+      --radius: 9999px;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100dvh;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    .orbit-wrap {
+      position: relative;
+      width: clamp(280px, 56vw, 400px);
+      height: clamp(280px, 56vw, 400px);
+      flex-shrink: 0;
+    }
+
+    .orbit-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .orbit-circle {
+      fill: none;
+      stroke: var(--ring);
+      stroke-width: 1;
+      transition: stroke 0.4s ease;
+    }
+
+    .orbit-wrap.active .orbit-circle {
+      stroke: var(--ring-active);
+      animation: pulse-ring 1.6s ease-in-out infinite;
+    }
+
+    @keyframes pulse-ring {
+      0%, 100% { stroke-opacity: 0.55; }
+      50%       { stroke-opacity: 0.15; }
+    }
+
+    .orbit-dash {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 1.5;
+      stroke-dasharray: 18 180;
+      stroke-linecap: round;
+      opacity: 0;
+      transform-origin: 50% 50%;
+      transition: opacity 0.3s;
+    }
+
+    .orbit-wrap.active .orbit-dash {
+      opacity: 1;
+      animation: spin-dash 3s linear infinite;
+    }
+
+    @keyframes spin-dash {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .buttons-row {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(12px, 3vw, 22px);
+    }
+
+    .input-btn {
+      width: clamp(52px, 13vw, 68px);
+      height: clamp(52px, 13vw, 68px);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: var(--btn-bg);
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+      flex-shrink: 0;
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+    }
+
+    .input-btn:hover { background: var(--btn-hover); border-color: rgba(255,255,255,0.28); }
+    .input-btn:active { transform: scale(0.94); }
+    .input-btn.active-state { border-color: var(--accent); background: var(--accent-dim); }
+
+    .input-btn svg {
+      width: 22px; height: 22px;
+      stroke: currentColor; fill: none;
+      stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .rec-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #e05555;
+      flex-shrink: 0;
+      display: none;
+      animation: blink-dot 0.9s ease-in-out infinite;
+    }
+
+    .input-btn.recording .rec-dot { display: block; }
+    .input-btn.recording svg { display: none; }
+
+    @keyframes blink-dot {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.2; }
+    }
+
+    /* ── Orbit nodes ── */
+    .orbit-nodes { position: absolute; inset: 0; pointer-events: none; }
+
+    .orbit-node {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.4);
+      transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .orbit-node.show {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .orbit-node-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .orbit-node-label {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(0.5rem, 1.2vw, 0.62rem);
+      color: var(--text);
+      white-space: nowrap;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .orbit-node-dur {
+      font-size: clamp(0.44rem, 1vw, 0.55rem);
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .orbit-node[data-pos="0"]  { left: 50%;   top: 2%; }
+    .orbit-node[data-pos="1"]  { left: 75%;   top: 8%; }
+    .orbit-node[data-pos="2"]  { left: 96%;   top: 30%; }
+    .orbit-node[data-pos="3"]  { left: 96%;   top: 70%; }
+    .orbit-node[data-pos="4"]  { left: 75%;   top: 92%; }
+    .orbit-node[data-pos="5"]  { left: 50%;   top: 98%; }
+    .orbit-node[data-pos="6"]  { left: 25%;   top: 92%; }
+    .orbit-node[data-pos="7"]  { left: 4%;    top: 70%; }
+    .orbit-node[data-pos="8"]  { left: 4%;    top: 30%; }
+    .orbit-node[data-pos="9"]  { left: 25%;   top: 8%; }
+    .orbit-node[data-pos="10"] { left: 85%;   top: 50%; }
+    .orbit-node[data-pos="11"] { left: 15%;   top: 50%; }
+
+    .orbit-node[data-pos="0"] .orbit-node-label,
+    .orbit-node[data-pos="5"] .orbit-node-label { order: 1; text-align: center; }
+    .orbit-node[data-pos="1"] .orbit-node-label,
+    .orbit-node[data-pos="2"] .orbit-node-label,
+    .orbit-node[data-pos="3"] .orbit-node-label,
+    .orbit-node[data-pos="4"] .orbit-node-label,
+    .orbit-node[data-pos="10"] .orbit-node-label { order: 1; text-align: left; }
+    .orbit-node[data-pos="6"] .orbit-node-label,
+    .orbit-node[data-pos="7"] .orbit-node-label,
+    .orbit-node[data-pos="8"] .orbit-node-label,
+    .orbit-node[data-pos="9"] .orbit-node-label,
+    .orbit-node[data-pos="11"] .orbit-node-label { order: -1; text-align: right; }
+
+    /* ── Below ring ── */
+    .below-ring {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: clamp(20px, 4vw, 28px);
+    }
+
+    .content-area {
+      width: 100%;
+      min-height: 80px;
+      padding: 1rem 1.2rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .content-block { display: none; flex-direction: column; gap: 6px; }
+    .content-block.visible { display: flex; }
+
+    .content-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .content-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(0.88rem, 2.2vw, 1.05rem);
+      line-height: 1.55;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .content-text.placeholder {
+      color: var(--muted);
+      font-style: italic;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+    }
+
+    .image-preview { width: 100%; max-height: 180px; object-fit: cover; border-radius: 8px; display: none; }
+    .image-preview.visible { display: block; }
+
+    .text-input-row { display: none; width: 100%; gap: 8px; align-items: flex-end; margin-top: 4px; }
+    .text-input-row.visible { display: flex; }
+
+    .text-field {
+      flex: 1; background: transparent; border: none; outline: none;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(0.88rem, 2.2vw, 1.05rem);
+      color: var(--text); resize: none; line-height: 1.5;
+      min-height: 36px; max-height: 120px; overflow-y: auto;
+    }
+    .text-field::placeholder { color: var(--muted); font-style: italic; }
+
+    .text-confirm-btn {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: transparent; color: var(--accent);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background 0.2s;
+    }
+    .text-confirm-btn:hover { background: var(--accent-dim); }
+    .text-confirm-btn svg {
+      width: 14px; height: 14px; stroke: currentColor; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    .content-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.07); display: none; }
+    .content-divider.visible { display: block; }
+
+    .generate-btn {
+      margin-top: clamp(16px, 3vw, 24px);
+      padding: 0 2.4rem; height: 52px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(200,169,126,0.45);
+      background: transparent; color: var(--accent);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      cursor: pointer; position: relative; overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .generate-btn::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--accent); opacity: 0; transition: opacity 0.2s;
+    }
+    .generate-btn:hover::before { opacity: 0.08; }
+    .generate-btn:active { transform: scale(0.98); }
+    .generate-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+    .generate-btn span { position: relative; z-index: 1; }
+
+    .status-line {
+      margin-top: 10px; font-size: 0.68rem;
+      letter-spacing: 0.12em; color: var(--muted);
+      text-align: center; min-height: 1em;
+    }
+
+    #imageFileInput { display: none; }
+
+    .play-row {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: clamp(12px, 2vw, 16px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .play-row.visible { opacity: 1; pointer-events: auto; }
+
+    .play-btn {
+      padding: 0 2rem; height: 44px; border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: transparent; color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+      cursor: pointer; transition: background 0.2s, border-color 0.2s;
+    }
+    .play-btn:hover { background: var(--btn-hover); border-color: rgba(255,255,255,0.28); }
+  </style>
+</head>
+<body>
+
+  <div class="orbit-wrap" id="orbitWrap">
+    <svg class="orbit-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <circle class="orbit-dash" cx="200" cy="200" r="192"/>
+      <circle class="orbit-circle" cx="200" cy="200" r="178"/>
+      <circle class="orbit-circle" cx="200" cy="200" r="138" style="stroke-opacity:0.5"/>
+    </svg>
+
+    <div class="buttons-row">
+      <button class="input-btn" id="micBtn" title="Voice input">
+        <div class="rec-dot"></div>
+        <svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="9" y1="22" x2="15" y2="22"/></svg>
+      </button>
+      <button class="input-btn" id="cameraBtn" title="Image input">
+        <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      </button>
+      <button class="input-btn" id="typeBtn" title="Type input">
+        <svg viewBox="0 0 24 24"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+      </button>
+    </div>
+
+    <div class="orbit-nodes" id="orbitNodes">
+      <div class="orbit-node" data-pos="0"><span class="orbit-node-label"></span><div class="orbit-node-dot"></div><span class="orbit-node-dur"></span></div>
+      <div class="orbit-node" data-pos="1"><span class="orbit-node-label"></span><div class="orbit-node-dot"></div><span class="orbit-node-dur"></span></div>
+      <div class="orbit-node" data-pos="2"><span class="orbit-node-label"></span><div class="orbit-node-dot"></div><span class="orbit-node-dur"></span></div>
+      <div class="orbit-node" data-pos="3"><span class="orbit-node-label"></span><div class="orbit-node-dot"></div><span class="orbit-node-dur"></span></div>
+      <div class="orbit-node" data-pos="4"><span class="orbit-node-label"></span><div class="orbit-node-dot"></div><span class="orbit-node-dur"></span></div>
+      <div class="orbit-node" data-pos="5"><span class="orbit-node-label"></span><div class="orbit-node-dot"></div><span class="orbit-node-dur"></span></div>
+      <div class="orbit-node" data-pos="6"><span class="orbit-node-label"></span><div class="orbit-node-dot"></div><span class="orbit-node-dur"></span></div>
+      <div class="orbit-node" data-pos="7"><span class="orbit-node-label"></span><div class="orbit-node-dot"></div><span class="orbit-node-dur"></span></div>
+      <div class="orbit-node" data-pos="8"><span class="orbit-node-label"></span><div class="orbit-node-dot"></div><span class="orbit-node-dur"></span></div>
+      <div class="orbit-node" data-pos="9"><span class="orbit-node-label"></span><div class="orbit-node-dot"></div><span class="orbit-node-dur"></span></div>
+      <div class="orbit-node" data-pos="10"><span class="orbit-node-label"></span><div class="orbit-node-dot"></div><span class="orbit-node-dur"></span></div>
+      <div class="orbit-node" data-pos="11"><span class="orbit-node-label"></span><div class="orbit-node-dot"></div><span class="orbit-node-dur"></span></div>
+    </div>
+  </div>
+
+  <input type="file" id="imageFileInput" accept="image/*">
+
+  <div class="below-ring">
+    <div class="content-area">
+      <div class="content-block" id="transcriptBlock">
+        <span class="content-label">Transcript</span>
+        <p class="content-text" id="transcriptText"></p>
+      </div>
+      <div class="content-divider" id="contentDivider"></div>
+      <div class="content-block" id="imageCaptionBlock">
+        <span class="content-label">Image</span>
+        <img class="image-preview" id="imagePreview" alt="uploaded image">
+        <p class="content-text" id="imageCaptionText"></p>
+      </div>
+      <div class="content-block" id="typeBlock">
+        <span class="content-label">Type</span>
+        <div class="text-input-row visible" id="textInputRow">
+          <textarea class="text-field" id="textField" rows="1" placeholder="describe a scene, a feeling…"></textarea>
+          <button class="text-confirm-btn" id="textConfirmBtn">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </button>
+        </div>
+        <p class="content-text" id="typeConfirmedText" style="display:none"></p>
+      </div>
+      <p class="content-text placeholder" id="emptyPlaceholder" style="cursor:pointer">tap a button above to begin</p>
+    </div>
+
+    <button class="generate-btn" id="generateBtn" disabled><span>Generate Scent</span></button>
+    <div class="status-line" id="statusLine"></div>
+    <div class="play-row" id="playRow">
+      <button class="play-btn" id="playBtn">▶ Play on Device</button>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = window.FREQUENCY_API_BASE || 'http://localhost:8000';
+    const TOTAL_DURATION = 60;
+
+    // ── State ──────────────────────────────────────────────────────────────────
+    let voiceText = '', imageText = '', typedText = '';
+    let currentSequence = null;
+    let currentRatios = null;
+    let scentsData = {};
+    let mediaRecorder = null, recStream = null, recChunks = [];
+    let isRecording = false;
+    let sessionOriginalSentence = null, sessionOriginalRatios = null;
+    let sessionHistory = [], isInFeedbackMode = false;
+    let currentSessionId = null;
+    let sessionStartTime = null;
+    let activeModalities = new Set();
+
+    fetch('./scent_classification.json')
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(d => { scentsData = d || {}; })
+      .catch(() => {});
+
+    // ── DOM refs ───────────────────────────────────────────────────────────────
+    const orbitWrap         = document.getElementById('orbitWrap');
+    const micBtn            = document.getElementById('micBtn');
+    const cameraBtn         = document.getElementById('cameraBtn');
+    const typeBtn           = document.getElementById('typeBtn');
+    const imageFileInput    = document.getElementById('imageFileInput');
+    const transcriptBlock   = document.getElementById('transcriptBlock');
+    const transcriptText    = document.getElementById('transcriptText');
+    const imageCaptionBlock = document.getElementById('imageCaptionBlock');
+    const imagePreview      = document.getElementById('imagePreview');
+    const imageCaptionText  = document.getElementById('imageCaptionText');
+    const typeBlock         = document.getElementById('typeBlock');
+    const textField         = document.getElementById('textField');
+    const textConfirmBtn    = document.getElementById('textConfirmBtn');
+    const typeConfirmedText = document.getElementById('typeConfirmedText');
+    const emptyPlaceholder  = document.getElementById('emptyPlaceholder');
+    const contentDivider    = document.getElementById('contentDivider');
+    const generateBtn       = document.getElementById('generateBtn');
+    const statusLine        = document.getElementById('statusLine');
+    const playRow           = document.getElementById('playRow');
+    const playBtn           = document.getElementById('playBtn');
+    const orbitNodeEls      = document.querySelectorAll('.orbit-node');
+
+    // ── Helpers ────────────────────────────────────────────────────────────────
+    function setStatus(msg) { statusLine.textContent = msg; }
+
+    function updatePlaceholder() {
+      const hasContent = [transcriptBlock, imageCaptionBlock, typeBlock].some(b => b.classList.contains('visible'));
+      emptyPlaceholder.style.display = hasContent ? 'none' : 'block';
+    }
+
+    function updateDivider() {
+      const count = [transcriptBlock, imageCaptionBlock, typeBlock].filter(b => b.classList.contains('visible')).length;
+      contentDivider.classList.toggle('visible', count > 1);
+    }
+
+    function updateGenerateBtn() {
+      generateBtn.disabled = ![voiceText, imageText, typedText].some(Boolean);
+    }
+
+    function combinedPrompt() {
+      return [voiceText, imageText, typedText].filter(Boolean).join('. ');
+    }
+
+    // ── Mic ────────────────────────────────────────────────────────────────────
+    micBtn.addEventListener('click', () => {
+      if (isRecording) { stopRecording(); return; }
+      // if already has voice input, clear it
+      if (voiceText) {
+        voiceText = '';
+        transcriptText.textContent = '';
+        transcriptBlock.classList.remove('visible');
+        micBtn.classList.remove('active-state');
+        updatePlaceholder(); updateDivider(); updateGenerateBtn();
+        return;
+      }
+      startRecording();
+    });
+
+    function startRecording() {
+      if (!navigator.mediaDevices?.getUserMedia) { alert('Microphone not supported.'); return; }
+      recChunks = [];
+      navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+        recStream = stream;
+        isRecording = true;
+        micBtn.classList.add('recording', 'active-state');
+        orbitWrap.classList.add('active');
+        setStatus('Recording…');
+        const opts = MediaRecorder.isTypeSupported('audio/webm;codecs=opus') ? { mimeType: 'audio/webm;codecs=opus' } : {};
+        mediaRecorder = new MediaRecorder(stream, opts);
+        mediaRecorder.ondataavailable = e => { if (e.data.size > 0) recChunks.push(e.data); };
+        mediaRecorder.onstop = () => {
+          recStream.getTracks().forEach(t => t.stop()); recStream = null;
+          transcribeAudio(new Blob(recChunks, { type: mediaRecorder.mimeType || 'audio/webm' }), mediaRecorder.mimeType);
+        };
+        mediaRecorder.start();
+      }).catch(() => { alert('Microphone access denied.'); isRecording = false; });
+    }
+
+    function stopRecording() {
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+      isRecording = false;
+      micBtn.classList.remove('recording');
+      orbitWrap.classList.remove('active');
+      setStatus('Transcribing…');
+    }
+
+    function transcribeAudio(blob, mimeType) {
+      const form = new FormData();
+      form.append('audio', blob, 'recording.' + ((mimeType || '').includes('webm') ? 'webm' : 'ogg'));
+      fetch(API_BASE + '/transcribe', { method: 'POST', body: form })
+        .then(r => r.json())
+        .then(d => {
+          voiceText = d.text || '';
+          transcriptText.textContent = voiceText;
+          transcriptBlock.classList.add('visible');
+          micBtn.classList.toggle('active-state', !!voiceText);
+          if (voiceText) activeModalities.add('voice'); else activeModalities.delete('voice');
+          updatePlaceholder(); updateDivider(); updateGenerateBtn(); setStatus('');
+        })
+        .catch(() => { setStatus('Transcription failed.'); micBtn.classList.remove('active-state'); });
+    }
+
+    // ── Camera ─────────────────────────────────────────────────────────────────
+    cameraBtn.addEventListener('click', () => {
+      if (imageText || imageCaptionBlock.classList.contains('visible')) {
+        imageText = '';
+        imagePreview.src = '';
+        imagePreview.classList.remove('visible');
+        imageCaptionText.textContent = '';
+        imageCaptionBlock.classList.remove('visible');
+        cameraBtn.classList.remove('active-state');
+        updatePlaceholder(); updateDivider(); updateGenerateBtn();
+        return;
+      }
+      imageFileInput.click();
+    });
+
+    imageFileInput.addEventListener('change', () => {
+      const file = imageFileInput.files[0];
+      if (!file) return;
+      imagePreview.src = URL.createObjectURL(file);
+      imagePreview.classList.add('visible');
+      imageCaptionBlock.classList.add('visible');
+      cameraBtn.classList.add('active-state');
+      imageCaptionText.textContent = ''; imageText = '';
+      updatePlaceholder(); updateDivider(); updateGenerateBtn();
+      setStatus('Describing image…');
+      const form = new FormData();
+      form.append('image', file, file.name);
+      fetch(API_BASE + '/describe', { method: 'POST', body: form })
+        .then(r => r.json())
+        .then(d => { imageText = d.text || ''; imageCaptionText.textContent = imageText; activeModalities.add('image'); updateGenerateBtn(); setStatus(''); })
+        .catch(() => { imageCaptionText.textContent = 'Could not describe image.'; setStatus(''); });
+      imageFileInput.value = '';
+    });
+
+    // ── Type ───────────────────────────────────────────────────────────────────
+    typeBtn.addEventListener('click', () => {
+      if (typeBlock.classList.contains('visible')) {
+        // clear and hide
+        typedText = '';
+        textField.value = '';
+        textField.style.height = 'auto';
+        typeConfirmedText.style.display = 'none';
+        typeConfirmedText.textContent = '';
+        document.getElementById('textInputRow').classList.add('visible');
+        typeBlock.classList.remove('visible');
+        typeBtn.classList.remove('active-state');
+        updatePlaceholder(); updateDivider(); updateGenerateBtn();
+        return;
+      }
+      typeBlock.classList.add('visible'); typeBtn.classList.add('active-state');
+      updatePlaceholder(); updateDivider();
+      setTimeout(() => textField.focus(), 50);
+    });
+
+    function confirmType() {
+      const val = textField.value.trim();
+      if (!val) return;
+      typedText = val;
+      activeModalities.add('text');
+      typeConfirmedText.textContent = val;
+      typeConfirmedText.style.display = 'block';
+      document.getElementById('textInputRow').classList.remove('visible');
+      updateGenerateBtn(); setStatus('');
+    }
+
+    textConfirmBtn.addEventListener('click', confirmType);
+    textField.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); confirmType(); } });
+    textField.addEventListener('input', () => { textField.style.height = 'auto'; textField.style.height = textField.scrollHeight + 'px'; });
+    textField.addEventListener('blur', () => { if (textField.value.trim()) confirmType(); });
+    emptyPlaceholder.addEventListener('click', () => {
+      typeBlock.classList.add('visible'); typeBtn.classList.add('active-state');
+      emptyPlaceholder.style.display = 'none';
+      updateDivider();
+      setTimeout(() => textField.focus(), 50);
+    });
+
+    // ── Generate ───────────────────────────────────────────────────────────────
+    generateBtn.addEventListener('click', async () => {
+      const prompt = combinedPrompt();
+      if (!prompt) return;
+      generateBtn.disabled = true;
+      setStatus('Composing…');
+      clearOrbitNodes();
+      playRow.classList.remove('visible');
+      const inputTimestamp = new Date().toISOString();
+      const modalities = Array.from(activeModalities);
+
+      let data = null;
+      try {
+        if (isInFeedbackMode) {
+          data = await feedbackScent(prompt, modalities, inputTimestamp);
+        } else {
+          sessionStartTime = inputTimestamp;
+          data = await composeScent(prompt, modalities, inputTimestamp);
+          if (data) {
+            currentSessionId = data.session_id;
+            sessionOriginalSentence = prompt;
+            sessionOriginalRatios = data.scent_ratios;
+            isInFeedbackMode = true;
+          }
+        }
+      } catch (e) {}
+
+      generateBtn.disabled = false;
+      if (!data) { setStatus('Generation failed.'); return; }
+      currentRatios = data.scent_ratios;
+      currentSequence = data.scent_sequence;
+      setStatus('');
+      renderOrbitNodes(data.scent_ratios);
+      // reset all inputs
+      voiceText = ''; imageText = ''; typedText = '';
+      activeModalities.clear();
+      transcriptText.textContent = '';
+      transcriptBlock.classList.remove('visible');
+      micBtn.classList.remove('active-state');
+      imagePreview.src = '';
+      imagePreview.classList.remove('visible');
+      imageCaptionText.textContent = '';
+      imageCaptionBlock.classList.remove('visible');
+      cameraBtn.classList.remove('active-state');
+      textField.value = '';
+      textField.style.height = 'auto';
+      typeConfirmedText.style.display = 'none';
+      typeConfirmedText.textContent = '';
+      typeBlock.classList.remove('visible');
+      typeBtn.classList.remove('active-state');
+      document.getElementById('textInputRow').classList.add('visible');
+      updateDivider();
+      emptyPlaceholder.style.display = 'block';
+      updateGenerateBtn();
+      setTimeout(() => playRow.classList.add('visible'), Object.keys(data.scent_ratios).filter(k => data.scent_ratios[k] > 0).length * 150 + 300);
+    });
+
+    async function composeScent(sentence, modalities, inputTimestamp) {
+      const res = await fetch(API_BASE + '/compose', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sentence, modalities, input_timestamp: inputTimestamp })
+      });
+      if (!res.ok) throw new Error(await res.text());
+      return await res.json();
+    }
+
+    async function feedbackScent(feedbackText, modalities, inputTimestamp) {
+      const res = await fetch(API_BASE + '/feedback', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          original_sentence: sessionOriginalSentence,
+          original_ratios: sessionOriginalRatios,
+          prior_rounds: sessionHistory,
+          latest_feedback: feedbackText,
+          session_id: currentSessionId,
+          modalities,
+          input_timestamp: inputTimestamp,
+        })
+      });
+      if (!res.ok) throw new Error(await res.text());
+      const d = await res.json();
+      if (d.scent_ratios) {
+        sessionHistory.push({
+          feedback_text: feedbackText,
+          changes_made: d.changes_made || '',
+          resulting_ratios: d.scent_ratios
+        });
+      }
+      return d;
+    }
+
+    // ── Orbit nodes ────────────────────────────────────────────────────────────
+    function clearOrbitNodes() {
+      orbitNodeEls.forEach(n => {
+        n.classList.remove('show');
+        n.querySelector('.orbit-node-label').textContent = '';
+        n.querySelector('.orbit-node-dur').textContent = '';
+      });
+    }
+
+    function renderOrbitNodes(ratios) {
+      // Only show active scents (ratio > 0), sorted by ratio descending, max 8
+      const active = Object.entries(ratios)
+        .filter(([, r]) => r > 0)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 12);
+
+      active.forEach(([name, ratio], i) => {
+        const el = orbitNodeEls[i];
+        if (!el) return;
+        const duration = Math.max(1, Math.round(ratio * TOTAL_DURATION));
+        el.querySelector('.orbit-node-label').textContent = name;
+        el.querySelector('.orbit-node-dur').textContent = duration + 's';
+        setTimeout(() => el.classList.add('show'), i * 150);
+      });
+    }
+
+    // ── Play on device ─────────────────────────────────────────────────────────
+    playBtn.addEventListener('click', playSequenceOnDevice);
+
+    async function playSequenceOnDevice() {
+      if (!currentSequence?.length) return;
+      try {
+        playBtn.disabled = true;
+        setStatus('Sending to device…');
+        const res = await fetch('http://localhost:5001/play_sequence', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sequence: currentSequence })
+        });
+        const r = await res.json();
+        setStatus(r.status === 'success' ? '✓ Playing' : '✗ ' + r.message);
+        if (r.status === 'success' && currentSessionId) {
+          fetch(API_BASE + `/session/${currentSessionId}/played`, { method: 'POST' }).catch(() => {});
+        }
+      } catch { setStatus('Device not reachable.'); }
+      finally { playBtn.disabled = false; }
+    }
+
+    updatePlaceholder();
+  </script>
+</body>
+</html>

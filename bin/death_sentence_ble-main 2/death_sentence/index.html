@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Death Sentence - Scent Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+
+<body>
+    <div class="frame">
+        <header class="title">DEATH <span id="dynamicPrefix" class="title-dynamic">SENTENCE</span></header>
+        <div class="subtitle-main">Real-Time Sentence-to-Scent LLM</div>
+
+        <div class="input-row">
+            <input id="prompt" type="text" placeholder="Please enter your death sentence..">
+            <button id="leaf" aria-label="suggest themes">🍃</button>
+        </div>
+
+        <button id="synthesize" class="cta">SYNTHESIZE SCENT →</button>
+
+        <section class="results hidden" id="results">
+            <h2 class="subtitle">GENERATED FRAGRANCE PROFILE:</h2>
+            <ol id="notes" class="notes"></ol>
+            <div class="rating">
+                <div class="meter">
+                    <div class="needle" id="needle"></div>
+                </div>
+                <div class="score">MORTALITY RATING: <span id="score">—</span></div>
+            </div>
+            
+            <!-- BLE Device Controls -->
+            <div class="device-controls">
+                <button id="testConnectionBtn" class="device-btn test-btn" onclick="testBLEConnection()">
+                    🔍 TEST DEVICE CONNECTION
+                </button>
+                <button id="playSequenceBtn" class="device-btn play-btn" onclick="playSequenceOnDevice()">
+                    ▶ PLAY SEQUENCE ON DEVICE
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loader" class="loader-overlay hidden" aria-live="polite" aria-busy="true">
+        <div class="loader-card">
+            <!-- Inline SVG: skull with poison flask -->
+            <svg class="skull-spin" width="120" height="120" viewBox="0 0 120 120" fill="none"
+                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Loading">
+                <!-- Skull -->
+                <circle cx="60" cy="65" r="35" fill="#2a2a2a" stroke="#ff0000" stroke-width="3" />
+                <!-- Eye sockets -->
+                <circle cx="50" cy="55" r="6" fill="#000000" />
+                <circle cx="70" cy="55" r="6" fill="#000000" />
+                <!-- Nose -->
+                <path d="M60 65 L55 70 L65 70 Z" fill="#000000" />
+                <!-- Jaw -->
+                <path d="M40 80 Q60 95 80 80" stroke="#ff0000" stroke-width="3" fill="none" />
+                <!-- Teeth -->
+                <rect x="55" y="80" width="3" height="8" fill="#ffffff" />
+                <rect x="62" y="80" width="3" height="8" fill="#ffffff" />
+                <!-- Poison flask -->
+                <rect x="45" y="25" width="30" height="40" rx="5" fill="#1a1a1a" stroke="#ff0000" stroke-width="2" />
+                <rect x="50" y="20" width="20" height="10" rx="3" fill="#1a1a1a" stroke="#ff0000" stroke-width="2" />
+                <!-- Poison liquid -->
+                <rect x="47" y="50" width="26" height="15" rx="2" fill="#ff0000" opacity="0.7" />
+                <!-- Skull crossbones -->
+                <g transform="translate(30, 30)">
+                    <line x1="0" y1="0" x2="20" y2="20" stroke="#ff0000" stroke-width="3" />
+                    <line x1="20" y1="0" x2="0" y2="20" stroke="#ff0000" stroke-width="3" />
+                </g>
+            </svg>
+            <div class="loader-text">Synthesizing your death sentence...</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

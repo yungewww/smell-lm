@@ -1,0 +1,62 @@
+{"Cumin": {
+        "location": "1",
+        "volatility": 6,
+        "note": "Smokey, spice"
+    },
+    "Eucalipto": {
+        "location": "2",
+        "volatility": 5,
+        "note": "Refreshing, spa"
+    },
+    "Onion": {
+        "location": "3",
+        "volatility": 6,
+        "note": "Umami, oion, chips, savory"
+    },
+    "ylang ylang": {
+        "location": "4",
+        "volatility": 6,
+        "note": "warm, small spice"
+    },
+    "Sichuan oil": {
+        "location": "5",
+        "volatility": 3,
+        "note": "light, chai, spice"
+    },
+    "Rec clover": {
+        "location": "6",
+        "volatility": 5,
+        "note": "mint, clover, green, refreshing"
+    },
+    "Cypress": {
+        "location": "7",
+        "volatility": 5,
+        "note": "woody stability"
+    },
+    "Thyme": {
+        "location": "8",
+        "volatility": 5,
+        "note": "bitter, green, vegetable"
+    },
+    "Strawberry": {
+        "location": "9",
+        "volatility": 5,
+        "note": "elegant clarity, fruity, sweet"
+    },
+    "Isoveric Acid": {
+        "location": "10",
+        "volatility": 8,
+        "note": "cheesy, sweat, sour"
+    },
+    "Cinnamon": {
+        "location": "11",
+        "volatility": 5,
+        "note": "Sweet, spice, coffee, warm"
+    },
+    "Sage": {
+        "location": "12",
+        "volatility": 6,
+        "note": "Refreshing "
+    }
+
+}
