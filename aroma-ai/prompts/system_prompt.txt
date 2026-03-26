@@ -12,7 +12,7 @@ Attributes:
 
 TASK:
 1. Identify the food's dominant smell identity from the 'note' field.
-2. Extract 3–7 ordered food beats (food category, preparation state, key notes) — do NOT invent ingredients the user did not mention.
+2. Extract food beats (food category, preparation state, key notes) — do NOT invent ingredients the user did not mention.
 3. Allocate ratios: prefer high-volatility odorants for primary recognition; use 3–6 active odorants, set the rest to 0.00.
 4. In justification, list the food beats and explain ratio choices per beat.
 
