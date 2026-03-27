@@ -1,0 +1,801 @@
+Participants,Turns of Refinement,AI Output
+000,1,"[Compose] Justification: Beat extraction (ordered): 1) Fresh lift; 2) A little bit nutty; 3) Kind of sweet from berries; 4) Tiny hint of vinegar; 5) Clean, airy finish. Opening: Beat 1. Heart: Beats 2–3. Closing: Beat 5. Transition: Beat 4 as a brief flash. Rationale: To anchor the “fresh” quality quickly, Rec clover (15s) opens with green, minty refreshment, setting a clean, breathable space. The “little bit nutty” is expressed with Cumin (7s): its smoky-spice reads as lightly roasted/nutty and is kept short to honor “a little bit.” The core feeling—“kind of sweet from berries”—is centered with Strawberry (23s), giving the longest presence for an inviting, fruity heart. The “tiny hint of vinegar” appears as a swift Isoveric Acid (3s) flick—its high volatility and sour edge deliver the tang without lingering, matching “maybe a tiny hint.” To resolve, Sage (12s) restores a clean, refreshing afterglow, preventing the sour note from being the final impression and gently lifting the sweetness into a bright, tidy finish. Durations emphasize the user’s modifiers: short for ‘little’ and ‘tiny,’ long for the central berry sweetness, with freshness at both ends to frame the experience. script.js:283:13
+Rec clover script.js:357:13
+Cumin script.js:357:13
+Strawberry script.js:357:13
+Isoveric Acid script.js:357:13
+Sage script.js:357:13
+[Compose] Justification: Ordered beats extracted: 1) Brown cardboard takeout container (setting). 2) Fresh mixed greens, crisp and herbal. 3) Bright berries (strawberries/blueberries). 4) Raisin-like dried-fruit note. 5) Nutty crunch with the container’s woody backdrop. Opening: beat 1. Heart: beats 2–4. Closing: beat 5 (with a return to the container’s woody fiber). Artistic reasoning: The scene begins with a dry, woody waft of Cypress (6s) to signal the brown cardboard container and prime the mind for a casual, takeout moment. The heart shifts into the salad’s freshness: Rec clover (14s) delivers green, minty-clover lift for the mixed greens, followed by Thyme (10s) to add bitter, vegetal nuance—together forming the layered greens. The fruit accent enters with Strawberry (12s) to represent the berry mix; while we lack blueberry specifically, this clean, sweet berry note captures the intended juicy brightness. A brief Isoveric Acid (4s) flash suggests the tangy, fermented edge associated with dried fruit, then Cinnamon (6s) softens it into a warm, gently sweet dried-fruit impression for raisins. Closing returns to Cypress (8s), which doubles as the subtle woody nuttiness of shells/skins while also recalling the container—leaving a dry, stable finish. Durations emphasize the salad’s core (greens and berries) as the longest chapters, with the raisin note kept brief to avoid overpowering (its high volatility supports a short accent), and the bookending Cypress provides clear beginning and closure. Total duration is exactly 60 seconds. script.js:283:13
+Cypress script.js:357:13
+Rec clover script.js:357:13
+Thyme script.js:357:13
+Strawberry script.js:357:13
+Isoveric Acid script.js:357:13
+Cinnamon script.js:357:13"
+001,2,"[2ndCompose] Justification: Ordered beats: 1) Opening the brown cardboard takeout box (woody, dry). 2) First breath of crisp mixed greens (fresh, green). 3) Gentle fruit lift (strawberries/blueberries/raisins) but restrained to avoid sourness and excess sweetness. 4) Toasted nut depth for grounding. 5) A balanced, clean afterglow where greens settle. Opening/Heart/Closing: Opening = Beat 1; Heart = Beats 2–4; Closing = Beat 5. Narrative and choices: • Cypress 10s (Opening, Beat 1): A dry, woody anchor that instantly evokes the brown cardboard container. • Rec clover 13s (Heart, Beat 2): Minty-green freshness to embody the mixed greens, establishing a lively, crisp salad bed. • Thyme 9s (Heart, Beat 2): Vegetal bitterness that adds realism and counterbalances sweetness, reinforcing the leafy core. • Eucalipto 4s (Heart, Beat 3): A cool, clean lift reminiscent of berry freshness without adding sourness; clarifies the profile. • Strawberry 4s (Heart, Beat 3): A brief nod to strawberries—kept intentionally short so it does not dominate (“strawberry too prominent”). • Cinnamon 5s (Heart, Beat 3): Suggests raisin warmth with minimal added sweetness; short duration prevents the mix from becoming “too sweet.” • Cumin 9s (Heart transitioning toward resolution, Beat 4): Warm, lightly smoky, nut-like depth to evoke assorted nuts and provide savory ballast. • Sage 6s (Closing, Beat 5): A refreshing, clean finish that settles the experience in a balanced, herbal afterglow. Constraint alignment with user notes: To honor “less sour,” no Isoveric Acid is used; acidity is replaced by cool clarity (Eucalipto) and bitter greens (Thyme). Sweetness is moderated by keeping Strawberry and Cinnamon brief and framing them with green (Rec clover/Thyme) and woody/herbal (Cypress/Sage) elements. The durations create an arc: long greens (foundation), fleeting fruit (accent), grounded nuts (depth), and a clean herbal close (resolution). script.js:283:13
+Cypress script.js:357:13
+Rec clover script.js:357:13
+Thyme script.js:357:13
+Eucalipto script.js:357:13
+Strawberry script.js:357:13
+Cinnamon script.js:357:13
+Cumin script.js:357:13
+Sage"
+002,2,"[1st Compose ]Scent 1 for 5 seconds
+Scent 5 for 5 seconds
+Scent 6 for 5 seconds
+Scent 9 for 5 seconds
+Scent 11 for 5 seconds
+Scent 1 for 3 seconds
+Scent 6 for 3 seconds
+[2nd Compose] Justification: Beats (ordered): 1) Earthy-fresh first inhale. 2) Leafy/green presence — you can smell the leaves. 3) Tomato-candle herbaceous vibe (clean, kitchen-garden). 4) Subtle fruit halo (strawberry/blueberry impression, not literal). 5) A touch of sweetness. 6) A little nutty afterglow and settling.
+Opening (beats 1–2): Rec clover (12s) gives an immediate dew-green, minty-leaf freshness that reads as leafy and earthy-fresh, placing you in a living, green space right away.
+Heart (beats 2–4): Thyme (18s) is the core leafy-vegetal signature that echoes tomato-vine and candle herbaceousness. Sage (10s) layers a clean, refreshing herbal brightness to reinforce that candle-like, kitchen-garden clarity. Strawberry (8s) arrives late and soft, supplying a gentle, non-literal fruity aura — perceptibly a bit sweet without shouting strawberry, nodding to the berry impression.
+Closing (beats 5–6): A tiny flicker of Cumin (4s) introduces a warm, lightly nutty nuance without turning spicy or sweaty. Cypress (8s) lands the experience in calm, woody-green stability, leaving a grounded earthy-fresh memory.
+Why these durations: The herb/leaf center (Thyme + Sage) carries the longest time to honor the leafy, tomato-candle quality you emphasized. Fruit and nut facets are brief whispers so they read as impressions — a bit sweet, a little nutty — not full flavors. The closing Cypress ensures a clean, natural afterglow aligned with earthy fresh rather than dessert-sweet. script.js:283:13
+Rec clover script.js:357:13
+Thyme script.js:357:13
+Sage script.js:357:13
+Strawberry script.js:357:13
+Cumin script.js:357:13
+Cypress
+[Feedback] Justification: Kept the second scent (Thyme) intact and in place as the likely “accurate salad” note—its bitter, green, vegetable quality matches the leafy/herby profile you liked. Removed the perceived lemony brightness by swapping out Sage for Cypress in the third slot; Cypress adds woody-green stability without citrus edges, reinforcing the earthy, leafy character. Preserved the fresh green opening (Rec clover), the gentle fruit lift (Strawberry) and the subtle nutty warmth (Cumin). The narrative arc (fresh opening → herbal heart → grounded close) and all durations remain balanced at 60s, with no lemon-leaning materials introduced. script.js:317:13
+[Feedback] Changes made: Replaced Sage (10s) with Cypress (10s) to eliminate the lemony tone; preserved Thyme (18s) as the accurate salad anchor. All other positions and durations unchanged. script.js:318:13
+Rec clover script.js:357:13
+Thyme script.js:357:13
+Cypress script.js:357:13
+Strawberry script.js:357:13
+Cumin script.js:357:13
+Cypress
+[Compose] Justification: Ordered beats: (1) Remove perfumey elements, (2) Establish an earthy base, (3) Lead with herbal greens, (4) Keep the single fruity note (no increase), (5) Return to herbs without sweetness, (6) Resolve in grounded earth. Opening: beats 1–2 with Cypress (12s) to immediately set a woody, non-perfumey, earthy anchor. Heart: beats 3–5 — Thyme (15s) for clear herbal-green emphasis; Strawberry (8s) as the distinct fruity moment that is kept brief and steady (""doesn't need to increase""); Sage (12s) restores the herbal profile without floral/perfumey lift. A brief Cumin bridge (5s) deepens the earthy-spice undertone, avoiding sweetness while reinforcing the grounded mood. Closing: beat 6 — Cypress reprise (8s) for a stable, woody afterglow, ensuring the final impression is earthy rather than perfumey. All chosen scents avoid overt floral/perfumey tones while preserving the herby lead and the one fruity note, with durations tuned to keep fruit present but not amplified, and to let herb/earth define the arc. script.js:283:13
+Cypress script.js:357:13
+Thyme script.js:357:13
+Strawberry script.js:357:13
+Sage script.js:357:13
+Cumin script.js:357:13
+Cypress script.js:357:13"
+004,2,"Sequence 1: Single Scent Manual TriggersCaptured between 13:37:29 and 13:40:19These were sent as individual POST /play_scent requests.TimestampScent IDDuration13:37:29Scent 15s13:37:42Scent 25s13:38:02Scent 32s13:38:14Scent 43s13:38:25Scent 53s13:38:40Scent 63s13:38:54Scent 65s13:39:12Scent 73s13:39:21Scent 83s13:39:32Scent 93s13:39:46Scent 103s13:39:56Scent 113s13:40:09Scent 115s13:40:19Scent 125s
+Sequence 2: Automated BatchTimestamp: 13:41:29 | Endpoint: /play_sequenceScent 2 (2s)Scent 5 (5s)Scent 9 (6s)Scent 2 (5s)Scent 5 (5s)
+Sequence 3: High Intensity MixTimestamp: 13:46:08 | Endpoint: /play_sequenceScent 12 (8s)Scent 8 (10s)Scent 9 (15s)Scent 4 (8s)Scent 11 (5s)Scent 5 (4s)Scent 6 (10s)
+Sequence 4: Balanced Mix (Trial A)Timestamp: 13:51:33 | Endpoint: /play_sequenceScent 12 (8s)Scent 6 (8s)Scent 8 (6s)Scent 9 (10s)Scent 11 (10s)Scent 5 (10s)Scent 6 (8s)
+Sequence 5: Final Long-Duration Mix (Trial B)Timestamp: 13:55:08 | Endpoint: /play_sequenceScent 12 (8s)Scent 6 (8s)Scent 8 (6s)Scent 9 (20s) — Increased durationScent 5 (10s)Scent 6 (8s)"
+005,1,"[1st] Compose]Scent 5 for 5 seconds
+Scent 6 for 3 seconds
+Scent 7 for 7 seconds
+[Compose] Justification: Ordered beats: 1) Not-so-sweet, citrusy burst of brightness. 2) Grassy green clarity. 3) Clean, healthy herbal lift. 4) A little savory undertone. 5) Ultra-fresh, airy finish. Opening: Beat 1 with Eucalipto (12s). Its camphor-bright, spa-clean profile reads as citrus-adjacent without sweetness, immediately planting a very-fresh tone. Heart: Beats 2–4 with Rec clover (18s), Sage (12s), and Thyme (6s). Rec clover carries the grassy, mint-green body and keeps the freshness vivid. Sage deepens the ‘healthy’ wellness impression while staying crisp and unsweet. Thyme delivers a brief, bitter-green, vegetable-savory flicker—kept short to honor “a little bit savory.” Closing: Beat 5 with Eucalipto (12s) to bookend the experience in a final rush of cool, not-sweet freshness, leaving a clean, airy afterglow. Rationale: I avoided sweet notes (no Strawberry/Cinnamon) to respect “not so sweet.” Eucalipto and Sage provide the very-fresh, citrus-like lift; Rec clover supplies grassy greenness; Thyme adds a measured savory nuance. Durations emphasize the green core (longest on Rec clover), constrain the savory to a moment (short Thyme), and frame the arc with bright freshness (Eucalipto opening and close). script.js:283:13
+Eucalipto script.js:357:13
+Rec clover script.js:357:13
+Sage script.js:357:13
+Thyme script.js:357:13
+Eucalipto script.js:357:13
+[Feedback] Justification: To deliver a lot more freshness and reduce sweetness while adding a touch more savory, I preserved the opening and closing Eucalipto anchors and the central Sage placement to maintain the arc. I significantly cut Rec clover (the subtly sweet component) to dial down sweetness. I introduced Cypress as a crisp, clean, citrus-adjacent brightness to push overall freshness without adding sweetness. For the requested savory boost, I extended Thyme (green, vegetal, lightly bitter) rather than bringing in heavier savory notes that could undermine freshness. The Opening/Heart/Closing flow remains intact, with a greener, brisker heart and a clean Eucalipto reprise to finish. script.js:317:13
+[Feedback] Changes made: - Rec clover reduced from 18s to 8s to lessen sweetness.
+- Added Cypress (6s) after Rec clover for a cleaner, brighter, citrus-adjacent lift.
+- Thyme increased from 6s to 10s for a modest savory/green boost.
+- Eucalipto (12s opening and 12s closing) and Sage (12s) retained in position to preserve narrative structure. script.js:318:13
+Eucalipto script.js:357:13
+Rec clover script.js:357:13
+Cypress script.js:357:13
+Sage script.js:357:13
+Thyme script.js:357:13
+Eucalipto"
+007,1,"Sequence List:
+
+    Scent 1 for 3 seconds
+    Scent 1 for 2 seconds
+    Scent 4 for 5 seconds
+    Scent 7 for 5 seconds
+    Scent 9 for 5 seconds
+    Scent 11 for 4 seconds
+    Scent 12 for 4 seconds
+[Compose] Justification: Beats (ordered): 1) Fresh lift, 2) Watery humidity (water), 3) A hint of sandwich (herbaceous/savory), 4) Sugared strawberries (sweet + strawberry), 5) A bit old (faint age). Opening: beats 1–2. Heart: beats 3–4. Closing: beat 5. Opening (0–20s): Eucalipto (12s) establishes immediate freshness and a clean, spa-like, watery feel, matching “fresh” and “watery.” Rec clover (8s) layers in a green, dewy, humid tone to deepen the sense of moisture in the air. Heart (20–48s): Thyme (7s) brings a bitter-green, vegetable-herb quality—like sandwich greens—while Onion (5s) adds a quick savory flash to clearly nod to “a bit like a sandwich” without overpowering. Strawberry (16s) becomes the long central anchor for “sweet with the strawberries” and “like sugar with the strawberry”; its elegant, fruity clarity reads as sugared fruit when given time to bloom after the savory hint. Closing (48–60s): Isoveric Acid (4s) provides a brief, subtle touch of age—cheesy/sour—signaling “a bit old,” kept short to avoid dominance. Cypress (8s) then resolves into woody stability, leaving a gentle, slightly timeworn afterglow rather than a harsh stale note. Durations reflect beat weight: the freshness and watery setting arrive quickly, the strawberry sweetness holds longest as the emotional center, while the sandwich cue and aged note are short, evocative flashes to complete the narrative arc. script.js:283:13
+Eucalipto script.js:357:13
+Rec clover script.js:357:13
+Thyme script.js:357:13
+Onion script.js:357:13
+Strawberry script.js:357:13
+Isoveric Acid script.js:357:13
+Cypress script.js:357:13
+[Feedback] Justification: To convey an older (but not bad) salad, I softened the opening greens and reduced the overt freshness. Rec clover’s minty brightness is swapped for Lily, giving a gentle, humid, watery-floral veil that reads as wilted rather than crisp. Eucalipto is shortened to dial back spa-clean freshness. Thyme is extended to accentuate bitter, slightly oxidized vegetable facets that signal not-new greens. The praised Strawberry remains intact at 16s to preserve the sweet highlight. Onion, Isoveric Acid, and Cypress stay as they were to maintain the savory sandwich cue, a light aged nuance near the close, and a stable woody finish. script.js:317:13
+[Feedback] Changes made: Swapped Rec clover for Lily (same position, 8s) to mute minty freshness and add watery softness; reduced Eucalipto 12s→9s; increased Thyme 7s→10s. Strawberry, Onion, Isoveric Acid, and Cypress unchanged. script.js:318:13
+Eucalipto script.js:357:13
+Lily script.js:357:13
+Thyme script.js:357:13
+Onion script.js:357:13
+Strawberry script.js:357:13
+Isoveric Acid script.js:357:13
+Cypress script.js:357:13
+XHR
+POST
+http://localhost:8000/feedback
+[HTTP/1.1 422 Unprocessable Entity 79562ms]
+
+[Compose] Justification: Beat extraction (ordered): 1) Move away from eucalyptus-like freshness; 2) Introduce watery dampness; 3) Emphasize green-bitter salad leaves; 4) Add savory kitchen umami; 5) Suggest subtle wilt/oldness without strong sourness; 6) Settle into quiet indoor damp stillness. Opening: beats 2 and 6 (with 1 as tonal correction). Heart: beats 3 and 4. Closing: beat 6, with beat 5 as a brief pre-close accent. Opening (0–18s): Cypress 8s then Lily 10s. Cypress establishes an indoor, damp, non-garden frame; Lily adds a gentle watery veil without the spa-bright freshness you disliked. Heart (18–48s): Thyme 14s brings the bitter-green, leafy character of salad; Onion 16s folds in familiar savory umami, shifting from garden-bright to a lived-in kitchen bowl. Transition accent (48–51s): Isoveric Acid 3s is a fleeting hint of age/wilt to evoke old salad while avoiding the too-sour issue through brevity and its high volatility. Closing (51–60s): Cypress 9s returns to stable, quiet dampness for a resolved afterglow—watery-vegetal remains, but without sweetness or eucalyptus-fresh overtones. This composition reduces sourness, minimizes eucalyptus freshness, adds the watery quality, and centers the memory on an indoor, slightly wilted salad rather than a fresh garden. script.js:283:13
+Cypress script.js:357:13
+Lily script.js:357:13
+Thyme script.js:357:13
+Onion script.js:357:13
+Isoveric Acid script.js:357:13
+Cypress"
+008,1,"Sequence List:
+
+    Scent 1 for 5 seconds
+    Scent 3 for 3 seconds
+    Scent 4 for 5 seconds
+    Scent 7 for 5 seconds
+    Scent 8 for 5 seconds
+    Scent 9 for 5 seconds
+[Compose] Justification: Ordered beats extracted from the user's sentence: 1) Sweet strawberry arrives first. 2) A subtle savory, boiled-chicken note. 3) Leafy greens come forward. 4) A little sour from the salad sauce. 5) An overall oxidized after-feel. Opening/Heart/Closing mapping: Opening = Beat 1. Heart = Beats 2–4. Closing = Beat 5. Artistic reasoning: The sequence mirrors the described order and feeling. Strawberry (18s) opens warmly and clearly to anchor the first impression of sweetness; its moderate volatility supports a longer, welcoming start. Onion (6s) provides a brief, savory umami flash to suggest boiled chicken without overpowering—kept short to match “a little kind of smell.” Rec clover (14s) carries the leaf beat, offering green, refreshing clover-mint character that reads as fresh salad greens and forms the main body of the heart. Isoveric Acid (7s), with high volatility and a sharp sour facet, adds a quick, noticeable tang corresponding to the salad sauce without lingering too long. Thyme (15s) closes with a dry, bitter-green, slightly vegetal tone to evoke the sensation of everything feeling a bit oxidized, delivering a gentle fade that suggests the aftertaste and air-exposed greens. Durations vary to reflect emphasis: a longer, inviting fruit opening; a short savory hint; a sustained leafy middle; a quick sour spark; and a steady, dry-down oxidized finish. script.js:283:13
+Strawberry script.js:357:13
+Onion script.js:357:13
+Rec clover script.js:357:13
+Isoveric Acid script.js:357:13
+Thyme script.js:357:13
+XHR
+POST
+http://localhost:8000/feedback
+CORS Missing Allow Origin
+
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8000/feedback. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 500.
+TypeError: NetworkError when attempting to fetch resource. script.js:321:13
+[Compose] Justification: Beat Extraction (ordered):
+1) A brief touch of sweetness to start. 2) Pull back from savory/chemical mids. 3) Move into airy, natural green calm. 4) Finish on fresh, leafy clarity.
+
+Opening (Beats 1): Strawberry 6s + Lily 9s (total 15s). Strawberry stays, but shorter to match your request for less time on the sweet opening. Lily softens the sugar with a gentle floral veil, preventing a jump into anything savory or sharp.
+
+Heart (Beats 2–3): Cypress 10s + Sage 10s + Eucalipto 10s (total 30s). These create a clean, natural, and quietly structured mid. Cypress provides woody stability (no meatiness), Sage adds refreshing herbal greenness (leafy without bitterness), and Eucalipto lifts the space with crisp, spa-like clarity—scrubbing away any sense of chemical/sour.
+
+Closing (Beat 4): Rec clover 15s. A distinctly green, clover-leaf freshness to leave the final impression you asked for—cool, mint-tinged, and leafy, not meaty or sour.
+
+Refinement notes: Removed Onion and Isoveric Acid entirely to eliminate the savory/chemical/sour mid-to-end you disliked. Shortened Strawberry to keep the sweet introduction but not let it linger. Built a greener, leaf-forward arc so the ending is clean, fresh, and natural as requested. script.js:283:13
+Strawberry script.js:357:13
+Lily script.js:357:13
+Cypress script.js:357:13
+Sage script.js:357:13
+Eucalipto script.js:357:13
+Rec clover script.js:357:13
+"
+009,2,"Sequence List:
+
+    Scent 3 for 5 seconds
+    Scent 5 for 5 seconds
+    Scent 8 for 3 seconds
+    Scent 9 for 5 seconds
+
+GET
+http://[::1]:8080/favicon.ico
+[HTTP/1 404 File not found 0ms]
+
+“[::1]” has been classified as a bounce tracker. If it does not receive user activation within the next 3,600 seconds it will have its state purged.
+[Compose] Justification: Ordered beats extracted: 1) Dew-wet salad leaves (cool rinse). 2) Vegetal green bite of fresh leaves. 3) Strong, ripe strawberry presence. 4) Faint background of stems/box, subtle and woody. Opening (beats 1): Rec clover (10s) sets the immediate green, refreshing leafiness; Eucalipto (6s) overlays a clean, watery lift to evoke that specific wet-salad freshness you named. Heart (beats 2–3): Thyme (9s) introduces the bitter-green, vegetable tone that reads as cut, damp leaves; Strawberry (25s) takes center stage to match “the strawberries are quite strong,” adding sweet, clear fruit that sits among the greens. Closing (beat 4): Cypress (10s) fades to a gentle, woody-stem impression—like the box/stems you see but aren’t smelling strongly—providing a calm, grounded afterglow. Durations reflect emphasis: a swift, vivid wet-green opening; an extended heart where the strawberry dominates while the green bite persists; and a quiet, supportive close that suggests the faint background rather than competing with the primary notes. Total = 60s. script.js:283:13
+Rec clover script.js:357:13
+Eucalipto script.js:357:13
+Thyme script.js:357:13
+Strawberry script.js:357:13
+Cypress script.js:357:13
+XHR
+POST
+http://localhost:8000/feedback
+CORS Missing Allow Origin
+
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8000/feedback. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 500.
+TypeError: NetworkError when attempting to fetch resource. script.js:321:13
+[Compose] Justification: Beats (ordered): 1) Quiet, not-quite-salad start. 2) Greens/herbs build into a well-composed, salad-like middle. 3) A fruity burst that risks overwhelming. 4) Final element previously felt off—seek a gentle, steady resolution instead. Opening: Beat 1 with Eucalipto (12s). Its refreshing, spa-clean profile sets a neutral, airy stage that feels fresh but not “salad,” matching the initial subtlety. Heart: Beat 2 with Rec clover (12s) then Thyme (12s). Rec clover’s minty-green and Thyme’s bitter-vegetal facets build the salad-like center that felt well composed, giving structure and natural herbality without being sharp. Transition/Flash: Beat 3 with Strawberry (6s). The fruity note appears as a brief pop—kept short to avoid the prior sense of being overwhelming while still delivering a recognizably sweet-fruity moment. Closing: Beat 4 with Cypress (8s) followed by Eucalipto (10s). Cypress offers a brief, woody stabilizer so the end doesn’t feel abrupt, but it’s not the last word; Eucalipto returns to provide a clean, gentle lift and a comfortable afterglow—avoiding the off-putting final element you noted. Durations emphasize a calm open, a confident herbal heart, a controlled fruit spark, and a soothing, clean finish. script.js:283:13
+Eucalipto script.js:357:13
+Rec clover script.js:357:13
+Thyme script.js:357:13
+Strawberry script.js:357:13
+Cypress script.js:357:13
+Eucalipto script.js:357:13
+[Feedback] Justification: Kept the soft bookends you preferred: the opening Eucalipto and the closing Eucalipto/Cypress remain in the same positions and durations to avoid abruptness. To restore a stronger ""salad peak"" in the heart without increasing intensity, I swapped the fruity Strawberry for herbaceous Sage. This keeps the middle greener and more vegetal, enhancing the salad impression via the Thyme + Rec clover + Sage triad, while maintaining the smoother, more fluid stacking you liked. No added sharp notes or stronger endings, preserving the gentle start/finish and overall narrative arc. script.js:317:13
+[Feedback] Changes made: Replaced Strawberry (6s) with Sage (6s) to reduce fruitiness and heighten green/herbaceous salad character; preserved all other scents, positions, and durations to keep the softer opening/ending and fluid transitions. script.js:318:13
+Eucalipto script.js:357:13
+Rec clover script.js:357:13
+Thyme script.js:357:13
+Sage script.js:357:13
+Cypress script.js:357:13
+Eucalipto script.js:357:13
+"
+010,1?,"Sequence List: 
+ Scent 1 for 5 seconds
+Scent 3 for 5 seconds
+Scent 10 for 5 seconds
+
+GET
+http://[::1]:8080/favicon.ico
+[HTTP/1 404 File not found 0ms]
+
+[Compose] Justification: Ordered beats extracted: 1) Slight artificial top note, 2) Green, vegetal crunch, 3) Savory core, 4) Sour dressing blooms, 5) Lingering sour finish. Opening (beats 1–2): Strawberry (4s) gives a brief, slightly artificial hint of sweetness, then Thyme (9s) establishes the green, bitter‑vegetal salad base. Heart (beats 3–4): Onion (12s) delivers the umami/savory core, followed by Rec clover (10s) to add fresh, minty-green crunch; a short lift of Sage (5s) aerates and brightens to cue the coming tang. Closing (beat 5): Isoveric Acid (20s) provides the sour note that persists longer than any other element, echoing a tart dressing’s lingering tang. Durations reflect the user’s description: the sweet/artificial is fleeting; greens and savory carry the body; the sour is given the longest single block and placed last to ensure it outlasts all other impressions. script.js:283:13
+Strawberry script.js:357:13
+Thyme script.js:357:13
+Onion script.js:357:13
+Rec clover script.js:357:13
+Sage script.js:357:13
+Isoveric Acid script.js:357:13
+XHR
+POST
+http://localhost:8000/feedback
+[HTTP/1.1 422 Unprocessable Entity 74442ms]
+
+[Compose] Justification: Ordered beats extracted: 1) Begin with Strawberry; 2) Move into Thyme; 3) Brief flash of Onion; 4) Settle into Rec clover; 5) Remove Sage; 6) Remove Isoveric Acid. Opening/Heart/Closing: • Opening = Beat 1 (Strawberry). • Heart = Beats 2–3 (Thyme, then Onion). • Closing = Beat 4 (Rec clover), reinforced by Beats 5–6 as a cleansing resolution via exclusion. Rationale: The sentence specifies an initial progression—strawberry → thyme → onion → red clover—and explicitly asks to remove Sage and Isoveric Acid. I honor that by excluding those two entirely, shaping the afterglow around clean, green clarity rather than herbal astringency (Sage) or sweaty-sour edges (Isoveric Acid). Timing: Strawberry (15s) anchors the Opening with elegant, fruity brightness to quickly set a welcoming tone. Thyme (12s) introduces a green, bitter-herbal bridge—garden-like and purposeful—deepening the scene. Onion (6s) is a short, savory umami flash; kept brief due to its higher volatility and intensity, it adds a lived-in kitchen memory without lingering. Rec clover (27s) expands into a refreshing, minty-green field, serving as purification and resolution; its long tail embodies the requested “removal,” leaving a clean, natural finish. Emotional arc: Sweet familiarity (Strawberry) → grounded herbality (Thyme) → vivid, human warmth of cooking (Onion) → airy, refreshing release (Rec clover) with the deliberate omission of Sage and Isoveric Acid ensuring a clear, uplifting close. script.js:283:13
+Strawberry script.js:357:13
+Thyme script.js:357:13
+Onion script.js:357:13
+Rec clover script.js:357:13
+[Compose] Justification: Beats (ordered): 1) Sharp sour snap to reset the palate. 2) Savory umami base. 3) Crisp, bitter‑green salad herbs. 4) Cool, airy freshness. 5) Lingering green finish with a last tart flicker. Opening (Beats 1–2): Isoveric Acid (6s) delivers an immediate sour jolt to avoid any sweetness, followed by Onion (9s) to ground the profile in savory umami. Heart (Beat 3): Thyme (12s) provides the core bitter‑green, vegetable “salad” feel; Sage (10s) layers refreshing herbality; Rec clover (8s) adds minty, green clarity—together forming a fuller salad body with freshness. Closing (Beats 4–5): Eucalipto (5s) lifts with cool freshness; a quick Isoveric Acid return (3s) reasserts tang; Rec clover (7s) leaves a clean, green salad afterglow. Rationale: You asked for sour and savory up front and more salad/freshness overall. No sweet materials (Strawberry, Cinnamon, Lily) are used. Durations emphasize greens and freshness (42s total across Thyme, Sage, Rec clover, Eucalipto), while sour appears at entry and near the end for definition without overpowering. Volatility is leveraged: brief Isoveric Acid flashes (high volatility) frame the experience; steadier herbs carry the main arc. script.js:283:13
+Isoveric Acid script.js:357:13
+Onion script.js:357:13
+Thyme script.js:357:13
+Sage script.js:357:13
+Rec clover script.js:357:13
+Eucalipto script.js:357:13
+Isoveric Acid script.js:357:13
+Rec clover script.js:357:13
+XHR
+POST
+http://localhost:8000/feedback
+CORS Missing Allow Origin
+
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8000/feedback. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 500.
+TypeError: NetworkError when attempting to fetch resource. script.js:321:13
+[Compose] Justification: Goal: make the sequence less sweet by removing sweet-leaning freshness and keeping only austere, herbal, savory, and dry-woody elements. I removed Rec clover and Sage entirely and avoided any inherently sweet materials (e.g., Strawberry, Cinnamon).
+
+Ordered beats:
+1) Reject sweetness; pivot to clean austerity
+2) Bitter-green herbal backbone
+3) Savory kitchen warmth
+4) Spice-driven lift without sugar
+5) Brief edgy tang for contrast
+6) Dry, stable woody resolve
+
+Opening (Beats 1–2): Eucalipto (12s) + Thyme (8s). Eucalipto snaps the air clean and unsweet, setting an austere tone; Thyme reinforces a bitter-green, vegetable-herbal spine. Together they immediately steer away from any sweetness the previous mix hinted at.
+
+Heart (Beats 3–4): Onion (12s) + Sichuan oil (10s) + Cumin (6s). Onion brings a comforting, unmistakably savory umami warmth; Sichuan oil adds energetic spice without any sugary connotation; Cumin contributes smoky-spice depth, maintaining dryness.
+
+Transition/Accent (Beat 5): Isoveric Acid (4s). A very brief, volatile tangy-funky flash that cuts through any residual softness and sharpens the profile without lingering.
+
+Closing (Beat 6): Cypress (8s). A dry, woody finish that settles the journey into a grounded, unsweet conclusion.
+
+Why these durations: Longer spans (Eucalipto/Onion/Sichuan) set and sustain the clean and savory core; medium (Thyme/Cypress) frame the opening and closure; short accents (Cumin/Isoveric Acid) add complexity without turning heavy or sweet. Volatility also informed timing: Isoveric Acid (high volatility) is kept brief for a quick, clarifying jolt, while Sichuan oil (lower volatility) can carry warmth steadily without sweetness. script.js:283:13
+Eucalipto script.js:357:13
+Thyme script.js:357:13
+Onion script.js:357:13
+Sichuan oil script.js:357:13
+Cumin script.js:357:13
+Isoveric Acid script.js:357:13
+Cypress script.js:357:13
+"
+011,1," Scent 3 for 5 seconds
+Scent 7 for 5 seconds
+Scent 9 for 5 seconds
+Scent 10 for 5 seconds
+[Compose] Justification: Ordered beats (extracted): 1) Fresh salad context (light green lift). 2) Dressing dominates. 3) Mostly sweet profile. 4) Very mild acidic touch. 5) Smooth, rounded texture. 6) A hint of floral lift. Opening uses beats 1 and 6. Heart uses beats 2, 3, 4, and 5. Closing uses beat 6.
+
+Narrative and choices: 
+- Rec clover (4s, Opening): A brief, airy green to nod to the salad itself (beat 1) without overpowering the dressing focus. Its moderate volatility makes a quick, fresh spark that fades fast so the dressing can lead. 
+- Lily (11s, Opening): Soft, floral cushion establishing the “bit flowery” request (beat 6) and immediately smoothing the profile. High volatility and gentle tone create a silky veil that sets the mood.
+- Strawberry (20s, Heart): The sweet core of the dressing (beats 2 and 3). Its fruity clarity reads as sugar-forward and clean, carrying the middle of the experience and making the dressing feel dominant.
+- Isoveric Acid (3s, Heart): A tiny, fleeting ping of acidity (beat 4). Extremely short due to its sharp, high-volatility nature—just enough to suggest a mild vinaigrette tang without turning sour.
+- Cypress (7s, Heart): Woody stability to emulate the emulsified, oily body of a smooth dressing (beat 5). It adds roundness and textural calm after the acid flicker.
+- Cinnamon (5s, Heart): A soft warm-sweet accent that deepens the sweetness while remaining smooth and comforting (beats 2 and 3). Kept brief to avoid overt spice; it reads like a gentle honeyed warmth.
+- Lily (10s, Closing): Returns as the lingering, silky floral afterglow (beat 6), reinforcing the requested flowery, very smooth finish so the memory left is sweet, soft, and refined.
+
+Why the timings: Sweetness dominates the longest (Strawberry 20s) to match “mostly sweet.” Acidity is purposely minimal (Isoveric Acid 3s) to stay “very, very mild.” Smoothing elements bookend and cushion the core (Lily + Cypress) to convey a rounded, emulsified texture, ending with a graceful floral finish. Total duration = 60s exactly. script.js:283:13
+Rec clover script.js:357:13
+Lily script.js:357:13
+Strawberry script.js:357:13
+Isoveric Acid script.js:357:13
+Cypress script.js:357:13
+Cinnamon script.js:357:13
+Lily script.js:357:13
+[Feedback] Justification: To emphasize a sweeter, smooth salad-dressing profile with a gentle savory undertone and reduced herbal character, I removed the green/herbal elements and reinforced the sweet heart. Rec clover (minty/green) was swapped for Strawberry in the opening to deliver an immediate sweet impression. Cypress (woody/green) was replaced with Cumin to introduce a soft, warm savory nuance without sharpness, keeping the texture smooth. I slightly extended Cinnamon to bolster comforting sweetness while trimming the closing Lily by 1s to maintain balance and preserve the floral lift without reading herbal. The Opening/Heart/Closing arc remains intact: a sweet-floral opening (Strawberry/Lily), a sweet core with mild acidity and a touch of savory (Strawberry, Isoveric Acid, Cumin), and a warm-sweet, soft-floral finish (Cinnamon/Lily). Total duration remains exactly 60s. script.js:317:13
+[Feedback] Changes made: - Replaced Rec clover (4s) with Strawberry (4s) to increase sweetness and remove herbal/green.
+- Replaced Cypress (7s) with Cumin (7s) to add a gentle savory tone without herbal qualities.
+- Increased Cinnamon from 5s to 6s for more sweet warmth; reduced final Lily from 10s to 9s to keep total at 60s while maintaining a smooth floral finish. script.js:318:13
+Strawberry script.js:357:13
+Lily script.js:357:13
+Strawberry script.js:357:13
+Isoveric Acid script.js:357:13
+Cumin script.js:357:13
+Cinnamon script.js:357:13
+Lily script.js:357:13
+"
+006,3,"[Compose] Justification: Beats (ordered): 1) Cheesy burst dominates. 2) Strong dried-green herbs (oregano/parsley vibe). 3) Slight artificial-dough/processed snack note. 4) Cooling shift in perception. 5) Teeny hint of sauce sweetness appears. 6) Settling back to mainly cheese + herbs. Opening (0-15s): Beat 1 with Isoveric Acid (15s) for an unmistakable cheese hit; its cheesy-sour edge also gestures to the light artificiality you mention. Heart (15-45s): Beat 2 with Thyme (9s) to channel oregano-like, bitter-green herbality; Beat 3 with Onion (9s) for savory, chip-like umami that reads as processed/""artificial dough"" without overpowering; Beats 4-5 via a very brief Strawberry (4s) to flash the cooled, barely-sweet sauce impression, then Sage (8s) to round and freshen the herb bouquet (parsley-adjacent, green and clean). Closing (45-60s): Beat 6 resolved by returning to Isoveric Acid (8s) so cheese reasserts as the main impression, ending with a Thyme tail (7s) to leave a lasting oregano/parsley echo. Duration logic: Cheese is primary (long opening + return), herbs are pronounced (two distinct herb phases), the artificial facet is present but contained (short Onion and controlled Isoveric return), and sweetness is only a quick flicker (very short Strawberry) after the cooling moment. script.js:283:13
+Isoveric Acid script.js:357:13
+Thyme script.js:357:13
+Onion script.js:357:13
+Strawberry script.js:357:13
+Sage script.js:357:13
+Isoveric Acid script.js:357:13
+Thyme script.js:357:13
+[Feedback] Justification: To address “too sour,” I reduced the total Isoveric Acid time (from 23s to 15s) so the cheesy note remains but with less sour edge. The unwanted sweet pop was eliminated by swapping Strawberry for Rec clover, giving a brief fresh-green lift that reads closer to parsley/oregano instead of fruit. To push a more savory herb profile, I extended the herb heart: both Thyme blocks and the Sage segment are longer, reinforcing a culinary, oregano/parsley-like character. For the ‘fresh’ aspect in two senses: Cypress opens the piece with a short, warm woody flare that suggests a hot oven/wood-fired crust, while Rec clover adds a crisp garden-fresh impression mid-heart. Onion stays anchored where it was to preserve the savory umami continuity. The overall arc remains Opening (warm-oven + softened cheese), Heart (herb-forward savory with fresh-green lift), and Closing (gentle cheesy-herb fade) while keeping the total at exactly 60 seconds. script.js:317:13
+[Feedback] Changes made: - Reduced Isoveric Acid durations (15s→10s opening; 8s→5s closing) to cut sourness while retaining cheese.
+- Replaced Strawberry (4s) with Rec clover (4s) to remove sweetness and add fresh-green herb nuance.
+- Added a new 4s Cypress opener for warm, just-out-of-the-oven feel.
+- Increased herb presence: Thyme 9→11s (first) and 7→8s (last); Sage 8→9s.
+- Preserved Onion (9s) as the savory anchor and maintained overall structure at 60s total. script.js:318:13
+Cypress script.js:357:13
+Isoveric Acid script.js:357:13
+Thyme script.js:357:13
+Onion script.js:357:13
+Rec clover script.js:357:13
+Sage script.js:357:13
+Isoveric Acid script.js:357:13
+Thyme script.js:357:13
+[Feedback] Justification: Reduced sourness by cutting total Isoveric Acid from 15s to 10s while keeping enough for a cheesy impression. To push a more tomato-like profile without adding new scents, Onion was lengthened to deepen sauce-like savoriness and Rec clover was extended to evoke a fresh tomato-vine/leaf green facet. Core herbs (Thyme, Sage) stay unchanged to preserve the oregano/parsley character the user liked. Sequence order and the opening/heart/closing arc remain intact, with adjustments confined to sauce-forward elements tied to the tomato request. script.js:317:13
+[Feedback] Changes made: - Isoveric Acid reduced: 10→7s (opening), 5→3s (closing) to lessen sourness.
+- Onion increased: 9→12s to enhance tomato-sauce body.
+- Rec clover increased: 4→6s to add tomato-leaf green freshness.
+- Cypress, Thyme, and Sage durations unchanged to preserve the established structure and herb profile. script.js:318:13
+Cypress script.js:357:13
+Isoveric Acid script.js:357:13
+Thyme script.js:357:13
+Onion script.js:357:13
+Rec clover script.js:357:13
+Sage script.js:357:13
+Isoveric Acid script.js:357:13
+Thyme"
+012,," Scent 3 for 5 seconds
+Scent 6 for 5 seconds
+Scent 8 for 3 seconds"
+013,2," Scent 3 for 5 seconds
+Scent 6 for 5 seconds
+Scent 8 for 3 seconds
+
+[Compose] Justification: Beat extraction (ordered): 1) Ketchup-sweet tomato sauce (very American, on the sweeter side). 2) Simmering savory base of sauce. 3) Herbal tangle like oregano/basil. 4) Mozzarella’s tangy pull. 5) Reduced, browned depth—tomato decreased to tomato. 6) Warm, sweet afterglow. Opening: Beat 1. Heart: Beats 2–5. Closing: Beat 6. Narrative and choices: Opening (0–12s, Strawberry 12s): Strawberry brings a clear, fruity red sweetness that mimics the ketchup-like, Americanized tomato top note—fast, inviting, and recognizably sweet. Heart (12–27s, Onion 15s): Onion delivers the simmering, savory backbone of a pasta sauce, grounding the sweetness and evoking a pot on the stove. Heart (27–37s, Thyme 10s): Thyme supplies the green, slightly bitter-herbal lift akin to oregano/basil, creating that classic Italian-American herb profile. Heart accent (37–43s, Isoveric Acid 6s): A brief flash of cheesy-sour tang conjures melted mozzarella—kept short and volatile so it ‘pulls’ and recedes like a stretch of cheese. Heart bridge (43–50s, Cumin 7s): Cumin’s smoky-brown warmth suggests reduction and slight caramelization—the ‘big brown’ concentrated depth of cooked-down tomato. Closing (50–60s, Cinnamon 10s): Cinnamon trails a gentle, cozy warmth and soft sweetness, returning to the user’s requested sweet leaning while leaving a comforting kitchen afterglow. Durations and volatility: Longer Onion and moderate Thyme hold the sauce’s body; brief Isoveric Acid captures cheese tang without overwhelming; Cumin adds browned depth; Cinnamon closes with a sweet-warm resolve, reinforcing the ‘sweeter side’ the user emphasized. script.js:283:13
+Strawberry script.js:357:13
+Onion script.js:357:13
+Thyme script.js:357:13
+Isoveric Acid script.js:357:13
+Cumin script.js:357:13
+Cinnamon script.js:357:13
+[Feedback] Justification: Kept the opening Strawberry and the closing Cinnamon exactly as you liked. To make the profile less warm/sweet and push the tomato-ketchup tang, I moved Isoveric Acid forward and extended it so the sour, mozzarella-like tang sits prominently right after the opening. Onion and Thyme remain to carry a cooked-sauce savory and green-herbal core, but are slightly trimmed to keep the focus on sourness. Cumin was swapped for Sage to remove smoky warmth and add a basil/oregano-adjacent green lift without sweetness. The arc stays Opening (Strawberry), Heart (Isoveric Acid → Onion → Thyme → Sage), Closing (Cinnamon), totaling 60s. script.js:317:13
+[Feedback] Changes made: Anchored Strawberry (12s) at start and Cinnamon (10s) at end. Moved Isoveric Acid earlier and increased to 12s to emphasize sour/tang. Reduced Onion to 12s and Thyme to 8s to rebalance. Replaced Cumin with Sage (6s) for a fresher, oregano/basil-like herbal tone and less warmth. script.js:318:13
+Strawberry script.js:357:13
+Isoveric Acid script.js:357:13
+Onion script.js:357:13
+Thyme script.js:357:13
+Sage script.js:357:13
+Cinnamon
+
+[remove the strawberry]"
+014,2,"Sequence List:
+
+    Scent 10 for 5 seconds
+    Scent 9 for 5 seconds
+    Scent 8 for 5 seconds
+
+[Compose] Justification: Beat extraction (ordered): 1) Ketchup-sweet tomato sauce (very American, on the sweeter side). 2) Simmering savory base of sauce. 3) Herbal tangle like oregano/basil. 4) Mozzarella’s tangy pull. 5) Reduced, browned depth—tomato decreased to tomato. 6) Warm, sweet afterglow. Opening: Beat 1. Heart: Beats 2–5. Closing: Beat 6. Narrative and choices: Opening (0–12s, Strawberry 12s): Strawberry brings a clear, fruity red sweetness that mimics the ketchup-like, Americanized tomato top note—fast, inviting, and recognizably sweet. Heart (12–27s, Onion 15s): Onion delivers the simmering, savory backbone of a pasta sauce, grounding the sweetness and evoking a pot on the stove. Heart (27–37s, Thyme 10s): Thyme supplies the green, slightly bitter-herbal lift akin to oregano/basil, creating that classic Italian-American herb profile. Heart accent (37–43s, Isoveric Acid 6s): A brief flash of cheesy-sour tang conjures melted mozzarella—kept short and volatile so it ‘pulls’ and recedes like a stretch of cheese. Heart bridge (43–50s, Cumin 7s): Cumin’s smoky-brown warmth suggests reduction and slight caramelization—the ‘big brown’ concentrated depth of cooked-down tomato. Closing (50–60s, Cinnamon 10s): Cinnamon trails a gentle, cozy warmth and soft sweetness, returning to the user’s requested sweet leaning while leaving a comforting kitchen afterglow. Durations and volatility: Longer Onion and moderate Thyme hold the sauce’s body; brief Isoveric Acid captures cheese tang without overwhelming; Cumin adds browned depth; Cinnamon closes with a sweet-warm resolve, reinforcing the ‘sweeter side’ the user emphasized. script.js:283:13
+Strawberry script.js:357:13
+Onion script.js:357:13
+Thyme script.js:357:13
+Isoveric Acid script.js:357:13
+Cumin script.js:357:13
+Cinnamon script.js:357:13
+[Feedback] Justification: Kept the opening Strawberry and the closing Cinnamon exactly as you liked. To make the profile less warm/sweet and push the tomato-ketchup tang, I moved Isoveric Acid forward and extended it so the sour, mozzarella-like tang sits prominently right after the opening. Onion and Thyme remain to carry a cooked-sauce savory and green-herbal core, but are slightly trimmed to keep the focus on sourness. Cumin was swapped for Sage to remove smoky warmth and add a basil/oregano-adjacent green lift without sweetness. The arc stays Opening (Strawberry), Heart (Isoveric Acid → Onion → Thyme → Sage), Closing (Cinnamon), totaling 60s. script.js:317:13
+[Feedback] Changes made: Anchored Strawberry (12s) at start and Cinnamon (10s) at end. Moved Isoveric Acid earlier and increased to 12s to emphasize sour/tang. Reduced Onion to 12s and Thyme to 8s to rebalance. Replaced Cumin with Sage (6s) for a fresher, oregano/basil-like herbal tone and less warmth. script.js:318:13
+Strawberry script.js:357:13
+Isoveric Acid script.js:357:13
+Onion script.js:357:13
+Thyme script.js:357:13
+Sage script.js:357:13
+Cinnamon
+
+[Compose] Justification: Beats (ordered): 1) Oven-warm crust, just-cooked (not burnt); 2) Melted cheese richness; 3) Tomato sauce with a hint of sugar (not too sweet); 4) Oregano-like herbal lift; 5) Cozy baked afterglow.
+Opening (0–15s): Cinnamon (7s) + Cypress (8s). Cinnamon brings immediate gentle warmth and a baked-kitchen vibe without smoke, while Cypress grounds it in a dry, woody heat—suggesting an oven wall/wood board rather than anything burnt.
+Heart (15–45s): Onion (8s) lays a savory, cooked base reminiscent of sauce and crust. Isoveric Acid (6s) provides the critical melted-cheese note but is kept brief and buffered between warm woods and umami to avoid reading as sour. Strawberry (6s) adds a restrained touch of sweetness to echo lightly sugared tomato sauce—present but not cloying. Thyme (10s) stands in for oregano, giving the green, aromatic lift typical of a pizza finish.
+Closing (45–60s): Cypress (15s) returns to leave a calm, dry-baked impression—cooked-through warmth with zero char, reinforcing “oven, not burnt.”
+Why these choices: The sequence builds from oven heat (Opening) to the core flavors (Heart: cheese + savory sauce + gentle sugar + oregano) and resolves with lingering baked comfort (Closing). Durations emphasize atmosphere (longer Cypress), center the culinary identity (Onion + Thyme longer within the heart), keep sweetness modest (brief Strawberry), and minimize any sour edge in the cheese (short Isoveric Acid framed by warm/spicy and savory notes). script.js:283:13
+Cinnamon script.js:357:13
+Cypress script.js:357:13
+Onion script.js:357:13
+Isoveric Acid script.js:357:13
+Strawberry script.js:357:13
+Thyme script.js:357:13
+Cypress script.js:357:13
+[Feedback] Justification: Addressing the note that the final impression felt too fresh, I reworked only the Closing (45–60s). I introduced Cumin’s smoky, cooked warmth to evoke oven-toasted edges without going acrid, then kept a short Cypress tail for structural stability so the drydown doesn’t turn harsh. The Opening and Heart remain intact as anchors (warm cinnamon lift, woody stability, cheesy-umami core with subtle sweetness and oregano-like thyme). This preserves the overall pizza-like narrative while making the finish feel more cooked/roasty and less fresh. script.js:317:13
+[Feedback] Changes made: Replaced part of the final 15s Cypress: added Cumin 10s and reduced closing Cypress to 5s to create a warmer, cooked/roasted finish. All earlier segments unchanged. script.js:318:13
+Cinnamon script.js:357:13
+Cypress script.js:357:13
+Onion script.js:357:13
+Isoveric Acid script.js:357:13
+Strawberry script.js:357:13
+Thyme script.js:357:13
+Cumin script.js:357:13
+Cypress script.js:357:13
+[Feedback] Justification: Removed the herbal/oregano-like element by eliminating Thyme and replaced it with Onion to emphasize a cooked tomato-sauce body without adding freshness or greenery. Kept Isoveric Acid moderate to convey cheese while avoiding excessive sourness. Preserved a touch of sweetness for tomato via Strawberry and early Cinnamon warmth, but did not increase it, aligning with ‘a bit of sugar, not too much.’ Maintained the oven-baked character through Cypress and kept the light char in the close with Cumin for the requested ‘bit of burn.’ Opening/Heart/Closing arc remains intact; only the herb was swapped to refocus on tomato, cheese, and char. script.js:317:13
+[Feedback] Changes made: Removed Thyme (10s) and replaced it with Onion (10s) to eliminate oregano-like notes and concentrate on tomato-sauce savoriness. All other scents and durations unchanged to preserve structure and avoid added freshness. script.js:318:13
+Cinnamon script.js:357:13
+Cypress script.js:357:13
+Onion script.js:357:13
+Isoveric Acid script.js:357:13
+Strawberry script.js:357:13
+Onion script.js:357:13
+Cumin script.js:357:13
+Cypress"
+015,1," Scent 1 for 5 seconds
+Scent 3 for 5 seconds
+
+[Compose] Justification: Ordered beats: (1) Tomatoey core, (2) Slightly sweeter lift, (3) Yeasty whisper, (4) Hint of oregano, (5) Satisfied afterglow (“good”). Opening: Beat 1. Heart: Beats 2–3 (with a brief savory bridge). Closing: Beats 4–5. Narrative: We begin with Thyme (12s) to evoke the green, bitter-vegetal “tomatoey” vibe—like tomato vine and herbaceous sauce base. Onion (8s) follows as a short savory bridge that anchors the tomato impression with umami warmth without dominating. The heart shifts to the “slightly sweeter” request via Strawberry (12s), adding a gentle, clear fruit sweetness that rounds the acidity of the tomato idea. A quick flash of Isoveric Acid (6s)—high volatility, cheesy/fermented—reads as a restrained yeasty note; it’s brief to avoid unpleasantness while signaling fermentation/bread-dough nuance. For the close, Sage (22s) provides the lingering herbal lift akin to an oregano-like finish (both share Mediterranean, camphoraceous-green facets), leaving a clean, satisfying “good” afterglow. Durations vary to mirror emphasis: a concise, immediate opening; a balanced, layered heart; and an extended herbal finish so the oregano hint is what lingers. script.js:283:13
+Thyme script.js:357:13
+Onion script.js:357:13
+Strawberry script.js:357:13
+Isoveric Acid script.js:357:13
+Sage script.js:357:13
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:5001/play_sequence. (Reason: CORS request did not succeed). Status code: (null).
+BLE Error: TypeError: NetworkError when attempting to fetch resource. script.js:438:13
+[Feedback] Justification: To reduce sweetness, Strawberry was shortened so it plays a smaller supporting role. Herbal intensity was softened by trimming Thyme (the sharper herbal signal) and slightly easing Sage while keeping its closing position to preserve the oregano-like hint. Tomato-like character was strengthened by extending Onion as the savory, umami core of the heart. Isoveric Acid (the yeasty nuance) remained unchanged as an anchor. The opening/heart/closing arc is preserved: a lighter herbal open (Thyme), a more tomato-forward heart (Onion with a brief touch of Strawberry), a subtle yeasty beat (Isoveric Acid), and a gentler herbal-oregano finish (Sage). script.js:317:13
+[Feedback] Changes made: - Reduced Strawberry 12→7 to make it less sweet.
+- Reduced Thyme 12→9 and Sage 22→20 to soften overall herbal intensity.
+- Increased Onion 8→18 to amplify tomato-like savoriness.
+- Kept Isoveric Acid at 6s to maintain the yeasty hint and overall structure. script.js:318:13
+Thyme script.js:357:13
+Onion script.js:357:13
+Strawberry script.js:357:13
+Isoveric Acid script.js:357:13
+Sage script.js:357:13
+[Feedback] Justification: Strawberry is reduced to a bare-minimum 2s to dial back sweetness as requested. The freed time is shifted primarily to Onion (+3s) to deepen the tomato-like savoriness, with subtle boosts to Thyme (+1s) and Sage (+1s) to emphasize the herbal focus without overpowering. Isoveric Acid remains unchanged to preserve the light yeasty character from the original brief. The Opening keeps a greener lift (Thyme), the Heart centers on savory Onion with just a fleeting sweet touch and yeast, and the Closing rests into steady herbal Sage, maintaining the 0–15/15–45/45–60 arc. script.js:317:13
+[Feedback] Changes made: Reduced Strawberry 7→2 to achieve bare-minimum sweetness; increased Onion 18→21 to emphasize tomato-y savoriness; slightly increased Thyme 9→10 and Sage 20→21 to support herbal focus; kept Isoveric Acid at 6s unchanged. script.js:318:13
+Thyme script.js:357:13
+Onion script.js:357:13
+Strawberry script.js:357:13
+Isoveric Acid script.js:357:13
+Sage"
+017,1,"Sequence List:
+
+    Scent 2 for 5 seconds
+    Scent 6 for 5 seconds
+    Scent 8 for 5 seconds
+    Scent 10 for 3 seconds
+    Scent 11 for 5 seconds
+
+[Compose] Justification: Deconstruction of the user’s wish: a cheese pizza that overstayed in the oven—smoky/burned but still edible—dominated by cheese and savory tones with a mild caramelized sweetness, and not super fresh.
+
+Ordered beats (extracted):
+1) Oven door opens: a smoky, scorch-tinged rush from the overbaked pie.
+2) Dense, molten cheese presence (slightly sour-fatty edges signaling not-super-fresh).
+3) Savory, browned, umami crust/topping warmth.
+4) Mild caramelized sweetness from over-browned edges.
+5) Bitter-browned crust cue that says “burned but edible.”
+6) Lingering warm smoke/char afterglow.
+
+Opening (Beat 1): Cumin (12s). Chosen for its smokey, spice character to immediately place us in the overbaked, smoky-oven moment. Duration is long enough to ground the setting without tipping into acrid.
+
+Heart (Beats 2–5):
+- Isoveric Acid (10s) for Beat 2. Its cheesy, slightly sour note captures heavy cheese and the “not super fresh” nuance without overwhelming the blend.
+- Onion (12s) for Beat 3. Umami, savory warmth to read as browned crust/toppings and the satisfying savory core of pizza.
+- Cinnamon (6s) for Beat 4. A brief, warm sweetness to suggest caramelization of cheese/crust edges (mild sweet, not dessert-like).
+- Thyme (8s) for Beat 5. A bitter-green, baked-vegetal edge that evokes the singed crust note—asserting “burned but still edible” without catastrophe.
+
+Closing (Beat 6): Cypress (12s). A woody, stable finish that reads as lingering oven/wood-char warmth and smoke, leaving a resolved, appetizing afterglow rather than a harsh burn-off.
+
+Narrative arc and timing rationale: The Opening establishes smoke/overbake instantly. The Heart dedicates the greatest span to cheese and savory (Isoveric Acid + Onion), with short, precise flashes for caramelized sweetness (Cinnamon) and edible-burnt bitterness (Thyme). The Closing returns to gentle char-smoke (Cypress) for a final, steady exhale. Total = 60s, balancing smoky dominance, cheese-forward center, savory weight, and a mild sweet lift while staying clearly in the burned-yet-edible zone. script.js:283:13
+Cumin script.js:357:13
+Isoveric Acid script.js:357:13
+Onion script.js:357:13
+Cinnamon script.js:357:13
+Thyme script.js:357:13
+Cypress script.js:357:13
+[Feedback] Justification: To reduce sweetness and freshness while increasing the burned/charred impression, I significantly boosted the smoky-spice Cumin and trimmed back the sweet warmth of Cinnamon and the green-fresh edge of Thyme. The core cheesy-savoury anchors (Isoveric Acid and Onion) were preserved in both position and duration to keep the pizza identity prominent. Cypress remains as a dry, woody closing to support the baked crust finish without adding minty or spa-like freshness. The Opening remains smoke-forward, the Heart centers on cheese and savory crust, and the Closing stays dry-woody, now overall less sweet/fresh and more burned. script.js:317:13
+[Feedback] Changes made: Cumin increased 12→18 to amplify char; Cinnamon reduced 6→3 to dial down sweetness; Thyme reduced 8→5 to reduce freshness. Isoveric Acid (10), Onion (12), and Cypress (12) kept unchanged. script.js:318:13
+Cumin script.js:357:13
+Isoveric Acid script.js:357:13
+Onion script.js:357:13
+Cinnamon script.js:357:13
+Thyme script.js:357:13
+Cypress"
+018,1,"[Compose] Justification: Beat extraction (ordered): 1) Savory pizza base. 2) Sour-cheesy tang. 3) Sweet, tomato-driven freshness (not sugary). 4) Soggy, pre-made crust with a hint of artificiality and moisture. 5) Very thin, burnt edge at the end. Opening: Beat 1 with Onion (12s). Onion’s umami/chips/savory profile anchors the immediate impression of hot, savory pizza. Heart: Beats 2–4 unfold across Isoveric Acid (11s) for the cheesy, slightly sour lift; Strawberry (9s) for the gentle, natural sweetness that reads as ripe tomato rather than sugar; Thyme (8s) to add the green, vegetal facet of tomato and herbs; Cypress (12s) to translate the floury, cardboard-stale feel of a pre-made crust, giving a dry, structural backbone; and a brief Sage (4s) wisp to suggest dampness/clean-tinged moisture, enhancing the sense of a sauce-soaked, not-very-good base and a faintly synthetic edge. Closing: Beat 5 with Cumin (4s). Cumin’s smoky-spice glints deliver a restrained, charred crust impression—kept very short so it’s only a thin burnt note at the end. Duration logic: A long savory opening grounds the scene; the cheese tang arrives quickly but doesn’t overstay; tomato sweetness and green facets are present but balanced; the crust’s pre-made character lingers longest within the heart to communicate ‘soaked, floury, not great’; and the char finish is deliberately brief to match the user’s request for a subtle burn. The sequence builds from base (savory) to tang (cheese) to brightness (tomato) to quality cue (crust) and resolves with a light burn, matching the user’s described progression. script.js:283:13
+Onion script.js:357:13
+Isoveric Acid script.js:357:13
+Strawberry script.js:357:13
+Thyme script.js:357:13
+Cypress script.js:357:13
+Sage script.js:357:13
+Cumin script.js:357:13
+XHR
+POST
+http://localhost:8000/feedback
+CORS Missing Allow Origin
+
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8000/feedback. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 500.
+TypeError: NetworkError when attempting to fetch resource. script.js:321:13
+[Compose] Justification: Beat extraction (ordered): 1) Savory cheese core (keep). 2) A touch more sour tang. 3) Tomato-like, oily sweetness of the sauce (not generic fruit). 4) Herbal backbone (thyme/sage). 5) Burnt/charred edge at the end. 6) Soaked–soury crust finish. Opening (Beats 1–2): Isoveric Acid 7s → Onion 8s. The high-volatility sour-cheesy Isoveric Acid comes first to slightly intensify the tang (as requested), then it hands off to Onion to preserve and deepen the savory/umami cheese impression. This anchors the experience quickly while keeping the savory dominant and the sourness elevated but controlled. Heart (Beats 3–4): Thyme 10s → Strawberry 6s → Sage 8s. Thyme lays a green, cooked-vegetable frame typical of simmered sauce. A brief veil of Strawberry adds the required sweet roundness; placed between herbs and kept short, it reads as tomato-like sweetness rather than a distinct fruit note. Sage follows to add a soft, oily, aromatic lift that suggests the fatty, glossy quality of a sauce without introducing unrelated sweetness. Closing (Beats 5–6): Cumin 6s → Cypress 9s → Isoveric Acid 6s. Cumin’s smoky, toasty facet supplies the missing burnt edge at the end. Cypress then brings a sturdy, woody-baked crust impression. A final reprise of Isoveric Acid adds the soaked–soury accent the crust needs, ensuring the very last impression is that slightly wet, tangy crumb you asked for. Durations reflect weight and diffusion: fast, bright sour notes bookend the piece; herbs and woody crust get longer spans to feel cooked-in and structural, with the char as a short, decisive transition into the crust finish. script.js:283:13
+Isoveric Acid script.js:357:13
+Onion script.js:357:13
+Thyme script.js:357:13
+Strawberry script.js:357:13
+Sage script.js:357:13
+Cumin script.js:357:13
+Cypress script.js:357:13
+Isoveric Acid script.js:357:13
+
+​"
+019,2,"Sequence List: 10,11,12,3 
+
+"
+020,3,"Sequence List:
+
+    Scent 5 for 5 seconds
+    Scent 3 for 3 seconds
+    Scent 6 for 3 seconds
+    Scent 11 for 3 seconds
+
+[Compose] Justification: Ordered beats extracted from your sentence: 1) Sweet entry, 2) Milky undertone, 3) Cinnamon warmth, 4) Black tea tannin, 5) Other warm spices rounding, 6) Toasted finish. Opening = beats 1–2. Heart = beats 3–4. Closing = beats 5–6. Opening (0–16s): Strawberry (12s) drops you into the wanted “sweet” first impression with clear, fruity sugar. A brief Isoveric Acid (4s) follows as a quick, whisper-soft dairy cue—used very short to suggest milk’s lactic creaminess without lingering sourness—fulfilling the “little bit of the smell of milk.” Heart (16–40s): Cinnamon (14s) blooms warm and cozy to deliver “spiced with cinnamon,” forming the emotional core. Thyme (10s) adds herbal bitterness and dryness that mimics black tea’s tannic body, evoking a steaming cup beneath the cinnamon. Closing (40–60s): ylang ylang (6s) introduces a gentle, warm-spice halo—soft, rounded, and comforting—standing in for “other warm spices” and smoothing the blend before the finale. Cumin (14s) lands the “toasted” request with its smoky, lightly roasted spice character, leaving a warm, toasty afterglow. Narrative arc: Sweet-and-milky arrival, a spiced-tea heart that feels familiar and cozy, and a toasted, warm finish for satisfying closure. script.js:283:13
+Strawberry script.js:357:13
+Isoveric Acid script.js:357:13
+Cinnamon script.js:357:13
+Thyme script.js:357:13
+ylang ylang script.js:357:13
+Cumin script.js:357:13
+[Feedback] Justification: To honor the request for more sweet and spiced elements while reducing floral character, I boosted the sweet fruit (Strawberry) and the core warm spices (Cinnamon, Cumin). I significantly reduced the most floral element (ylang ylang) and trimmed the green, herbal Thyme so the spice-sweet profile leads. Isoveric Acid remains unchanged to preserve the subtle milk nuance from the original intent. The Opening keeps a sweet start, the Heart is spice-forward, and the Closing retains a warm, toasted finish, all totaling exactly 60 seconds. script.js:317:13
+[Feedback] Changes made: Increased Cinnamon 14s→18s and Cumin 14s→16s to amplify warm spice/toasted feel; increased Strawberry 12s→14s for added sweetness; reduced ylang ylang 6s→2s to diminish floral; reduced Thyme 10s→6s to keep green notes in check; kept Isoveric Acid at 4s to maintain the milk nuance. script.js:318:13
+Strawberry script.js:357:13
+Isoveric Acid script.js:357:13
+Cinnamon script.js:357:13
+Thyme script.js:357:13
+ylang ylang script.js:357:13
+Cumin script.js:357:13
+XHR
+POST
+http://localhost:8000/feedback
+CORS Missing Allow Origin
+
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8000/feedback. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 500.
+TypeError: NetworkError when attempting to fetch resource. script.js:321:13
+[Compose] Justification: Ordered beats (extracted from your request for “another layer of tea and spice” while honoring your base): 1) Bright invitation, 2) Steaming green-herbal tea lift, 3) Warm baking-spice bloom, 4) Fleeting fermented/aged tea nuance, 5) Peppery heat rising into savory-herbal body, 6) Soft floral rounding and woody calm. Opening (0–15s; Beats 1–2): Strawberry (6s) gives a quick, friendly sparkle so the build can layer on top; Eucalipto (4s) adds a clean, steamy lift like hot tea vapors; Rec clover (5s) brings a mint-green, leafy freshness that reads as a light green tea note. Heart (15–45s; Beats 3–5): Cinnamon (7s) anchors the first spice wave with warm sweetness; a 2s flash of Isoveric Acid suggests the faint fermented edge of aged tea before it vanishes; Sage (7s) deepens the infusion into a fuller herbal-tea body; Sichuan oil (8s) extends a peppery, tingling heat for a pronounced spice layer; Thyme (6s) folds in a savory-green nuance, like herbs steeping alongside the spice. Closing (45–60s; Beat 6): ylang ylang (6s) gently rounds the spices with a warm, soft contour; Cumin (4s) offers a brief smoky-spice exhale; Cypress (5s) settles everything into a calm, wooden-tray finish—clean closure after the tea-and-spice complexity. Why this works: Your original arc is preserved but gains more tea-and-spice strata. Short, volatile flashes (Isoveric Acid) create complexity without overpowering; longer spans (Cinnamon, Sage, Sichuan oil) carry the central tea/spice story; the finish (ylang ylang → Cumin → Cypress) provides warmth, then smoky memory, then tranquil resolve. Total = 60s. script.js:283:13
+Strawberry script.js:357:13
+Eucalipto script.js:357:13
+Rec clover script.js:357:13
+Cinnamon script.js:357:13
+Isoveric Acid script.js:357:13
+Sage script.js:357:13
+Sichuan oil script.js:357:13
+Thyme script.js:357:13
+[Feedback] Justification: The latest feedback requests removal of any citrus elements. Based on the provided palette descriptors, none of the current scents are citrus (no lemon/orange/bergamot equivalents). Eucalipto and Sage are refreshing/herbal rather than citrus, Rec clover is mint/green, and Strawberry is a berry note. Therefore, no swaps or rebalancing are required. The Opening (Strawberry, Eucalipto, Rec clover), Heart (Cinnamon, Isoveric Acid, Sage, Sichuan oil, Thyme), and Closing (ylang ylang, Cumin, Cypress) arc remains intact, and total duration stays exactly 60 seconds. script.js:317:13
+[Feedback] Changes made: No changes made. Verified the composition is already citrus-free per the palette; all durations and structure preserved. script.js:318:13
+Strawberry script.js:357:13
+Eucalipto script.js:357:13
+Rec clover script.js:357:13
+Cinnamon script.js:357:13
+Isoveric Acid script.js:357:13
+Sage script.js:357:13
+Sichuan oil script.js:357:13
+Thyme script.js:357:13
+
+"
+021,,"Sequence List:
+
+    Scent 4 for 5 seconds
+    Scent 8 for 5 seconds
+    Scent 11 for 5 seconds
+    Scent 12 for 5 seconds
+
+[Compose] Justification: Ordered beats extracted from your sentence: 1) First whiff of chai steam and spices. 2) A travel-flash to India. 3) Sweet, delicate milky body. 4) Recognizable cinnamon at the core. 5) Not the best tea: a slightly bitter, green edge. 6) Gentle lingering sweetness/spice aftertaste.
+
+Opening (0–15s) — Beats 1 and 4: Rec clover (7s) opens with a cool, minty-green lift that stands in for cardamom, signaling chai instantly without being loud. Cinnamon (8s) follows to anchor the recognizable chai identity and sweet warmth you called out, establishing a “you know what you’re about to drink” feeling.
+
+Heart (15–45s) — Beats 2, 5, 3 in arc order: Cumin (12s) brings a smoky-spice masala warmth that evokes the travel-to-India moment and a bustling stall atmosphere. Thyme (10s) adds the tea-leaf bitterness/greenness to express “not the best tea,” giving a lived-in, everyday realism. ylang ylang (8s) softens and rounds the center with a warm, small-spice creaminess to evoke the delicate, milky body without making it heavy.
+
+Closing (45–60s) — Beats 6 (+ a nod to 4): Cinnamon (9s) returns as the familiar, gentle linger of spice, keeping the experience recognizable yet not explosive. Strawberry (6s) lays a light, airy sweetness at the finish, echoing the sweet, delicate tone you described without turning the profile into dessert.
+
+Why these durations: The opening totals 15s to ground you quickly in chai. The heart takes 30s to let the masala, tea bitterness, and creamy body unfold in a delicate, non-overpowering way. The closing 15s leaves a soft, comforting sweetness/spice trail, aligning with your notes of subtlety and recognizability. script.js:283:13
+Rec clover script.js:357:13
+Cinnamon script.js:357:13
+Cumin script.js:357:13
+Thyme script.js:357:13
+ylang ylang script.js:357:13
+Cinnamon script.js:357:13
+Strawberry script.js:357:13
+[Feedback] Justification: Kept the opening and heart intact since you felt the experience after the beginning matched a real chai latte. To address the mismatch in the final note, I replaced the fruity closing with a woody, tea-like base. Cypress provides gentle woody stability that aligns with black tea and warm spices, preserving the delicate, sweet-spiced chai mood while keeping intensity modest. All other placements and durations remain unchanged to maintain the narrative arc you liked. script.js:317:13
+[Feedback] Changes made: Swapped the final note: Strawberry (6s) -> Cypress (6s) to remove the fruity mismatch and give a woody tea-like finish. No other changes; total remains 60s. script.js:318:13
+Rec clover script.js:357:13
+Cinnamon script.js:357:13
+Cumin script.js:357:13
+Thyme script.js:357:13
+ylang ylang script.js:357:13
+Cinnamon script.js:357:13
+Cypress script.js:357:13
+
+​"
+023,3,"Sequence List:
+
+    Scent 3 for 5 seconds
+    Scent 5 for 5 seconds
+    Scent 6 for 5 seconds
+    Scent 8 for 3 seconds
+    Scent 9 for 3 seconds
+    Scent 11 for 3 seconds
+    Scent 12 for 2 seconds
+
+[Compose] Justification: Ordered beats extracted from your description: 1) A soft, milky whisper. 2) Freshness rises. 3) Less floral, more botanical/tree. 4) A strong other note that is not milk or tea—something savory. 5) A clean, botanical afterglow. Opening (beats 1–2): Isoveric Acid for 5s gives a fleeting dairy impression (milky) without overpowering; its high volatility makes it ideal as a quick hint. Eucalipto for 10s follows to establish the freshness you called out—cool, spa-clean air that clears the palate and shifts away from sweetness. Heart (beats 3–4): Cypress for 15s anchors the core as the “botanical, tree rather than flower” setting—woody stability with green lift. Thyme for 10s adds a bitter-green, vegetable-herbal layer that reads savory rather than floral. Cumin for 8s introduces the distinct “something in there” you sensed: a smoky-spiced, savory warmth that is clearly not milk or tea, giving the heart its defining character. Closing (beat 5): Sage for 12s resolves the journey with a refreshing, clean-herbal afterglow, reinforcing the botanical clarity and keeping the finish non-floral. Durations and volatility are tuned to keep the milky note brief, let the woody-botanical scene linger, and give the savory core presence without heaviness. No florals or fruits are used to honor your request for less floral and more tree-botanical, with a subtle milkiness and a clear savory signature. script.js:283:13
+Isoveric Acid script.js:357:13
+Eucalipto script.js:357:13
+Cypress script.js:357:13
+Thyme script.js:357:13
+Cumin script.js:357:13
+Sage script.js:357:13
+[Feedback] Justification: Anchored Cypress (woody) and Sage (herbal) exactly as you liked. Removed the eggy facet by swapping out Isoveric Acid; introduced Rec clover up front for a clean, green freshness that supports the botanical vibe without florals. Kept a clear spice presence by replacing Cumin with Sichuan oil to retain savory, peppery heat while avoiding the sweaty/animalic edge you were unsure about. Eucalipto and Thyme remain to maintain freshness and herbality. The Opening (Rec clover + Eucalipto), Heart (Cypress → Thyme → early Sichuan), and Closing (fade of Sichuan → Sage) arc is preserved, totaling exactly 60s. script.js:317:13
+[Feedback] Changes made: Replaced Isoveric Acid (5s) with Rec clover (5s) to remove eggy/cheesy tone and boost fresh-green opening. Swapped Cumin (8s) for Sichuan oil (8s) to keep a clear, savory spice without the cumin ambiguity. All other scents kept in the same positions and durations. script.js:318:13
+Rec clover script.js:357:13
+Eucalipto script.js:357:13
+Cypress script.js:357:13
+Thyme script.js:357:13
+Sichuan oil script.js:357:13
+Sage script.js:357:13
+[Feedback] Justification: The latest feedback suggests the very first impression on the wrist felt too strong/unclear, so I softened the opening by shortening the two brightest, most volatile fresh-green notes (Rec clover and Eucalipto). This reduces the initial burst while keeping the composition botanical and non-floral. To preserve the narrative and overall character, I kept the praised anchors (Cypress and Sage) in their original positions and durations, and shifted the recovered time into the savory-green heart (Thyme, Sichuan oil) so the body comes in sooner and feels steadier. The arc remains Opening (0–11s) / Heart (11–48s) / Closing (48–60s), with a gentler entrance and a clearer savory-botanical core. script.js:317:13
+[Feedback] Changes made: Reduced Rec clover 5→3s and Eucalipto 10→8s to soften the initial wrist hit; added the 4s into the heart by increasing Thyme 10→12s and Sichuan oil 8→10s; kept Cypress and Sage unchanged in both position and duration to preserve the favored woody-botanical frame. script.js:318:13
+Rec clover script.js:357:13
+Eucalipto script.js:357:13
+Cypress script.js:357:13
+Thyme script.js:357:13
+Sichuan oil script.js:357:13
+Sage"
+024,,"Sequence List:
+
+    Scent 2 for 5 seconds
+    Scent 10 for 3 seconds
+
+[Compose] Justification: Ordered beats extracted: 1) Slow, lingering pace. 2) Very sweet, slightly artificial syrupiness. 3) Nursing a warm cup. 4) Faint dairy note (milk, yogurt, cheese). 5) Possible vanilla syrup finish. Opening, Heart, Closing mapping: Opening uses Beat 2. Heart uses Beats 3 and 4. Closing uses Beat 5. Rationale: The experience centers on a slow, very sweet cup with a hint of dairy and a vanilla-like afterglow. Strawberry (15s) opens fast with clear, candy-like sweetness to signal the artificial syrup impression immediately. Cinnamon (24s) forms the long heart to embody nursing this cup; its sweet, warm, coffee-adjacent spice creates that cozy, held-mug setting and sustains the slow mood. Isoveric Acid (6s) is a brief, intentional flash to suggest the lactic edge the user wonders about (milk, yogurt, even a touch of cheese) without dominating. Ylang ylang (15s) closes with a creamy, warm, lightly spiced softness that reads as a vanilla-syrup echo, leaving a gentle, sweet aftertaste. Pacing: a long central warmth and a soft, extended finish reinforce the slow, lingering quality while the short lactic accent preserves the slight uncertainty about dairy. script.js:283:13
+Strawberry script.js:357:13
+Cinnamon script.js:357:13
+Isoveric Acid script.js:357:13
+ylang ylang script.js:357:13
+[Feedback] Justification: To remove the “too sweet” and “fridge-old, too sour” impression, I eliminated all gourmand/sour drivers and shifted to a clean, green-woody profile. Isoveric Acid (cheesy/sour) was the main source of the stale, fermented note; it is fully removed. Strawberry, Cinnamon, and ylang ylang collectively amplified sweetness and a creamy warmth, so they’re replaced by fresher, drier materials. The arc is preserved: Opening (0–15s) is a crisp spa-like lift with Eucalipto; Heart (15–45s) moves through green clarity (Rec clover) into grounded woody stability (Cypress); Closing (45–60s) resolves clean and airy with Sage, leaving no residual sweetness or sourness. script.js:317:13
+[Feedback] Changes made: Removed Strawberry, Cinnamon, ylang ylang, and Isoveric Acid. Added Eucalipto, Rec clover, Cypress, and Sage. Rebalanced to 15s each to maintain a clear Opening/Heart/Closing structure while eliminating sweetness and sourness. script.js:318:13
+Eucalipto script.js:357:13
+Rec clover script.js:357:13
+Cypress script.js:357:13
+Sage script.js:357:13
+[Feedback] Justification: To meet the request for a milk-forward chai impression while avoiding the prior issues of excessive sweetness and leafy emphasis, I introduced a brief, low-dose dairy cue with Isoveric Acid at the opening. Its high volatility creates a quick, soft cheese/yogurt nuance that reads as milk and fades fast, minimizing sourness. I replaced the green floral facet (Rec clover) with Cinnamon to anchor the heart in warm chai spice rather than leaves. Cypress and Sage are preserved at their original positions and durations to maintain structure: Cypress provides a stable woody body, and Sage keeps a subtle tea-leaf backbone in the closing without creeping back into a perfumey green profile. The arc remains Opening (0–8): milky cue; Heart (8–45): chai-forward warmth with woody support; Closing (45–60): clean herbal tea finish. script.js:317:13
+[Feedback] Changes made: Swapped Eucalipto → Isoveric Acid (8s) to add a concise milk/dairy note; swapped Rec clover → Cinnamon (22s) to shift the heart to chai spice; kept Cypress (15s) and Sage (15s) unchanged in position and duration; total remains 60s. script.js:318:13
+Isoveric Acid script.js:357:13
+Cinnamon script.js:357:13
+Cypress script.js:357:13
+Sage script.js:357:13
+
+​"
+025,1,"[Compose] Justification: Ordered beats (extracted from the sentence): 1) Steeped black tea warmth; 2) Sharp, woody cinnamon; 3) Herbal-sweet cardamom lift; 4) Hint of spicy ginger; 5) Creamy, milky finish. Opening: Beat 1. Heart: Beats 2–4. Closing: Beat 5. Artistic reasoning: The experience is a chai-like arc: a tannic tea base, layered spices, a quick ginger spark, and a soft, creamy landing. Thyme (12s) opens with a bitter-green, vegetal dryness that stands in for the steeped black tea’s tannic character—setting the comforting, brewed atmosphere. Cinnamon (12s) brings the defined woody-warm spine, matching the sentence’s “sharp, woody notes,” and anchors the heart. Eucalipto (6s) flashes a cool camphor facet reminiscent of cardamom’s aromatic lift; kept brief to avoid turning overly spa-fresh while signaling that herbal brightness. ylang ylang (12s) adds warm, small-spice sweetness and a naturally creamy, rounded body—carrying the “herbal sweetness of cardamom” into a softer, more gourmand leaning. Sichuan oil (6s) supplies a quick prickle of peppery heat, evoking the “hint of spicy ginger”; used shortly as a spark so it reads as accent, not dominance. ylang ylang (12s) returns to close, blooming into a plush, lactonic-like creaminess that gently envelops the spices—fulfilling the “creamy, milky finish.” Durations are varied to mirror emphasis: longer for base/cream (opening/closing), standard for cinnamon and sweet body, brief flashes for cardamom-like lift and ginger heat. The progression preserves nostalgia and comfort while layering complexity exactly in the order the sentence implies. script.js:283:13
+Thyme script.js:357:13
+Cinnamon script.js:357:13
+Eucalipto script.js:357:13
+ylang ylang script.js:357:13
+Sichuan oil script.js:357:13
+ylang ylang script.js:357:13
+XHR
+POST
+http://localhost:8000/feedback
+[HTTP/1.1 422 Unprocessable Entity 155741ms]
+
+[Compose] Justification: Ordered beats: 1) Steeped black tea warmth and tannic wood, 2) Cinnamon-forward coziness, 3) Herbal sweetness like cardamom, 4) A prick of ginger-like heat, 5) Creamy, milky finish with gentle freshness. Opening (Beats 1): Cypress 8s sets a woody, stable base like tea-soaked wood; Thyme 7s adds bitter-green, tannic leafiness to evoke the actual steeped black tea and keep florals low. Heart (Beats 2–4): Cinnamon 22s is the dominant, cozy-spicy core you asked to emphasize, delivering sweet warmth and a woody edge. Rec clover 6s brings a soft, green-herbal sweetness to stand in for cardamom without turning floral or chemical. Sichuan oil 4s adds a quick, spicy prickle reminiscent of fresh ginger—brief for impact without harshness. Closing (Beat 5): ylang ylang 13s provides a velvety, rounded warmth that reads as creamy/soft, smoothing the spice into a milky finish; it’s kept restrained to avoid a floral-forward profile. Choices to match your notes: more cinnamon and sweetness (Cinnamon lead, supported by soft herbals), more fresh/creamy (Rec clover for fresh lift; ylang ylang for creamy body), and less chemical/floral (avoiding Isoveric Acid, Onion, and heavy florals; using natural spice/wood/herb). Durations emphasize the cinnamon heart, a brief ginger spark, and a lingering creamy afterglow for closure. script.js:283:13
+Cypress script.js:357:13
+Thyme script.js:357:13
+Cinnamon script.js:357:13
+Rec clover script.js:357:13
+Sichuan oil script.js:357:13
+ylang ylang script.js:357:13
+
+​"
+026,2,"Sequence List:
+
+    Scent 3 for 2 seconds
+    Scent 4 for 3 seconds
+    Scent 6 for 2 seconds
+    Scent 9 for 1 seconds
+    Scent 11 for 5 seconds
+    Scent 12 for 5 seconds
+[Compose] Justification: Beats (ordered): 1) Steeped black tea warmth and comfort. 2) Sharp, woody cinnamon. 3) Herbal sweetness like cardamom. 4) A hint of spicy ginger. 5) A creamy, milky finish that softens everything. Opening (0–15s): Beat 1. Thyme (9s) captures the bitter-green, tannic edge of steeped black tea; Cypress (6s) adds woody stability that reads as the warm vessel and the tea’s body, grounding the scene. Heart (15–45s): Beats 2–4. Cinnamon (14s) delivers the sharp, woody spice prominently. ylang ylang (10s) supplies a warm, small-spice sweetness to stand in for cardamom’s sweet-aromatic lift, softening the cinnamon. Sichuan oil (6s) adds a brief, prickling heat—an echo of fresh ginger that flashes and recedes. Closing (45–60s): Beat 5. Extending ylang ylang (15s) creates a rounded, velvety afterglow to suggest the creamy, milky finish that gently blankets and resolves the spices. Duration logic: A 15s Opening establishes the tea base; a 30s Heart prioritizes the spice trio with a quick ginger accent; a 15s Closing lingers on creaminess for comfort. Total equals 60s exactly. script.js:283:13
+Thyme script.js:357:13
+Cypress script.js:357:13
+Cinnamon script.js:357:13
+ylang ylang script.js:357:13
+Sichuan oil script.js:357:13
+ylang ylang script.js:357:13
+XHR
+POST
+http://localhost:8000/feedback
+CORS Missing Allow Origin
+
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8000/feedback. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 500.
+TypeError: NetworkError when attempting to fetch resource. script.js:321:13
+[Compose] Justification: Ordered beats extracted from your sentence: 1) A weird note, clearly not milk tea. 2) A perfumey, makeup-manufacturer vibe. 3) The closest to true milk tea. 4) Supermarket-food smell (food-adjacent, not milk tea). 5) A very weak, hard-to-catch trace. 6) Another close-to-milk-tea, but less than the third. Opening (beats 1–2): A quick contrast establishes why milk tea matters. Isoveric Acid (4s) gives a brief odd, off-note flash to embody “weird, not milk tea.” Immediately after, ylang ylang (11s) sketches the perfumey, cosmetics vibe you noticed—recognizable and slightly stylized—so we feel that synthetic detour before arriving at comfort. Heart (beat 3): Center the true craving—warm, sweet milk tea. Cinnamon (20s) supplies cozy sweetness and café warmth (akin to spiced tea/coffee steam), forming the emotional core. Strawberry (9s) adds a soft, candied brightness that reads as sugary roundness without turning perfumey, nudging the heart closer to a creamy, sweet milk tea impression. Closing (beats 4–6): We step through the remaining impressions, then leave a gentle echo of the favorite. Thyme (6s) evokes the grocery/herb aisle—edible and green, like “supermarket but not milk tea.” Sage (4s) is an airy, refreshing wisp to capture the weakest, hard-to-grasp trace. Finally, a brief return of Cinnamon (6s) recalls the close-to-milk-tea feeling but in a smaller, softer dose—mirroring “close, but not as much as the third,” and providing a warm, resolved afterglow. Durations reflect weight: the longest segment belongs to the milk tea heart; the contrasts and recollections are shorter, creating a clear beginning (contrast), middle (comfort), and end (gentle echo). script.js:283:13
+Isoveric Acid script.js:357:13
+ylang ylang script.js:357:13
+Cinnamon script.js:357:13
+Strawberry script.js:357:13
+Thyme script.js:357:13
+Sage script.js:357:13
+Cinnamon script.js:357:13
+[Compose] Justification: Beats (ordered from your feedback): 1) Avoid the first’s weird, off-base note. 2) Avoid the second’s perfumey/makeup vibe. 3) Embrace the third’s milk-tea closeness (warm, cinnamon-forward). 4) Steer away from the fourth’s generic supermarket-food tone. 5) Ensure clearer, stronger presence than the weak fifth. 6) Keep a small echo of the sixth’s near–milk tea character for the finish. Opening (0–16s): Beat 3. Cinnamon (16s) drops you straight into the closest-to-milk-tea profile you liked, giving immediate warm, sweet spice without floral perfume. Heart (16–50s): Beats 5, 1, 4 (as constraints shaping the body). Cypress (10s) supplies neutral woody body—the warm cup—without the green bitterness that read as “weird,” and without drifting into a supermarket-food vibe. Sichuan oil (8s) adds a brief ginger-like prickle for realism and clearer presence (you found that note weak before, so it’s slightly extended). A second Cinnamon pass (16s) reinforces the spiced tea core so the signal stays strong and unmistakably milk-tea rather than herbal or perfumey. Closing (50–60s): Beat 6 (while honoring Beat 2). ylang ylang (10s) is used briefly at the end as a soft, creamy blanket—enough to suggest milkiness and an after-sip glow, but kept short to avoid the perfume/makeup impression you disliked. Why these choices: I removed Thyme entirely to eliminate the odd, bitter-green edge you reported. I minimized floral presence to the finish only and kept it brief. Cinnamon—your closest match—frames both the entry and most of the journey, while cypress holds warmth without turning into a grocery-aisle smell. Duration logic: Longer Cinnamon chapters (16s + 16s) keep the signature; moderate Cypress (10s) sets a non-perfumey vessel; a slightly longer Sichuan oil (8s) prevents it from vanishing; a short, final ylang ylang (10s) provides creamy closure. Total = 60s. script.js:283:13
+Cinnamon script.js:357:13
+Cypress script.js:357:13
+Sichuan oil script.js:357:13
+Cinnamon script.js:357:13
+ylang ylang script.js:357:13
+
+​
+"
+027,2,"Sequence List:
+
+    Scent 3 for 3 seconds
+    Scent 11 for 3 seconds
+
+GET
+http://[::1]:8080/favicon.ico
+[HTTP/1 404 File not found 0ms]
+
+“[::1]” has been classified as a bounce tracker. If it does not receive user activation within the next 3,600 seconds it will have its state purged.
+[Compose] Justification: Ordered beats: (1) A light fresh lift, (2) Sweet cinnamon emerges and takes center stage, (3) Warmth blooms around the cinnamon, (4) A gentle woody settling. Opening: Beat 1 with Eucalipto (6s) to create a subtle, clean freshness—kept brief to reflect “slightly fresh.” Heart: Beats 2–3 carried by ylang ylang (15s) as a warm, soft-spice prelude that rounds sweetness, then Cinnamon (30s) as the dominant core matching “sweet cinnamon” as the main descriptor. Closing: Beat 4 with Cypress (9s) for a calm, stable wood that lingers lightly—shorter duration to honor “slightly woody.” Narrative arc: a crisp inhale (Eucalipto) glides into cozy, sweet spice (ylang ylang → Cinnamon), finishing with a gentle wooden exhale (Cypress). Durations weight the story toward cinnamon’s warmth while keeping freshness and wood as nuanced accents, aligning precisely with the user’s emphasis on a prevalent sweet cinnamon over slight wood and freshness. script.js:283:13
+Eucalipto script.js:357:13
+ylang ylang script.js:357:13
+Cinnamon script.js:357:13
+Cypress script.js:357:13
+[Feedback] Justification: To boost perceived intensity and emphasize freshness without disrupting the arc, I expanded the Opening with crisp green notes. I swapped the warmer, slightly heavy ylang ylang for the cleaner Rec clover to avoid any murky/""rotten"" undertone and to push a brighter, fresher lift. Eucalipto was extended to make the fresh facet more pronounced and immediate. The Cinnamon heart remains at its maximum 30s to keep the sweet-cinnamon signature dominant, and the woody Cypress close is preserved to maintain the slightly woody finish. Structure is intact: Opening (fresh Eucalipto + Rec clover, 0–21s), Heart (sweet Cinnamon, 21–51s), Closing (woody Cypress, 51–60s). script.js:317:13
+[Feedback] Changes made: Replaced ylang ylang (15s) with Rec clover (12s) for a cleaner, fresher profile; increased Eucalipto from 6s to 9s to strengthen freshness and top intensity; kept Cinnamon at 30s and Cypress at 9s in the same positions to preserve the cinnamon-dominant heart and woody close. script.js:318:13
+Eucalipto script.js:357:13
+Rec clover script.js:357:13
+Cinnamon script.js:357:13
+Cypress script.js:357:13
+[Feedback] Justification: To lower the freshness and remove the floral tone while keeping intensity and cinnamon presence, I trimmed the spa-like freshness of Eucalipto and replaced the minty/clover freshness of Rec clover with the drier, herbal Thyme. Cinnamon remains dominant in the heart for 30s to preserve the sweet-cinnamon core you liked, and Cypress closes with the same woody tail. The Opening now leans less fresh/floral (Eucalipto 7s → Thyme 14s), flowing into the unchanged cinnamon Heart and woody Closing, maintaining overall intensity and the narrative arc. script.js:317:13
+[Feedback] Changes made: - Replaced Rec clover (12s) with Thyme (14s) to reduce floral freshness and add a dry herbal bridge into cinnamon.
+- Reduced Eucalipto from 9s to 7s to lower overall freshness slightly.
+- Kept Cinnamon (30s) and Cypress (9s) unchanged in position and duration to preserve cinnamon prominence and woody close. script.js:318:13
+Eucalipto script.js:357:13
+Thyme script.js:357:13
+Cinnamon script.js:357:13
+Cypress script.js:357:13
+[Feedback] Justification: Addressed the soapy quality in the closing by swapping the woody close (Cypress) for Sichuan oil, which adds warm, peppery heat that supports a chai-like finish without introducing soapiness. Cinnamon’s duration and placement remain unchanged to preserve its dominance, while the opening freshness (Eucalipto) and the dry herbal bridge (Thyme) are kept to maintain the original structure and intensity that you felt were working. The overall arc (fresh open → cinnamon heart → spiced warm close) is preserved, now with a cleaner, chai-aligned ending. script.js:317:13
+[Feedback] Changes made: Replaced the closing note Cypress (9s) with Sichuan oil (9s) to remove the soapy after-scent and reinforce a chai-style spice finish. All other scents and durations remain unchanged. script.js:318:13
+Eucalipto script.js:357:13
+Thyme script.js:357:13
+Cinnamon script.js:357:13
+Sichuan oil script.js:357:13
+
+​
+
+"
+028,1,"Sequence List: 
+ Scent 5 for 5 seconds
+Scent 3 for 5 seconds
+Scent 11 for 5 seconds
+Scent 9 for 3 seconds
+
+GET
+http://[::1]:8080/favicon.ico
+[HTTP/1 404 File not found 0ms]
+
+[Compose] Justification: Beats (ordered): 1) Early spiced first inhale (distinct opening), 2) Gentle heat—just a little spicy, 3) Warm milk-tea body, 4) Sweetness unfolds and rounds, 5) Syrupy-sweet afterglow. Opening: beats 1–2. Heart: beats 3–4. Closing: beat 5. Rationale: The user wants a spiced milk tea that starts different (spice-forward), is a little spicy yet very sweet, and grows sweeter over time. I structure the arc so early scents are sharp/brief and later scents are sweeter/longer. Opening (0–15s): Sichuan oil (5s) delivers a quick peppery tingle for the “little bit spicy.” Cumin (6s) adds warm, toasty Southeast-leaning spice. Thyme (4s) gives a short, bitter-green astringency to suggest the tea leaf bite—making the early stage clearly different. Heart (15–45s): Cinnamon (18s) becomes the central, cozy, sweet spice that reads as masala/Thai-tea warmth, easing the spice into comfort. ylang ylang (12s) layers a creamy, enveloping softness that suggests the milked body of the tea and nudges the profile sweeter. Closing (45–60s): Strawberry (15s) provides a clear, candied sweetness that blooms last, leaving a long, sugary afterglow—so the experience grows “more and more sweet” as time passes. Durations step from sharper, shorter bursts to longer, sweeter anchors, matching the requested progression from spiced-different opening to amplified sweetness at the finish. script.js:283:13
+Sichuan oil script.js:357:13
+Cumin script.js:357:13
+Thyme script.js:357:13
+Cinnamon script.js:357:13
+ylang ylang script.js:357:13
+Strawberry script.js:357:13
+[Compose] Justification: Deconstruction: A warm, comforting milk tea with South/East Asian spice—initially sharper and lightly spicy, then softening and becoming noticeably sweeter with time.
+Ordered beats (in sequence):
+1) Steam and tannic black tea base
+2) Sharp woody spice lifts (cinnamon/cardamom-like)
+3) Gentle heat prickle like ginger
+4) Milk folds in, rounding the edges
+5) Sweetness blooms and lingers
+Opening (beats 1–early 2, 0–15s): Cypress (7s) + Thyme (8s) establish the steeped tea base. Cypress’ woody stability evokes the cup and brewed leaves; Thyme’s bitter-green facet suggests tannins and the first sip’s dryness—anchoring the scene before sweetness arrives.
+Heart (beats 2–3–4, ~15–44s): Cumin (6s) flashes smoky masala complexity, signaling “a lot of spice.” Cinnamon (16s) becomes the core—warm, sweet-spicy, matching the described cinnamon/cardamom-leaning profile. Sichuan oil (7s) supplies a subtle, mouth-tingling heat akin to ginger, keeping the blend lively while the sweetness begins to build.
+Closing (beat 5, ~44–60s): ylang ylang (9s) introduces a velvety, warm creaminess to emulate the milk rounding the brew. Strawberry (7s) adds an elegant, clear sweetness—standing in for sugared/condensed-milk notes—so the finish reads cozy and more sweet than the opening.
+Why this arc: The sequence intentionally shifts from woody-bitter (tea) to spice-forward heat (chai-like heart) and finally to creamy-sweet (milky finish). Durations weight the heart with robust spice (Cinnamon longest), then extend the sweet close (ylang ylang + Strawberry) so the experience grows “more and more sweet the more you smell it,” while a thread of warmth and mild heat persists underneath for comfort and authenticity. script.js:283:13
+Cypress script.js:357:13
+Thyme script.js:357:13
+Cumin script.js:357:13
+Cinnamon script.js:357:13
+Sichuan oil script.js:357:13
+ylang ylang script.js:357:13
+Strawberry script.js:357:13
+XHR
+POST
+http://localhost:8000/feedback
+CORS Missing Allow Origin
+
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8000/feedback. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 500.
+TypeError: NetworkError when attempting to fetch resource. script.js:321:13
+
+​
+
+"
