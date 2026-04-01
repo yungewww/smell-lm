@@ -10,7 +10,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
+    /* :root {
       --bg: #080808;
       --ring: rgba(255,255,255,0.12);
       --ring-active: rgba(255,255,255,0.55);
@@ -20,6 +20,18 @@
       --accent-dim: rgba(200,169,126,0.18);
       --btn-bg: rgba(255,255,255,0.05);
       --btn-hover: rgba(255,255,255,0.10);
+      --radius: 9999px;
+    } */
+    :root {
+      --bg: #ffffff;
+      --ring: rgba(0,0,0,0.12);
+      --ring-active: rgba(0,0,0,0.55);
+      --text: #1a1a1a;
+      --muted: rgba(30,30,30,0.38);
+      --accent: #c8a97e;
+      --accent-dim: rgba(200,169,126,0.18);
+      --btn-bg: rgba(0,0,0,0.04);
+      --btn-hover: rgba(0,0,0,0.08);
       --radius: 9999px;
     }
 
@@ -176,7 +188,7 @@
 
     .orbit-node-label {
       font-family: 'DM Mono', monospace;
-      font-size: clamp(0.5rem, 1.2vw, 0.62rem);
+      font-size: clamp(0.75rem, 1.8vw, 0.9rem);  /* 原来 0.5~0.62rem */
       color: var(--text);
       white-space: nowrap;
       text-align: center;
@@ -184,7 +196,7 @@
     }
 
     .orbit-node-dur {
-      font-size: clamp(0.44rem, 1vw, 0.55rem);
+      font-size: clamp(0.65rem, 1.5vw, 0.78rem);  /* 原来 0.44~0.55rem */
       color: var(--accent);
       letter-spacing: 0.05em;
     }

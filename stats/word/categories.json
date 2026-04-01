@@ -1,0 +1,7 @@
+{
+    "Sweet": ["sweet", "caramelized", "syrupy", "chocolate", "cinnamon", "fruity", "berry", "tropical", "ripe"],
+    "Savory": ["savory", "meaty", "umami", "greasy", "fatty", "buttery", "cheesy", "yeasty"],
+    "Sour": ["sour", "tart", "vinegary", "citrus", "citrusy", "bitter"],
+    "Burnt/Smoked": ["roasted", "smoky", "smoked", "charred", "roasty", "burnt", "toasted", "grilled"],
+    "Fresh": ["fresh", "crisp", "refreshing", "floral", "flower", "fragrant", "mint", "leafy", "grassy", "spice", "earthy", "wood", "musky", "nutty"]
+}

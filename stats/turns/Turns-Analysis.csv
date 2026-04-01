@@ -1,0 +1,27 @@
+Participant,Actual_Turns,Turn1_Strategy,Turn1_Description,Turn2_Strategy,Turn2_Description,Turn3_Strategy,Turn3_Description
+000,0,,,,,,
+001,1,Full Recomposition,"Rebuilt entirely: removed Isoveric Acid; added Eucalipto+Cumin+Sage; restructured sequence",,,,
+002,2,Single-Scent Swap,"Replaced Sage(10s)→Cypress(10s); all other scents and durations unchanged",Full Recomposition,"Rebuilt entirely: new structure removing perfumey elements; Cypress+Thyme+Strawberry+Sage+Cumin+Cypress",,
+004,0,,,,,,
+005,1,Single-Scent Swap,"Reduced Rec clover 18→8s; added Cypress(6s); increased Thyme 6→10s; kept Eucalipto+Sage unchanged",,,,
+006,2,Element Substitution + Duration Adjustment,"Replaced Strawberry→Rec clover(4s); added Cypress opener(4s); reduced Isoveric Acid 23→15s; extended Thyme+Sage",Duration Adjustment,"Reduced Isoveric Acid further to 10s; extended Onion 9→12s; extended Rec clover 4→6s; Cypress+Thyme+Sage unchanged",,
+007,2,Single-Scent Swap,"Swapped Rec clover(8s)→Lily(8s); reduced Eucalipto 12→9s; extended Thyme 7→10s; Strawberry+Onion+Isoveric Acid+Cypress unchanged",Full Recomposition,"Rebuilt entirely: Cypress+Lily opening; Thyme+Onion heart; Isoveric Acid accent; Cypress close; removed Eucalipto+Rec clover+Strawberry",,
+008,1,Full Recomposition,"Removed Onion+Isoveric Acid; added Lily+Cypress+Sage; shortened Strawberry 18→6s; added Eucalipto+Rec clover close",,,,
+009,1,Single-Scent Swap,"Replaced Strawberry(6s)→Sage(6s); all other positions and durations unchanged",,,,
+010,3,Full Recomposition,"Removed Sage+Isoveric Acid; restructured: Isoveric Acid→Onion→Thyme→Rec clover",Duration Adjustment,"Shortened Strawberry 12→7s; increased Onion 8→18s; reduced Thyme+Sage slightly",Duration Adjustment,"Reduced Strawberry 7→2s; increased Onion 18→21s; slight increases to Thyme+Sage"
+011,1,Element Substitution,"Replaced Rec clover(4s)→Strawberry(4s) AND Cypress(7s)→Cumin(7s); increased Cinnamon 5→6s; reduced Lily 10→9s",,,,
+012,0,,,,,,
+013,1,Element Substitution + Duration Adjustment,"Replaced Cumin→Sage(6s); moved Isoveric Acid earlier and increased 6→12s; reduced Onion 15→12s + Thyme 10→8s",,,,
+014,3,Full Recomposition,"New pizza composition: Cinnamon+Cypress+Onion+Isoveric Acid+Strawberry+Thyme+Cypress",Single-Scent Swap,"Replaced closing Cypress(15s): added Cumin(10s) + reduced Cypress 15→5s; all earlier segments unchanged",Single-Scent Swap,"Replaced Thyme(10s)→Onion(10s); all other scents and durations unchanged"
+015,2,Duration Adjustment,"Reduced Strawberry 12→7s; increased Onion 8→18s; reduced Thyme 12→9s + Sage 22→20s",Duration Adjustment,"Reduced Strawberry 7→2s; increased Onion 18→21s; slight increases to Thyme+Sage",,
+017,1,Duration Adjustment,"Increased Cumin 12→18s; reduced Cinnamon 6→3s; reduced Thyme 8→5s; Isoveric Acid+Onion+Cypress unchanged",,,,
+018,1,Full Recomposition,"Rebuilt entirely: reordered sequence with Isoveric Acid first; new structure for more sour+savory upfront; Cumin+Cypress+Isoveric Acid close",,,,
+019,0,,,,,,
+020,3,Duration Adjustment,"Increased Cinnamon 14→18s + Cumin 14→16s + Strawberry 12→14s; reduced ylang ylang 6→2s + Thyme 10→6s",Full Recomposition,"Rebuilt entirely with new ingredients: Strawberry+Eucalipto+Rec clover opening; Cinnamon+Isoveric Acid+Sage+Sichuan oil+Thyme heart; ylang ylang+Cumin+Cypress close",No Change,"AI verified no citrus in composition; user request inapplicable; all scents and durations preserved unchanged"
+021,1,Single-Scent Swap,"Replaced closing Strawberry(6s)→Cypress(6s); all other positions and durations unchanged",,,,
+023,2,Element Substitution,"Replaced Isoveric Acid(5s)→Rec clover(5s) AND Cumin(8s)→Sichuan oil(8s); all other positions and durations unchanged",Duration Adjustment,"Reduced Rec clover 5→3s + Eucalipto 10→8s; increased Thyme 10→12s + Sichuan oil 8→10s; Cypress+Sage unchanged",,
+024,2,Full Recomposition,"Removed all 4 original scents (Strawberry+Cinnamon+Isoveric Acid+ylang ylang); replaced entirely with Eucalipto+Rec clover+Cypress+Sage",Element Substitution,"Replaced Eucalipto→Isoveric Acid(8s) AND Rec clover→Cinnamon(22s); kept Cypress+Sage in same positions and durations",,
+025,0,,,,,,
+026,1,Full Recomposition,"Rebuilt entirely with new ingredient set based on ranked scent preferences",,,,
+027,1,Single-Scent Swap,"Replaced closing Strawberry(6s)→Cypress(6s); all other positions and durations unchanged",,,,
+028,0,,,,,,

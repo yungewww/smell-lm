@@ -10,7 +10,7 @@ import sys
 
 
 # ── Load data ──────────────────────────────────────────────────────────────────
-csv_path = sys.argv[1] if len(sys.argv) > 1 else 'SmellUIST - Semantic.csv'
+csv_path = sys.argv[1] if len(sys.argv) > 1 else '/Users/yungew/Documents/GitHub/smell-lm/stats/similarity_semantic/SmellUIST - Semantic.csv'
 df = pd.read_csv(csv_path)
 df = df[df.iloc[:, 2] != 'n.a.'].copy()
 for col in df.columns[2:]:
@@ -18,7 +18,8 @@ for col in df.columns[2:]:
 
 descriptors = ['sweet', 'savory', 'sour', 'burnt/smoked', 'fresh', 'chemical/artificial']
 groups = ['A', 'B', 'C', 'D']
-group_labels = {'A': 'A (real)', 'B': 'B (human)', 'C': 'C (AI)', 'D': 'D (HITL)'}
+# group_labels = {'A': 'A (real)', 'B': 'B (human)', 'C': 'C (AI)', 'D': 'D (HITL)'}
+group_labels = {'A': 'Real', 'B': 'Human', 'C': 'w/o Learning', 'D': 'AromaAI'}
 
 # ── Medians ────────────────────────────────────────────────────────────────────
 print("=" * 60)
@@ -93,7 +94,7 @@ colors = {
 # }
 linewidths = {'A': 1.8, 'B': 2.2, 'C': 2.2, 'D': 1.8}
 
-fig, ax = plt.subplots(figsize=(7, 10), subplot_kw=dict(polar=True))
+fig, ax = plt.subplots(figsize=(10, 4), subplot_kw=dict(polar=True)) # figsize
 fig.patch.set_facecolor('white')
 ax.set_facecolor('white')
 
@@ -136,7 +137,7 @@ for i, (angle, d) in enumerate(zip(angles[:-1], descriptors)):
     x = pad * np.cos(angle - np.pi / 2)
     y = pad * np.sin(angle - np.pi / 2)
     ax.text(angle, 11.5, d, ha='center', va='center',
-            fontsize=12, color=color, fontweight=weight,
+            fontsize=16, color=color, fontweight=weight,
             transform=ax.transData)
 
 # grid
@@ -152,13 +153,13 @@ sig_patch = mpatches.Patch(color='#000000', alpha=0.4, label='* p < .05 vs A (FD
 # ax.legend(handles=patches + [sig_patch], loc='upper right',
 #           bbox_to_anchor=(1.35, 1.15), fontsize=9, frameon=False)
 ax.legend(handles=patches, loc='upper right',
-          bbox_to_anchor=(1.35, 1.15), fontsize=12, frameon=False)
+          bbox_to_anchor=(1.75, 1), fontsize=16, frameon=False)
 
 plt.tight_layout()
 out_path = 'descriptor.png'
-plt.savefig(out_path, dpi=150, bbox_inches='tight')
+# plt.savefig(out_path, dpi=300, bbox_inches='tight')
 plt.savefig('descriptor.pdf', bbox_inches='tight', dpi=300)
 print("Saved: similarity_improvement_chart.pdf / .png")
 print(f"\nRadar chart saved to: {out_path}")
-# plt.show()
+plt.show()
 

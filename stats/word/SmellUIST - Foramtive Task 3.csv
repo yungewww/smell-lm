@@ -105,8 +105,45 @@ I would say also overpowering, wafting, kind of a sickly sweet, like a, like a, 
 Um, and, then, Oh, also, similarly, a different smell on the rind than on the flesh itself, where the rind smells very bitter, and the flesh smells far more sweet.
 
 And stale, I think, honestly, stale, I think would be a good word. "
-006 (nomy),,,,,
-007 (nomy),,,,,
+006 (nomy),Task1,"Described as ""sweet, aromatic,"" with the user noting it's a unique, hard-to-describe smell.
+-----------------------------------------
+ It's just strawberry, sweet, aromatic, um, when it gets warm, you're just like surrounded.
+
+I feel like it's hard to describe, like, it's like describing the color red, like, strawberry just, like, it's its own flavor, you know?","focused on how roast level dictates smell notes.
+Roast: A distinct ""tinged and burnt"" smell.
+Notes: Can include fruit or citrus.
+Dark Roast: Leans into a ""burnt, sometimes almost like a burpy smell.""
+-----------------------------------------
+Okay, I like coffee beans, um, you can have a lot of different smells. to you.
+
+Okay. The roasting is like a smell in itself, so they're a little tinged and burnt sometimes, but then they can have all kinds of different notes in them, so you can get fruit smells or citrus smells in them, if have a dark roast, it usually leans more into that burnt, sometimes almost like a burpy smell.",missing ,"bananas smell like bananas.
+
+They're sweet and they smell like bananas."
+007 (nomy),Task1,"""Super fresh,"" ""spring-summer,"" ""wild berries,"" ""trees.""
+-----------------------------------------
+Um, it smells, like, super fresh, and, like, a bit of, um, spring-summer, like, it reminds me of that. Um, and, also, like, in general, like, wild berries.
+
+Um, if memory. Thank Smell, also smells like trees, think, because when I was younger, I used to grab them from the grass and trees, like from the, in the, yeah, yeah, I think that's it.
+
+Yeah, but it's very personal. This is the first time I heard anyone describing the smell of strawberry in this way, but it's very enjoyable.","Strong,"" ""roasted,"" ""intense,"" ""deep,"" ""woody.""
+-----------------------------------------
+Very strong, and I really like that, the smell.
+
+Smells like breakfast and like a chill morning. Why do you like the smell of coffee beans? Because I really like coffee, like the flavor of coffee, and so like smelling it, it's a very nice smell.
+
+And And I really love cappuccino, so...
+
+(question: now you're asked to describe the smell of coffee to someone else, probably someone who never ever drinks coffee by themselves, how would you describe that?)
+
+Ah, that's difficult. Like a bit roasted, in a sense. It's very like intense, it has a very particular smell and very deep.
+
+It smells a bit like a tree somehow, like the wood in the tree. ","Easy to decompose into components (meat, cheese, bread), which provided a clear descriptive strategy.
+-----------------------------------------
+It's also a very strong smell, and it's more like mixed up because it has a lot of ingredients, and usually like also from the smell I associate it to the pub smell, so like in the night, night out with the friends.
+
+And so yeah, it's more composite, so also meat and cheese and the bread.","""Nauseating,"" ""strong,"" ""sweet,"" ""tropical.""
+-----------------------------------------
+A bit nauseating, but it's a bit strong, sweet, and also very like, so that smells like tropical smell. "
 008 ✅,Task1,"fresh, spring summer, wild berries, trees
 -----------------------------------------
 Um, it smells, like, super fresh, and, like, a bit of, um, spring-summer, like, it reminds me of that. Um, and, also, like, in general, like, wild berries.
@@ -137,6 +174,7 @@ I think nutty is how I would describe it.
 Smells like a smoothie, because all the time I eat a banana, there is a smoothie. And a lot of bananas I eat at home is like baked bananas, like bananas in dessert.
 
 So, I think it's always like sweet, like coconut milk. So, like sweet and nutty. It seems like a, in between, like not savory and not sweet, neutral, medium. "
+010,Task1,"""Strawberry"" (treated it as a smell in itself)",Can smell the actual container it's in; the smell of coffee,"Cheese, beef patty","Fruity, grainy, sweetness"
 001 ✅,Task2,"Caramelized sugar: 6/7
 Berry: 6 or 7/7
 Earthy: 2/7
@@ -313,8 +351,65 @@ Bitter: 1
 1, I would say sweet. 2, I would say sickly. I love bananas, but they don't smell good. Just say. Um, three, I would say, wafting. Four, I would say, um, kind of a rubbery smell. Five, I would say, um, a bit of, I'd say, I'd say like, fruity, uh, kind of, there's, there's like, fresh smell too, even though it does sort have had that, but I think two of her powers.
 
 Um, six, I would say, uh, bitter. Um, and seven"
-006 (nomy),Task2,,,,
-007 (nomy),Task2,,,,
+006 (nomy),Task2,"Sweet (3/7), ""strawberry"" (7/7).
+
+Strawberries smell sweet and they smell like strawberries. Those are the two things they smell like. 
+
+(question: Can you give me a number? Three on sweetness, seven on strawberries. Okay. If I show you a picture of a strawberry cake. how do you describe the, or decompose the smell of that?)
+
+Oh. Well, depends on the cakes. Some strawberry cakes don't really taste like strawberry at all.
+
+So it would be like... Icing, and sweetness, just like sugar, and like maybe like strawberry flavoring, which is a different smell.
+
+Yep, I can tell that you're distinguishing like the smell of strawberry and strawberry candy or strawberry flavoring and other stuff.","Burnt/char (3–4/7), earthy (4/7), fruity/citrus (2/7).
+
+as I said before, like coffee beans, they'll have a burnt kind of smell.
+
+They can almost be earthy, depending on how they're roasted. And then they often have fruity or citrus notes. And they can have a lot of different notes.
+
+But fruit, citrus are the most common ones, I think.
+
+Like burnt or char would be like three or four, and then fruit and citrus would be like two, and then I think earthiness would be like a four.
+
+Earthiness? Yeah. Okay. Next one is, yeah, cheeseburger. Okay. The grease is like the dominant smell that's like six, and then like the smell of the burger itself, which is also like a six, and then this picture has onions and bacon, which also are like four and five for each.
+
+I guess like a little bit of smoke from the bacon, like a one, and like a one for like sweetness as well, from the bacon and the onions.
+
+(question: I actually also wonder, are you describing the smell or you describing the flavor, like how it tastes like?)
+
+they're the same thing.
+","Grease (6/7), meat (6/7), onions/bacon (4–5/7), smoke/sweetness (1–2/7).
+
+
+The dominant smell for burgers are the grease, which would probably be like a 6, and the meat itself, which is a 6, chart, 2 or 3, um, and then sweetness and smoke and the onions and bacon, which are like...
+
+Let's One or two each. ",So it's just like the smell of banana and it's 7 out of 7.
+007 (nomy),Task2,"Sweet/Sugary: 6
+Wood/Grass: 3
+Wild Berries: 3
+-----------------------------------------
+Okay, strawberry is a bit difficult because that's already like per se an ingredient, but do you mean like something that it reminds me of, or like components?
+
+Something that you think strawberry can be made from, like the smell of strawberry can come from, I don't know, like if I have to give an example, like sweetness, like you can also use some descriptive words as ingredients, it doesn't have to be like a real object.
+
+Okay, okay, understand, thank you. So yeah, for sure, sweet and sugar, and I feel like, I mean, those are like a category together, yeah, would say sugary, first category.
+
+And I would give it like a six. Then, of like the woods and grass, and like a three, and in general, like category of wild berries, I guess I'm missing one.","Roasted: 5
+Wood: 2
+Deep/Strong: 3
+-----------------------------------------
+That's difficult. Okay, so again, as I was saying before, like roasted, I guess five, a bit like wood, like a two, and then like deep and strong, three.","Meat: 5
+Cheese: 2
+Bread: 2
+Pub Environment: 1
+-----------------------------------------
+This is easier. So, yeah, would say meat. Also like half five. Cheese, two, bread, also two, and then just like the background smell of a pub, one.","Sugar: 5
+Strong/Deep: 3
+Exotic: 2
+-----------------------------------------
+ I'd say also sugar, but more like five, and a bit strong.
+
+And deep, like three. And then the remaining two exotic smells. "
 008 ✅,Task2,"Sugar: 6
 Sweet: 6
 Wood: 3
@@ -359,3 +454,9 @@ It smells nutty, I think to me.
 It's very dominant smell, so like, I would say a 6. Or a 7, yeah. It's just like a very...
 
 don't know, It's strong. At least... It's a strong smell that nothing else smells like. You can always smell a banana, and it just will be, that's really dominant, but it smells, I think, yeah, nutty to me."
+010,Task2,used as standalone reference,Expressive/rich beans scent; container/bag smell,"Oily: 3
+Needy (heavy/greasy): 7
+Grainy, red (earthy/meaty tone)
+Accept free (acceptable): 3","fruity: 7
+grainy: -
+sweetness: -"

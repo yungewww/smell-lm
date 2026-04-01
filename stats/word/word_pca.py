@@ -3,21 +3,11 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 from sentence_transformers import SentenceTransformer
+import pandas as pd
 
-word_freq = {
-    "sweet": 59, "strong": 28, "fresh": 23, "sour": 22, "earthy": 19,
-    "bitter": 16, "flavor": 16, "roasted": 15, "nutty": 13, "fruity": 12,
-    "berry": 12, "burnt": 11, "greasy": 11, "caramelized": 10, "smoky": 9,
-    "citrus": 8, "roasty": 8, "citrusy": 7, "chocolate": 7, "light": 6,
-    "wood": 6, "tropical": 6, "flower": 6, "cheesy": 6, "rich": 6,
-    "buttery": 6, "toasted": 6, "yeasty": 6, "dry": 5, "smoked": 5,
-    "fatty": 5, "grilled": 5, "ripe": 5, "grassy": 5, "warm": 5,
-    "meaty": 5, "leathery": 4, "refreshing": 4, "savory": 4, "spice": 4,
-    "charred": 4, "sickly": 4, "musky": 3, "leafy": 3, "subtle": 3,
-    "stale": 3, "floral": 2, "tart": 2, "crisp": 2, "rubbery": 2,
-    "vinegary": 2, "umami": 2, "mint": 2, "cinnamon": 2, "nauseating": 2,
-    "syrupy": 2, "artificial": 2, "fragrant": 2
-}
+# ── Load CSV ──────────────────────────────────────────────────────────────────
+df = pd.read_csv("word_frequency_smell.csv")
+word_freq = dict(zip(df["word"], df["frequency"]))
 
 words = list(word_freq.keys())
 freqs = np.array([word_freq[w] for w in words])
