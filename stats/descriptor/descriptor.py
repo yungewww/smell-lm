@@ -19,7 +19,7 @@ for col in df.columns[2:]:
 descriptors = ['sweet', 'savory', 'sour', 'burnt/smoked', 'fresh', 'chemical/artificial']
 groups = ['A', 'B', 'C', 'D']
 # group_labels = {'A': 'A (real)', 'B': 'B (human)', 'C': 'C (AI)', 'D': 'D (HITL)'}
-group_labels = {'A': 'Real', 'B': 'Human', 'C': 'w/o Learning', 'D': 'AromaAI'}
+group_labels = {'A': 'Real', 'B': 'Human', 'C': 'w/o Learning', 'D': 'AromaGen'}
 
 # ── Medians ────────────────────────────────────────────────────────────────────
 print("=" * 60)

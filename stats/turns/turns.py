@@ -9,7 +9,9 @@ fig.patch.set_facecolor('white')
 # ── Chart 1: Donut ──────────────────────────────────────────
 sizes = [6, 11, 6, 3]
 labels = ['0 turns / zero-shot (n=6)', '1 turn (n=11)', '2 turns (n=6)', '3 turns (n=3)']
-colors = ['#EFEFEF', '#D4D4D4', '#888888', '#444444']
+# colors = ['#EFEFEF', '#D4D4D4', '#888888', '#444444']
+colors = ['#D6E8F7', '#7AB8E8', '#2D7FC1', '#185FA5']
+# colors = ['#EBF4FB', '#85B7EB', '#4A8EC8', '#185FA5']
 
 wedges, _ = ax1.pie(
     sizes,
@@ -42,7 +44,7 @@ strategies = [
     'No change (correct)',
 ]
 counts = [10, 10, 8, 5, 1]
-bar_colors = ['#888888'] * 5
+bar_colors = ['#2D7FC1'] * 5
 
 y = np.arange(len(strategies))
 bars = ax2.barh(y, counts, color=bar_colors, height=0.5,

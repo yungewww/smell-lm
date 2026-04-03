@@ -93,7 +93,7 @@
 
 #     ax.set_xlim(0, 10)
 #     ax.set_yticks([0, 1])
-#     ax.set_yticklabels(['AromaAI', 'Human'], fontsize=12)
+#     ax.set_yticklabels(['AromaGen', 'Human'], fontsize=12)
 #     ax.spines['top'].set_visible(False)
 #     ax.spines['right'].set_visible(False)
 #     ax.spines['left'].set_visible(False)
@@ -115,7 +115,7 @@
 # axes[-1].set_xlabel('Rating (1–10)', fontsize=12)
 
 # patch_b = mpatches.Patch(color=COLOR_B, label='Human')
-# patch_d = mpatches.Patch(color=COLOR_D, label='AromaAI')
+# patch_d = mpatches.Patch(color=COLOR_D, label='AromaGen')
 # fig.legend(handles=[patch_b, patch_d], ncol=2, fontsize=12, frameon=False)
 
 # plt.savefig('nasa.pdf', dpi=300, bbox_inches='tight')
@@ -220,7 +220,7 @@ for i, (dim, label) in enumerate(zip(dimensions, dim_labels)):
     ax.tick_params(axis='x', bottom=False, labelbottom=False)
     # ax.set_xticks([0, 1])
     # ax.set_xticklabels([])
-    # ax.set_xticklabels(['Human', 'AromaAI'], fontsize=12, rotation=15)
+    # ax.set_xticklabels(['Human', 'AromaGen'], fontsize=12, rotation=15)
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
     ax.spines['bottom'].set_visible(False)
@@ -242,7 +242,7 @@ for i, (dim, label) in enumerate(zip(dimensions, dim_labels)):
 axes[0].set_ylabel('Rating (1–10)', fontsize=16)
 
 patch_b = mpatches.Patch(color=COLOR_B, label='Human')
-patch_d = mpatches.Patch(color=COLOR_D, label='AromaAI')
+patch_d = mpatches.Patch(color=COLOR_D, label='AromaGen')
 # fig.legend(handles=[patch_b, patch_d], ncol=2, fontsize=12, frameon=False)
 fig.legend(handles=[patch_b, patch_d], ncol=2, fontsize=16, frameon=False,
            loc='lower center', bbox_to_anchor=(0.5, 0))

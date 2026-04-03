@@ -121,22 +121,22 @@ df = pd.read_csv('SmellUIST - Similarity.csv')
 
 Human = df[df['Group']=='B'].set_index('Participant')['Similarity'].sort_index()
 NoLearning = df[df['Group']=='C'].set_index('Participant')['Similarity'].sort_index()
-AromaAI = df[df['Group']=='D'].set_index('Participant')['Similarity'].sort_index()
+AromaGen = df[df['Group']=='D'].set_index('Participant')['Similarity'].sort_index()
 
-idx = Human.index.intersection(NoLearning.index).intersection(AromaAI.index)
-Human, NoLearning, AromaAI = Human.loc[idx], NoLearning.loc[idx], AromaAI.loc[idx]
+idx = Human.index.intersection(NoLearning.index).intersection(AromaGen.index)
+Human, NoLearning, AromaGen = Human.loc[idx], NoLearning.loc[idx], AromaGen.loc[idx]
 N = len(idx)
 
 # ── Compute improvements ──────────────────────────────────────
 data = pd.DataFrame({
     'Participant': idx,
     'human_to_nolearning': (NoLearning - Human).values,
-    'nolearning_to_aromaai': (AromaAI - NoLearning).values,
-    'human_to_aromaai': (AromaAI - Human).values,
+    'nolearning_to_aromagen': (AromaGen - NoLearning).values,
+    'human_to_aromagen': (AromaGen - Human).values,
 })
 
-data['has_red'] = ((data['human_to_nolearning'] < 0) | (data['nolearning_to_aromaai'] < 0)).astype(int)
-data = data.sort_values(['human_to_aromaai', 'has_red'], ascending=[False, True]).reset_index(drop=True)
+data['has_red'] = ((data['human_to_nolearning'] < 0) | (data['nolearning_to_aromagen'] < 0)).astype(int)
+data = data.sort_values(['human_to_aromagen', 'has_red'], ascending=[False, True]).reset_index(drop=True)
 
 # ── Statistics ────────────────────────────────────────────────
 def wilcox_r(x, y, n):
@@ -145,8 +145,8 @@ def wilcox_r(x, y, n):
     return p, round(r, 3)
 
 p_human_nolearning, r_human_nolearning = wilcox_r(NoLearning.loc[idx], Human.loc[idx], N)
-p_nolearning_aromaai, r_nolearning_aromaai = wilcox_r(AromaAI.loc[idx], NoLearning.loc[idx], N)
-p_human_aromaai, r_human_aromaai = wilcox_r(AromaAI.loc[idx], Human.loc[idx], N)
+p_nolearning_aromagen, r_nolearning_aromagen = wilcox_r(AromaGen.loc[idx], NoLearning.loc[idx], N)
+p_human_aromagen, r_human_aromagen = wilcox_r(AromaGen.loc[idx], Human.loc[idx], N)
 
 def sig_label(p):
     if p < 0.001: return '***'
@@ -169,16 +169,16 @@ bar_width = 0.3
 
 bc_pos = data['human_to_nolearning'].clip(lower=0)
 bc_neg = data['human_to_nolearning'].clip(upper=0)
-cd_pos = data['nolearning_to_aromaai'].clip(lower=0)
-cd_neg = data['nolearning_to_aromaai'].clip(upper=0)
+cd_pos = data['nolearning_to_aromagen'].clip(lower=0)
+cd_neg = data['nolearning_to_aromagen'].clip(upper=0)
 
-ax.bar(x, bc_pos, bar_width, color=C_BLUE_LIGHT, label='Human→AromaAI w/o learning improved')
-ax.bar(x, cd_pos, bar_width, bottom=bc_pos, color=C_BLUE_DARK, label='AromaAI w/o learning→AromaAI improved')
-ax.bar(x, bc_neg, bar_width, color=C_RED_LIGHT, label='Human→AromaAI w/o learning worse')
-ax.bar(x, cd_neg, bar_width, bottom=bc_neg, color=C_RED_DARK, label='AromaAI w/o learning→AromaAI worse')
+ax.bar(x, bc_pos, bar_width, color=C_BLUE_LIGHT, label='Human→AromaGen w/o learning improved')
+ax.bar(x, cd_pos, bar_width, bottom=bc_pos, color=C_BLUE_DARK, label='AromaGen w/o learning→AromaGen improved')
+ax.bar(x, bc_neg, bar_width, color=C_RED_LIGHT, label='Human→AromaGen w/o learning worse')
+ax.bar(x, cd_neg, bar_width, bottom=bc_neg, color=C_RED_DARK, label='AromaGen w/o learning→AromaGen worse')
 
 seg_half = bar_width * 0.6
-for i, bd_val in enumerate(data['human_to_aromaai']):
+for i, bd_val in enumerate(data['human_to_aromagen']):
     ax.plot([x[i] - seg_half, x[i] + seg_half], [bd_val, bd_val],
             color=C_BLACK, linewidth=2.5, solid_capstyle='round', zorder=5)
 
@@ -195,9 +195,9 @@ ax.grid(axis='y', color='gray', alpha=0.2, linewidth=0.8)
 patches = [
     mpatches.Patch(color=C_BLUE_LIGHT, label='Human → w/o learning improved'),
     mpatches.Patch(color=C_RED_LIGHT,  label='Human → w/o learning worse'),
-    mpatches.Patch(color=C_BLUE_DARK,  label='w/o learning → AromaAI improved'),
-    mpatches.Patch(color=C_RED_DARK,   label='w/o learning → AromaAI worse'),
-    plt.Line2D([0], [0], color=C_BLACK, linewidth=2.5, label='Human → AromaAI total'),
+    mpatches.Patch(color=C_BLUE_DARK,  label='w/o learning → AromaGen improved'),
+    mpatches.Patch(color=C_RED_DARK,   label='w/o learning → AromaGen worse'),
+    plt.Line2D([0], [0], color=C_BLACK, linewidth=2.5, label='Human → AromaGen total'),
 ]
 ax.legend(handles=patches, fontsize=16, frameon=False,
           loc='lower center', 
@@ -205,9 +205,9 @@ ax.legend(handles=patches, fontsize=16, frameon=False,
           ncol=2)
 
 # stats_text = (
-#     f'Human→AromaAI w/o learning: p={p_human_nolearning:.3f} ({sig_label(p_human_nolearning)})\n'
-#     f'AromaAI w/o learning→AromaAI: p={p_nolearning_aromaai:.3f}, r={r_nolearning_aromaai} ({sig_label(p_nolearning_aromaai)})\n'
-#     f'Human→AromaAI: p={p_human_aromaai:.4f}, r={r_human_aromaai} ({sig_label(p_human_aromaai)})'
+#     f'Human→AromaGen w/o learning: p={p_human_nolearning:.3f} ({sig_label(p_human_nolearning)})\n'
+#     f'AromaGen w/o learning→AromaGen: p={p_nolearning_aromagen:.3f}, r={r_nolearning_aromagen} ({sig_label(p_nolearning_aromagen)})\n'
+#     f'Human→AromaGen: p={p_human_aromagen:.4f}, r={r_human_aromagen} ({sig_label(p_human_aromagen)})'
 # )
 # ax.set_title(stats_text, fontsize=12, color='gray', pad=10)
 
