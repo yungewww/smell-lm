@@ -11,15 +11,11 @@ Smell's deep connection with food, memory, and social experience has long motiva
 ![Teaser](assets/teaser.png)
 
 
-## Installation
-
-```bash
-pip install -r requirements.txt
-```
-
 ## Usage
 
 ```bash
+pip install -r requirements.txt
+
 # Start the backend
 uvicorn main:app --reload
 ```
